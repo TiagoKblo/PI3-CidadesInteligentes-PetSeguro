@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!-- Cabeçalho da página -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PatSeguro - Rastreamento de Animais de Estimação</title>
+
+        <!-- Link para o ícone da página -->
+        <link rel="icon" href="imagens/icone.png" type="image/x-icon">
+
+       <!-- Link para o Bootstrap CSS  -->
+       <link rel="stylesheet" href="bootstrap-5.3.0/dist/css/bootstrap.min.css">
+
+        <!-- Link para a biblioteca AOS -->
+       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+         <!-- Link para a biblioteca Bootstrap Icons -->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+       <!-- Arquivo CSS personalizado para estilos específicos -->
+       <link rel="stylesheet" href="styles.css">
+    </head>
+
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+                <img src="imagens/icone.png" alt="PetSeguro Icon" class="mr-2">
+                PetSeguro
+            </a>
+
+            <!-- Botões alinhados à direita -->
+            <div class="ml-auto">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rastreamento.html">Rastreamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Comunidade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre Nós</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- Seção Banner com imagem de fundo -->
+<section class="banner-section" id="banner">
+    <div data-aos="zoom-in">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 text-center text-lg-start">
+                    <h1 data-aos="fade-right">Bem-vindo ao PetSeguro <a href="seu_link_aqui">
+                        <i class="bi bi-search"></i> <!-- Ícone de lupa -->
+                    </a></h1>
+                    <p class="mb-5" data-aos="fade-right" data-aos-delay="1000">Oferecemos monitoramento e segurança para o seu animal de estimação. Com nossa tecnologia, você pode sair de casa todos os dias tranquilo sabendo a localização do seu Pet em tempo real.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Principal -->
+<section class="main-section" id="main">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-5" data-aos="fade-up">
+                <h2 class="section-heading">Vantagens de usar o PetSeguro</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-1 text-center">
+                    <div class="wrap-icon icon-1">
+                        <a href="rastreamento.html">
+                        <i class="bi bi-geo-alt"></i>
+                        </a>
+                    </div>
+                    <h3 class="mb-3">Localização em Tempo Real</h3>
+                    <p>Ofereça tranquilidade e segurança para você e seus pets com o PetSeguro.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-1 text-center">
+                    <div class="wrap-icon icon-1">
+                        <a href="seu link aqui">
+                        <i class="bi bi-journal-text"></i>
+                        </a>
+                    </div>
+                    <h3 class="mb-3">Registro Detalhado</h3>
+                    <p>Registre informações detalhadas sobre seus pets de forma digital e intuitiva.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-1 text-center">
+                    <div class="wrap-icon icon-1">
+                        <a href="seu link aqui">
+                        <i class="bi bi-bluetooth"></i>
+                        </a>
+                    </div>
+                    <h3 class="mb-3">Tecnologia Avançada</h3>
+                    <p>Integre tecnologia Bluetooth de última geração para rastreamento em tempo real.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Rodapé -->
+
+    <footer class="text-center text-lg-start" data-aos="fade-up">
+        <div class="text-center p-3">
+             <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados </a>
+        </div>
+    </footer>
+
+
+
+ <!-- Os scripts do Bootstrap e outros scripts necessários -->
+ <script src="bootstrap-5.3.0/js/bootstrap.min.js"></script>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* Estilos para a imagem de fundo */
+body {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Estilos para a barra de navegação */
+.navbar-custom {
+    background-color: rgba(59, 157, 254, 0.5);
+    padding: 10px 0; /* Espaçamento interno superior e inferior */
+}
+
+/* Estilos para o ícone ao lado do texto "PetSeguro" */
+.navbar-brand img {
+    max-width: 30px;
+    height: auto;
+    margin-right: 5px;
+    vertical-align: middle; /* Centraliza verticalmente o ícone */
+}
+
+/* Estilos para o texto "PetSeguro" na navbar */
+.navbar-brand {
+    color: #3c3b3b; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 30px; /* Tamanho da fonte para o texto */
+    line-height: 30px; /* Centraliza verticalmente o texto com o ícone */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+}
+
+/* Estilos para os links de navegação */
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    font-weight: bold; /* Texto em negrito */
+    font-size: 20px; /* Tamanho da fonte para o texto */
+    color: #3c3b3b; /* Cor dos links */
+    transition: color 0.3s ease-in-out; /* Efeito de transição suave para a cor do texto */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+}
+
+/* Estilos para os links de navegação no hover */
+.navbar-custom .navbar-nav .nav-item .nav-link:hover {
+    color: #150ae8; /* Mudar a cor dos links ao passar o mouse */
+}
+
+/* Estilos para a seção Banner */
+.banner-section {
+    position: relative; /* Adicione posição relativa para criar um contexto para ::before */
+    background-image: url('imagens/pets_large.jpeg'); /* Imagem de fundo */
+    background-size: contain; /* Torna a imagem de fundo cobrir toda a área da div */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+    background-attachment: fixed; /* Torna a imagem de fundo fixa */
+    min-height: 400px; /* Ajuste conforme necessário para controlar a altura da seção */
+    padding: 100px 0; /* Espaçamento interno superior e inferior */
+    z-index: 1;
+    /* Estilos para o texto na seção */
+    color: #000000; /* Cor do texto */
+    text-align: center;
+}
+
+.banner-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4); /* Cor e opacidade da camada semitransparente */
+    z-index: -1; /* Certifique-se de que a camada esteja atrás da imagem de fundo */
+}
+
+
+
+/* Estilos para o texto na seção */
+.banner-section h1 {
+    color: #3c3b3b;
+    font-size: 60px;
+    margin-top: 100px;
+    text-align: center;
+    font-weight: bold; /* Texto em negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+}
+
+.banner-section p {
+    color: #3c3b3b;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold; /* Texto em negrito */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombreamento de texto */
+    margin-top: 100px;
+}
+/* Estilos para o conteúdo principal */
+.container {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+/* Estilos para a Seção Principal */
+.main-section {
+    padding: 100px 0; /* Espaçamento interno superior e inferior */
+}
+
+.section-heading {
+    margin-bottom: 80px; /* Espaçamento inferior para o título da seção */
+    color: #3c3b3b;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold; /* Texto em negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+}
+
+.feature-1 {
+    margin-bottom: 30px; /* Espaçamento inferior entre as divs das vantagens */
+}
+
+.feature-1 .wrap-icon {
+    background-color: #3b9dfe; /* Cor de fundo do ícone */
+    border-radius: 50%; /* Borda arredondada para o ícone */
+    padding: 20px; /* Espaçamento interno do ícone */
+    margin: 0 auto; /* Centraliza horizontalmente o ícone */
+    display: inline-block;
+}
+
+.feature-1 .wrap-icon i {
+    font-size: 36px; /* Tamanho do ícone */
+    color: #3c3b3b; /* Cor do ícone */
+}
+.feature-1 .wrap-icon:hover {
+    background-color: #3c3b3b;
+}
+
+.feature-1 .wrap-icon:hover i {
+    color: #3b9dfe;
+    background-color: #3c3b3b;
+}
+
+
+.feature-1 h3 {
+    font-size: 24px; /* Tamanho da fonte para o título da vantagem */
+    margin-top: 20px; /* Espaçamento superior para o título da vantagem */
+    font-weight: bold; /* Texto em negrito */
+    color: #3c3b3b; /* Cor do título da vantagem */
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+.feature-1 p {
+    font-size: 18px; /* Tamanho da fonte para o texto da vantagem */
+    color: #020000; /* Cor do texto da vantagem */
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #3b9dfe;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.custom-link {
+    color: #3c3b3b; /* Cor dos links */
+    text-decoration: none; /* Remova o sublinhado padrão dos links */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 15px; /* Tamanho da fonte para o texto */
+
+}
+
+.custom-link:hover {
+    color: #150ae8; /* Cor do link ao passar o mouse (hover) */
+}
+/* Estilo da div que contém o mapa */
+.map-container {
+    height: 400px; /* Altura desejada para o mapa */
+    border: 1px solid #ccc; /* Uma borda para destacar a div do mapa */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 20px; /* Espaçamento superior */
+}
