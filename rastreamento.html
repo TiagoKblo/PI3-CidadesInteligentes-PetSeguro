@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <!-- Cabeçalho da página -->
+<!-- Cabeçalho da página -->
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PatSeguro - Rastreamento de Animais de Estimação</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatSeguro - Rastreamento de Animais de Estimação</title>
 
-        <!-- Link para o ícone da página -->
-        <link rel="icon" href="imagens/icone.png" type="image/x-icon">
+    <!-- Link para o ícone da página -->
+    <link rel="icon" href="imagens/icone.png" type="image/x-icon">
 
-       <!-- Link para o Bootstrap CSS  -->
-       <link rel="stylesheet" href="bootstrap-5.3.0/dist/css/bootstrap.min.css">
+    <!-- Link para o Bootstrap CSS  -->
+    <link rel="stylesheet" href="bootstrap-5.3.0/dist/css/bootstrap.min.css">
 
-        <!-- Link para a biblioteca AOS -->
-       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Link para a biblioteca AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-         <!-- Link para a biblioteca Bootstrap Icons -->
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Link para a biblioteca Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Vincule o seu arquivo JavaScript -->
+    <script src="map.js"></script>
 
 
-       <!-- Arquivo CSS personalizado para estilos específicos -->
-       <link rel="stylesheet" href="styles.css">
-    </head>
+    <!-- Arquivo CSS personalizado para estilos específicos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 
 <body>
     <!-- Barra de navegação -->
@@ -35,7 +38,8 @@
 
             <!-- Botões alinhados à direita -->
             <div class="ml-auto">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -50,7 +54,7 @@
                             <a class="nav-link" href="#">Comunidade</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre Nós</a>
+                            <a class="nav-link" href="#">Minha Conta</a>
                         </li>
                     </ul>
                 </div>
@@ -58,13 +62,75 @@
         </div>
     </nav>
 
-</section>
+    </section>
+
 <!-- Seção Principal -->
-<section class="main-section" id="main">
+<section class="main-section" id="main" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
-        <div id="map" style="height: 400px;"></div> <!-- Esta div para o mapa -->
+        <h2 class="section-heading">Localizar meu Pet</h2>
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-md-9">
+                <div id="map" style="height: 400px;"></div> <!-- Esta div para o mapa -->
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-duration="1000">
+                <!-- Seção de Configurações -->
+                <div id="config-panel">
+                    <h2>Criar Marcadores</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="icon-select">Escolha um ícone:</label>
+                            <select id="icon-select" class="form-control">
+                                <option value="icone-1.png"><i class="bi bi-heart"></i> Ícone 1</option>
+                                <option value="icone-2.png"><i class="bi bi-star"></i> Ícone 2</option>
+                                <!-- Adicione mais opções de ícones aqui -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pet-name">Nome do Animal:</label>
+                            <input type="text" id="pet-name" class="form-control">
+                        </div>
+                        <button type="button" onclick="adicionarMarcador()" data-aos="fade-up" data-aos-duration="1000">Adicionar Marcador</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+<!-- Seção de Funcionalidades Úteis -->
+<section class="funcionalidades-section" id="funcionalidades" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="col-md-8 text-center">
+                <h2 class="section-heading">Funcionalidades Úteis</h2>
+                <p class="section-subheading">Veja o que você pode fazer com o PetSeguro.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="funcionalidades-uteis">
+                    <button class="btn btn-primary">Encontre um companheiro</button>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="funcionalidades-uteis">
+                    <button class="btn btn-warning">Relatar um animal perdido</button>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="funcionalidades-uteis">
+                    <button class="btn btn-success">Reunir-se com seu pet</button>
+                </div>
+            </div>
+            <!-- Adicione mais colunas e botões conforme necessário -->
+        </div>
+    </div>
+</section>
+
+
+<!-- Outras seções abaixo desta nova seção -->
+
+
 
 
 
@@ -72,30 +138,32 @@
 
     <footer class="text-center text-lg-start" data-aos="fade-up">
         <div class="text-center p-3">
-             <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados </a>
+            <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados </a>
         </div>
     </footer>
 
 
 
- <!-- Os scripts do Bootstrap e outros scripts necessários -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Os scripts do Bootstrap e outros scripts necessários -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script>
-    AOS.init();
-  </script>
- <script>
-    function initMap() {
-        const myLatLng = { lat: -22.4334, lng: -46.8222 }; // Coordenadas da cidade de Itapira, SP, Brasil
-        const map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatLng,
-            zoom: 8
-        });
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-K_J9mjjy6UPA429Sp_rJhaW49GQNq8I&callback=initMap"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        function initMap() {
+            const myLatLng = { lat: -22.4334, lng: -46.8222 }; // Coordenadas da cidade de Itapira, SP, Brasil
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 8
+            });
+        }
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-K_J9mjjy6UPA429Sp_rJhaW49GQNq8I&callback=initMap"></script>
 
 </body>
+
 </html>

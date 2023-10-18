@@ -76,8 +76,8 @@ body {
 /* Estilos para o texto na seção */
 .banner-section h1 {
     color: #3c3b3b;
-    font-size: 60px;
-    margin-top: 100px;
+    font-size: 40px;
+    margin-top: 280px;
     text-align: center;
     font-weight: bold; /* Texto em negrito */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
@@ -86,10 +86,11 @@ body {
 .banner-section p {
     color: #3c3b3b;
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     font-weight: bold; /* Texto em negrito */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombreamento de texto */
-    margin-top: 100px;
+    margin-top: 130px;
+
 }
 /* Estilos para o conteúdo principal */
 .container {
@@ -97,11 +98,63 @@ body {
     text-align: center;
     color: white;
 }
-/* Estilos para a Seção Principal */
+
+/* Estilos para a seção principal */
 .main-section {
-    padding: 100px 0; /* Espaçamento interno superior e inferior */
+    background-color: #fefefe; /* Cor de fundo da seção */
+    padding: 100px 0; /* Espaçamento interno */
 }
 
+.main-section h2 {
+    font-size: 50px; /* Tamanho da fonte do título */
+    margin-bottom: 40px; /* Espaçamento inferior do título */
+}
+
+/* Estilos para a div do mapa */
+#map {
+    height: 400px;
+    border: 2px solid #3b9dfe; /* Borda fina ao redor do mapa */
+    border-radius: 5px; /* Borda arredondada */
+
+}
+
+/* Estilos para a seção de configurações */
+#config-panel {
+    background-color: rgba(59, 157, 254, 0.5); /* Cor de fundo da seção */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda fina ao redor da seção */
+    margin-top: 20px; /* Espaçamento superior para separar da seção anterior */
+}
+
+#config-panel h2 {
+    color: #000;
+    font-size: 24px; /* Tamanho da fonte do título */
+    margin-bottom: 20px; /* Espaçamento inferior do título */
+}
+
+#icon-select {
+    width: 100%; /* Largura total para preencher a largura da div */
+    padding: 10px; /* Espaçamento interno dos seletores */
+    margin-bottom: 10px; /* Espaçamento inferior entre os seletores */
+}
+
+#pet-name {
+    width: 100%; /* Largura total para preencher a largura da div */
+    padding: 10px; /* Espaçamento interno do campo de texto */
+    margin-bottom: 20px; /* Espaçamento inferior do campo de texto */
+}
+
+#config-panel button {
+    background-color: #3c3b3b; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Remova a borda do botão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Mude o cursor para um ponteiro ao passar o mouse */
+}
+
+
+/* Estilos para a seção de vantagens */
 .section-heading {
     margin-bottom: 80px; /* Espaçamento inferior para o título da seção */
     color: #3c3b3b;
@@ -169,11 +222,41 @@ footer {
 .custom-link:hover {
     color: #150ae8; /* Cor do link ao passar o mouse (hover) */
 }
-/* Estilo da div que contém o mapa */
-.map-container {
-    height: 400px; /* Altura desejada para o mapa */
-    border: 1px solid #ccc; /* Uma borda para destacar a div do mapa */
-    border-radius: 8px; /* Borda arredondada */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin-top: 20px; /* Espaçamento superior */
+
+/* Estilos para a seção de Funcionalidades Úteis */
+.funcionalidades-section {
+    background-color: #fefefe; /* Cor de fundo da seção */
+    padding: 50px 0; /* Espaçamento interno superior e inferior */
+    text-align: center;
 }
+
+.funcionalidades-section h2 {
+    color: #3c3b3b;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold; /* Texto em negrito */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    margin-bottom: 40px; /* Espaçamento inferior para o título da seção */
+}
+
+.funcionalidades-section .section-subheading {
+    font-size: 18px; /* Tamanho da fonte para o subtitulo */
+    color: #888; /* Cor do subtitulo */
+    margin-bottom: 30px; /* Espaçamento inferior para o subtitulo */
+}
+
+/* Estilos para os botões de funcionalidades */
+.funcionalidades-uteis button {
+    width: 100%; /* Largura total dos botões */
+    margin-bottom: 40px; /* Espaçamento inferior entre os botões */
+    font-size: 18px; /* Tamanho da fonte para os botões */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    border-radius: 5px; /* Borda arredondada dos botões */
+    padding: 15px; /* Espaçamento interno dos botões */
+}
+
+.funcionalidades-uteis button:hover {
+    background-color: #3b9dfe; /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
