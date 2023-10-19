@@ -145,12 +145,18 @@ body {
 }
 
 #config-panel button {
-    background-color: #3c3b3b; /* Cor de fundo do botão */
+    background-color: #3b9dfe; /* Cor de fundo do botão ao passar o mouse */
     color: #fff; /* Cor do texto do botão */
     padding: 10px 20px; /* Espaçamento interno do botão */
     border: none; /* Remova a borda do botão */
     border-radius: 5px; /* Borda arredondada */
     cursor: pointer; /* Mude o cursor para um ponteiro ao passar o mouse */
+}
+
+#config-panel button:hover {
+    background-color: #3c3b3b; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+
 }
 
 
