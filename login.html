@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!-- Cabeçalho da página -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página de Login</title>
+
+        <!-- Link para o ícone da página -->
+        <link rel="icon" href="imagens/icone.png" type="image/x-icon">
+
+       <!-- Link para o Bootstrap CSS  -->
+       <link rel="stylesheet" href="bootstrap-5.3.0/dist/css/bootstrap.min.css">
+
+        <!-- Link para a biblioteca AOS -->
+       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+         <!-- Link para a biblioteca Bootstrap Icons -->
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+       <!-- Arquivo CSS personalizado para estilos específicos -->
+       <link rel="stylesheet" href="styles.css">
+    </head>
+
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+                <img src="imagens/icone.png" alt="PetSeguro Icon" class="mr-2">
+                PetSeguro
+            </a>
+
+            <!-- Botões alinhados à direita -->
+            <div class="ml-auto">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rastreamento.html">Rastreamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Comunidade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Minha Conta</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+ <!-- Seção de Login -->
+ <section class="login-section" id="login">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-4 col-md-6">
+                <div class="login-container">
+                    <h2>Faça Login</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nome de usuário:</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Senha:</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <p>Não tem uma conta? <a href="cadastro.html">Registre-se</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Rodapé -->
+
+    <footer class="text-center text-lg-start" data-aos="fade-up">
+        <div class="text-center p-3">
+             <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados </a>
+        </div>
+    </footer>
+
+
+
+ <!-- Os scripts do Bootstrap e outros scripts necessários -->
+ <script src="bootstrap-5.3.0/js/bootstrap.min.js"></script>
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script src="scripts.js"></script>
+
+
+</body>
+</html>

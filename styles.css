@@ -266,3 +266,81 @@ footer {
     color: #fff; /* Cor do texto ao passar o mouse */
 }
 
+
+/* CSS para o container de login */
+.login-section {
+    background-image: url('imagens/Pets\ in\ front\ of\ a\ white\ background.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 400px; /* Define a largura máxima do contêiner */
+    margin: 100 auto; /* Centraliza o contêiner na horizontal */
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold; /* Texto em negrito */
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(78, 79, 79, 0.5); /* Sombreamento de texto */
+}
+
+.login-container form {
+    text-align: left;
+    color: #3c3b3b;
+}
+
+.login-container label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+.login-container a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold; /* Texto em negrito */
+    color: #3b9dfe;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+.login-container a:hover {
+    color: #3c3b3b;
+}
+
+.login-container button {
+    background-color: #3c3b3b; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    /* Adicione as seguintes regras para centralizar o botão */
+    display: block;
+    margin: 0 auto;
+}
+
+.login-container button:hover {
+    background-color: #3b9dfe; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 100%;
+    }
+}
