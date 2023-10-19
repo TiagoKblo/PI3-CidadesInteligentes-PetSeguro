@@ -415,7 +415,7 @@ footer {
     text-align: center;
     max-width: 600px; /* Define a largura máxima do contêiner */
     margin: 100px auto; /* Centraliza o contêiner na vertical e horizontal */
-    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5); /* Adiciona uma borda 3D cinza semi-transparente */
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5); /* Adiciona uma borda 3D cinza semi-transparente */
 }
 
 
@@ -510,16 +510,71 @@ section {
     margin-bottom: 20px; /* Espaçamento inferior */
 }
 
-/* Estilo para a seção de Notícias e Informações */
-#noticiasCarousel {
-    margin: 0 auto; /* Centraliza o carrossel horizontalmente */
-    max-width: 800px; /* Define a largura máxima do carrossel */
+/* Estilo para limitar o tamanho das imagens no carrossel */
+#noticiasCarousel .carousel-item {
+    position: relative; /* Define posição relativa para permitir camadas */
+
+}
+
+#noticiasCarousel .carousel-item img {
+    max-width: 100%; /* Largura máxima igual à largura do contêiner pai */
+    height: auto; /* Altura ajustada automaticamente para manter a proporção */
+    display: block; /* Remover espaço extra abaixo das imagens */
+    margin: 0 auto; /* Centralizar a imagem horizontalmente */
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
+}
+
+
+#noticiasCarousel .carousel-caption {
+    position: absolute; /* Define posição absoluta para sobrepor o texto */
+    top: 50%; /* Alinha o topo da legenda ao centro verticalmente */
+    left: 50%; /* Alinha a esquerda da legenda ao centro horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza a legenda */
+    color: white; /* Cor do texto branco */
+    background: rgba(255, 255, 255, 0.5); /* Fundo esfumaçado branco com transparência */
+    padding: 15px; /* Espaçamento interno da legenda */
+    border-radius: 5px; /* Cantos arredondados da legenda */
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
+}
+
+#noticiasCarousel .carousel-caption h5 {
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 40px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+#noticiasCarousel .carousel-caption p {
+    font-size: 35px;
+    margin-top: 20px;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+#noticiasCarousel .carousel-control-prev,
+#noticiasCarousel .carousel-control-next {
+    width: 5%; /* Largura dos controles */
+    opacity: 0.9; /* Opacidade dos controles */
+    color: black;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+/* Estilo para limitar o tamanho das imagens no carrossel */
+#noticiasCarousel .carousel-item img {
+    max-width: 100%; /* Largura máxima igual à largura do contêiner pai */
+    max-height: 600px; /* Altura máxima desejada */
+    background-size: contain; /* Torna a imagem de fundo cobrir toda a área da div */
+    display: block; /* Remover espaço extra abaixo das imagens */
+    margin: 0 auto; /* Centralizar a imagem horizontalmente */
 }
 /* Estilo para a seção de Mural de Animais Perdidos */
 .container.my-5 {
     padding: 80px 0; /* Espaçamento interno superior e inferior */
     background-color: #fff; /* Cor de fundo */
     text-align: center; /* Centraliza o conteúdo */
+
 }
 
 /* Estilo para o título da seção */
@@ -535,6 +590,7 @@ section {
 .container.my-5 .col-md-4 {
     text-align: center;
     margin-bottom: 20px;
+
 }
 
 .container.my-5 img {
@@ -543,6 +599,7 @@ section {
     height: auto;
     border: 1px solid #ccc; /* Adicione uma borda ao redor da imagem */
     object-fit: cover; /* Ajusta a imagem para cobrir todo o espaço do container */
+
 }
 
 .container.my-5 h5 {
@@ -565,10 +622,12 @@ section {
     padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
 }
 
 .container.my-5 .btn-primary:hover {
-    background-color: #007bff;
+    background-color: #3c3b3b; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
 }
 
 
@@ -586,6 +645,12 @@ form button {
     padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
+}
+
+form button:hover {
+    background-color: #3c3b3b; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
 }
 
 /* Estilo para a imagem do usuário nas postagens da Rede Social */
