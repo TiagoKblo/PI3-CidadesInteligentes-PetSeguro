@@ -6,7 +6,7 @@ Projeto Integrador (PI) do 3º período do curso de Tecnologia em Desenvolviment
 - Daniel
 - Laura
 - Radmila
-- Tiago
+- Tiago H
 
 ## Tema
 **PetSeguro:** Desenvolvimento de um portal para rastreamento inteligente e seguro de animais de estimação.
@@ -21,7 +21,7 @@ O Projeto Pedagógico do Curso DSM da Fatec Itapira descreve o desenvolvimento d
 - Desenvolvimento Web III (Prof. Junior)
 - Bancos de Dados não Relacionais (Prof. Mateus)
 - Interação Humano Computador (Prof. Thiago)
-  
+
 ## Recursos e Ferramentas
 
 - PMCanvas (Project Model Canvas) para o planejamento preliminar.
