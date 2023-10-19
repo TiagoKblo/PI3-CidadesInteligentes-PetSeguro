@@ -211,7 +211,7 @@ body {
 
 /* Estilos para o rodapé */
 footer {
-    background-color: #3b9dfe;
+    background-color: rgba(59, 157, 254, 0.5);
     padding: 10px;
     position: fixed;
     bottom: 0;
@@ -227,6 +227,14 @@ footer {
 
 .custom-link:hover {
     color: #150ae8; /* Cor do link ao passar o mouse (hover) */
+}
+#myFooter {
+    background-color: rgba(59, 157, 254, 0.2);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none; /* Inicialmente oculto */
 }
 
 /* Estilos para a seção de Funcionalidades Úteis */
@@ -341,6 +349,84 @@ footer {
 
 @media (max-width: 768px) {
     .login-container {
+        max-width: 100%;
+    }
+}
+
+/* CSS para a seção de cadastro de usuário */
+.cadastro-usuario {
+    background-image: url('imagens/cadastro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadastro-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 600px; /* Define a largura máxima do contêiner */
+    margin: 100px auto; /* Centraliza o contêiner na vertical e horizontal */
+}
+
+.cadastro-container h2 {
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold; /* Texto em negrito */
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(78, 79, 79, 0.5); /* Sombreamento de texto */
+}
+
+.cadastro-container form {
+    text-align: left;
+    color: #3c3b3b;
+}
+
+.cadastro-container label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+.cadastro-container a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold; /* Texto em negrito */
+    color: #3b9dfe;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+.cadastro-container a:hover {
+    color: #3c3b3b;
+}
+
+.cadastro-container button {
+    background-color: #3c3b3b; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+    /* Adicione as seguintes regras para centralizar o botão */
+    display: block;
+    margin: 0 auto;
+}
+
+.cadastro-container button:hover {
+    background-color: #3b9dfe; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+}
+
+@media (max-width: 768px) {
+    .cadastro-container {
         max-width: 100%;
     }
 }
