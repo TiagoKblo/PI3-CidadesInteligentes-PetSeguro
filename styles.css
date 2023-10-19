@@ -9,15 +9,9 @@ body {
 /* Estilos para a barra de navegação */
 .navbar-custom {
     background-color: rgba(59, 157, 254, 0.5);
-    padding: 10px 0; /* Espaçamento interno superior e inferior */
-}
-
-/* Estilos para o ícone ao lado do texto "PetSeguro" */
-.navbar-brand img {
-    max-width: 30px;
-    height: auto;
-    margin-right: 5px;
-    vertical-align: middle; /* Centraliza verticalmente o ícone */
+    padding: 10px;
+    display: flex; /* Usar flexbox para alinhar verticalmente o conteúdo */
+    align-items: center; /* Centralizar verticalmente o conteúdo */
 }
 
 /* Estilos para o texto "PetSeguro" na navbar */
@@ -25,24 +19,48 @@ body {
     color: #3c3b3b; /* Cor do texto */
     font-weight: bold; /* Texto em negrito */
     font-size: 30px; /* Tamanho da fonte para o texto */
-    line-height: 30px; /* Centraliza verticalmente o texto com o ícone */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Adicionar transição suave para cor, transform e sombra */
 }
+
+
+/* Efeito de hover para a marca e o ícone na navbar */
+.navbar-custom .navbar-brand:hover {
+    color: #3b9dfe; /* Mudar a cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Aumentar o tamanho do ícone e do texto no hover */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Adicionar uma sombra no texto no hover */
+}
+
+.navbar-custom .navbar-brand img:hover {
+    transform: scale(1.1); /* Aumentar o tamanho do ícone no hover */
+}
+
 
 /* Estilos para os links de navegação */
 .navbar-custom .navbar-nav .nav-item .nav-link {
     font-weight: bold; /* Texto em negrito */
     font-size: 20px; /* Tamanho da fonte para o texto */
     color: #3c3b3b; /* Cor dos links */
+    margin: 0 10px; /* Espaçamento horizontal entre os links */
     transition: color 0.3s ease-in-out; /* Efeito de transição suave para a cor do texto */
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
 }
 
 /* Estilos para os links de navegação no hover */
-.navbar-custom .navbar-nav .nav-item .nav-link:hover {
-    color: #150ae8; /* Mudar a cor dos links ao passar o mouse */
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, border-radius 0.3s ease; /* Adicionando transições suaves para cor, transform, sombra e borda */
+    border-radius: 0; /* Remover qualquer borda arredondada padrão */
 }
+
+.navbar-custom .navbar-nav .nav-item .nav-link:hover {
+    color: #3b9dfe; /* Mudar a cor dos links ao passar o mouse */
+    transform: scale(1.2); /* Aumentar o tamanho do texto no hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionar uma sombra no hover */
+    border-radius: 15px; /* Adicionar bordas arredondadas no hover */
+}
+
+
 
 /* Estilos para a seção Banner */
 .banner-section {
@@ -292,8 +310,9 @@ footer {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    max-width: 400px; /* Define a largura máxima do contêiner */
-    margin: 100 auto; /* Centraliza o contêiner na horizontal */
+    max-width: 600px; /* Define a largura máxima do contêiner */
+    margin: 100px auto; /* Centraliza o contêiner na vertical e horizontal */
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5); /* Adiciona uma borda 3D cinza semi-transparente */
 }
 
 .login-container h2 {
@@ -372,7 +391,9 @@ footer {
     text-align: center;
     max-width: 600px; /* Define a largura máxima do contêiner */
     margin: 100px auto; /* Centraliza o contêiner na vertical e horizontal */
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5); /* Adiciona uma borda 3D cinza semi-transparente */
 }
+
 
 .cadastro-container h2 {
     margin-bottom: 20px;
@@ -429,4 +450,22 @@ footer {
     .cadastro-container {
         max-width: 100%;
     }
+}
+/* Estilo para h3 dentro da seção de cadastro de pet */
+.cadastro-pet h3 {
+    font-size: 35px;
+    margin-top: 20px;
+    color: #3b9dfe;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
+
+/* Estilo para a seção de cadastro de pet */
+.cadastro-pet {
+    background-image: url('imagens/saudeanimal.jpg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

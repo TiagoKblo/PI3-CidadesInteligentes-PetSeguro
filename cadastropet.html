@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pet</title>
+
+    <!-- Link para o ícone da página -->
+    <link rel="icon" href="imagens/icone.png" type="image/x-icon">
+
+    <!-- Link para o Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Link para a biblioteca AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Link para a biblioteca Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Arquivo CSS personalizado para estilos específicos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+                PetSeguro
+            </a>
+            <div class="ml-auto">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rastreamento.html">Rastreamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Comunidade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Minha Conta</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- Seção de Cadastro do Pet -->
+<section class="cadastro-pet" id="cadastro-pet">
+    <div class="container">
+        <div class="row justify-content-center" data-aos="fade-up">
+            <div class="col-lg-8">
+                <div class="cadastro-container">
+                    <h2>Cadastro do Pet</h2>
+                    <form>
+                        <!-- Dados Gerais -->
+                        <h3>Dados Gerais</h3>
+                        <div class="mb-3">
+                            <label for="nome-pet" class="form-label">Nome do Pet:</label>
+                            <input type="text" class="form-control" id="nome-pet" name="nome-pet">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="especie" class="form-label">Espécie:</label>
+                                <input type="text" class="form-control" id="especie" name="especie">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="raca" class="form-label">Raça:</label>
+                                <input type="text" class="form-control" id="raca" name="raca">
+                            </div>
+                        </div>
+
+                        <!-- Informações de Saúde -->
+                        <h3>Informações de Saúde</h3>
+                        <div class="mb-3">
+                            <label for="tipo-sanguineo" class="form-label">Tipo Sanguíneo:</label>
+                            <input type="text" class="form-control" id="tipo-sanguineo" name="tipo-sanguineo">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="doencas-conhecidas" class="form-label">Doenças Conhecidas:</label>
+                            <textarea class="form-control" id="doencas-conhecidas" name="doencas-conhecidas" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exames-medicos" class="form-label">Anexar Exames Médicos:</label>
+                            <input type="file" class="form-control" id="exames-medicos" name="exames-medicos">
+                        </div>
+
+                        <!-- Rastreabilidade -->
+                        <h3>Rastreabilidade</h3>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="microchip" class="form-label">Microchip de Identificação:</label>
+                                <select class="form-select" id="microchip" name="microchip">
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="registro-microchip" class="form-label">Número de Registro do Microchip:</label>
+                                <input type="text" class="form-control" id="registro-microchip" name="registro-microchip">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dispositivos-rastreamento" class="form-label">Dispositivos de Rastreamento:</label>
+                            <input type="text" class="form-control" id="dispositivos-rastreamento"
+                                name="dispositivos-rastreamento">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="modelo-dispositivo" class="form-label">Modelo do Dispositivo:</label>
+                                <input type="text" class="form-control" id="modelo-dispositivo" name="modelo-dispositivo">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="marca-dispositivo" class="form-label">Marca do Dispositivo:</label>
+                                <input type="text" class="form-control" id="marca-dispositivo" name="marca-dispositivo">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="fabricante-dispositivo" class="form-label">Fabricante do Dispositivo:</label>
+                                <input type="text" class="form-control" id="fabricante-dispositivo"
+                                    name="fabricante-dispositivo">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Cadastrar Pet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <footer class="text-center text-lg-start" data-aos="fade-up" data-aos-duration="2000">
+        <div class="text-center p-3">
+            <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados</a>
+        </div>
+    </footer>
+
+    <script src="bootstrap-5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
