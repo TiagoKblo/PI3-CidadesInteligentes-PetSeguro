@@ -372,6 +372,30 @@ footer {
     }
 }
 
+/* CSS para a Etapa de cadastro */
+/* CSS para a seção de destaque de etapa */
+.destaque-etapa-fixed {
+    position: fixed;
+    top: 50%; /* Ajuste a posição vertical conforme necessário */
+    right: 0;
+    transform: translateY(-50%);
+    background-color: rgba(59, 157, 254, 0.5);
+    padding: 10px;
+    text-align: center;
+    z-index: 2; /* Para garantir que fique acima de outros elementos */
+    border-radius: 5px;
+    cursor: n-resize; /* Mude o cursor para um ponteiro para cima/baixo */
+    transition: background-color 0.3s; /* Efeito de transição de cor de fundo */
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+}
+
+.destaque-text {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
 /* CSS para a seção de cadastro de usuário */
 .cadastro-usuario {
     background-image: url('imagens/cadastro.png');
@@ -469,3 +493,121 @@ footer {
     align-items: center;
     justify-content: center;
 }
+/* Estilo para as seções de Notícias e Informações, Mural de Animais Perdidos e Mural de Rede Social */
+section {
+    background-color: #fff; /* Cor de fundo para todas as seções */
+    padding: 80px 0; /* Espaçamento interno superior e inferior */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Estilo para o h2 na seção "Notícias e Informações" */
+.container h2 {
+    color: #3c3b3b; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 40px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo para a seção de Notícias e Informações */
+#noticiasCarousel {
+    margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+    max-width: 800px; /* Define a largura máxima do carrossel */
+}
+/* Estilo para a seção de Mural de Animais Perdidos */
+.container.my-5 {
+    padding: 80px 0; /* Espaçamento interno superior e inferior */
+    background-color: #fff; /* Cor de fundo */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Estilo para o título da seção */
+.container.my-5 h2 {
+    font-size: 40px;
+    color: #3c3b3b; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    font-weight: bold;
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo para os itens de Mural de Animais Perdidos */
+.container.my-5 .col-md-4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container.my-5 img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc; /* Adicione uma borda ao redor da imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o espaço do container */
+}
+
+.container.my-5 h5 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container.my-5 p {
+    font-size: 16px;
+    color: #333;
+}
+
+.container.my-5 .btn-primary {
+    background-color: #3b9dfe;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container.my-5 .btn-primary:hover {
+    background-color: #007bff;
+}
+
+
+/* Estilo para o formulário e postagens da Mural de Rede Social */
+form {
+    margin-bottom: 20px;
+}
+
+/* Estilo para o botão "Postar" */
+form button {
+    background-color: #3b9dfe;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilo para a imagem do usuário nas postagens da Rede Social */
+.card img.card-img-top {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #3b9dfe; /* Adicione uma borda para destacar a imagem do perfil */
+}
+
+/* Estilo para o texto dentro das postagens da Rede Social */
+.card-text {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Estilos para os textos h5 e p nas postagens da Rede Social */
+.card-title,
+.card-text {
+    color: #3b9dfe; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    font-weight: bold; /* Texto em negrito */
+}
+

@@ -22,3 +22,17 @@ window.addEventListener('scroll', toggleFooterVisibility);
 // Chamar a função inicialmente para verificar o estado da página
 toggleFooterVisibility();
 
+// Função para redirecionar para página de cadastro pet
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("cadastro-form");
+
+  form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      window.location.href = form.action;
+  });
+});
+
+    // Rola a página para o topo quando a página é carregada
+    window.onload = function () {
+      window.scrollTo(0, 0);
+  };

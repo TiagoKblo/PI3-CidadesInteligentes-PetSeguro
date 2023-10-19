@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Cabeçalho da página -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+
+    <!-- Link para o ícone da página -->
+    <link rel="icon" href="imagens/icone.png" type="image/x-icon">
+
+    <!-- Link para o Bootstrap CSS  -->
+    <link rel="stylesheet" href="bootstrap-5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Link para a biblioteca AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Link para a biblioteca Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Arquivo CSS personalizado para estilos específicos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
+                data-aos-once="false">
+                PetSeguro
+            </a>
+
+            <!-- Botões alinhados à direita -->
+            <div class="ml-auto">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rastreamento.html">Rastreamento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comunidade.html">Comunidade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Minha Conta</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- Seção 1: Notícias e Informações -->
+<section class="container my-5">
+    <h2 class="text-center">Notícias e Informações</h2>
+    <div id="noticiasCarousel" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#noticiasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#noticiasCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#noticiasCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <!-- Notícia 1 -->
+          <div class="carousel-item active">
+            <img src="imagens/aqui na coleira.png" class="d-block w-100" alt="Notícia 1">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Campanha de Vacinação</h5>
+              <p>Informações sobre a próxima campanha de vacinação para animais de estimação.</p>
+            </div>
+          </div>
+          <!-- Notícia 2 -->
+          <div class="carousel-item">
+            <img src="imagens/coleira.jpg" class="d-block w-100" alt="Notícia 2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Cuidados com a Saúde</h5>
+              <p>Dicas para manter seu animal de estimação saudável e feliz.</p>
+            </div>
+          </div>
+          <!-- Notícia 3 -->
+          <div class="carousel-item">
+            <img src="imagens/coleiracomtag.jpeg" class="d-block w-100" alt="Notícia 3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Novas Tecnologias</h5>
+              <p>Conheça as últimas tecnologias de rastreamento de animais de estimação.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#noticiasCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#noticiasCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+</section>
+
+
+<!-- Seção 2: Mural de Animais Perdidos -->
+<section class="container my-5">
+    <h2>Mural de Animais Perdidos</h2>
+    <div class="row">
+
+        <!-- Item 1 -->
+        <div class="col-md-4 mb-4">
+            <img src="imagens/golfinho.webp" class="img-fluid rounded-0" alt="Animal 1">
+            <h5>Nome do Animal 1</h5>
+            <p>Última localização: Local 1</p>
+            <p>Data: 01/10/2023</p>
+            <a href="#" class="btn btn-primary">Ajudar</a>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-md-4 mb-4">
+            <img src="imagens/macaco.jpg" class="img-fluid rounded-0" alt="Animal 2">
+            <h5>Nome do Animal 2</h5>
+            <p>Última localização: Local 2</p>
+            <p>Data: 01/10/2023</p>
+            <a href="#" class="btn btn-primary">Ajudar</a>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-md-4 mb-4">
+            <img src="imagens/tucano.jpg" class="img-fluid rounded-0" alt="Animal 3">
+            <h5>Nome do Animal 3</h5>
+            <p>Última localização: Local 3</p>
+            <p>Data: 01/10/2023</p>
+            <a href="#" class="btn btn-primary">Ajudar</a>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="col-md-4 mb-4">
+            <img src="imagens/ovelha.jpeg" class="img-fluid rounded-0" alt="Animal 4">
+            <h5>Nome do Animal 4</h5>
+            <p>Última localização: Local 4</p>
+            <p>Data: 01/10/2023</p>
+            <a href="#" class="btn btn-primary">Ajudar</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Seção 3: Mural de Rede Social -->
+<section class="container my-5">
+    <h2>Mural de Rede Social</h2>
+    <!-- Formulário para adicionar uma postagem -->
+    <form>
+        <div class="mb-3">
+            <textarea class="form-control" placeholder="Digite sua postagem aqui"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Postar</button>
+    </form>
+
+    <!-- Card 1 -->
+    <div class="card my-3">
+        <img src="imagens/ana.jpg" class="card-img-top" alt="Usuário 1">
+        <div class="card-body">
+            <h5 class="card-title">Nome do Usuário 1</h5>
+            <p class="card-text">Conteúdo da postagem...</p>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card my-3">
+        <img src="imagens/joao.webp" class="card-img-top" alt="Usuário 2">
+        <div class="card-body">
+            <h5 class="card-title">Nome do Usuário 2</h5>
+            <p class="card-text">Conteúdo da postagem...</p>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card my-3">
+        <img src="imagens/maria.webp" class="card-img-top" alt="Usuário 3">
+        <div class="card-body">
+            <h5 class="card-title">Nome do Usuário 3</h5>
+            <p class="card-text">Conteúdo da postagem...</p>
+        </div>
+    </div>
+</section>
+
+<!-- Rodapé -->
+
+  <footer class="text-center text-lg-start" data-aos="fade-up" data-aos-duration="2000">
+    <div class="text-center p-3">
+        <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados</a>
+    </div>
+</footer>
+
+
+
+<!-- Os scripts do Bootstrap e outros scripts necessários -->
+<script src="bootstrap-5.3.0/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="scripts.js"></script>
+
+
+</body>
+
+</html>
+

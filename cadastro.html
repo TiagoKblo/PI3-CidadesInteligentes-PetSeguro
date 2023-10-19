@@ -29,6 +29,7 @@
                 data-aos-once="false">
                 PetSeguro
             </a>
+
             <div class="ml-auto">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +44,7 @@
                             <a class="nav-link" href="rastreamento.html">Rastreamento</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Comunidade</a>
+                            <a class="nav-link" href="comunidade.html">Comunidade</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Minha Conta</a>
@@ -53,6 +54,12 @@
             </div>
         </div>
     </nav>
+<!-- Seção de Destaque de Etapa -->
+<section class="destaque-etapa-fixed" data-aos="fade" data-aos-delay="500" data-aos-duration="2000">
+    <div class="destaque-container">
+        <p class="destaque-text">Etapa 1 de 2</p>
+    </div>
+</section>
 
     <!-- Seção de Cadastro de Usuário -->
     <section class="cadastro-usuario" id="cadastro-usuario">
@@ -61,7 +68,16 @@
                 <div class="col-lg-6">
                     <div class="cadastro-container">
                         <h2>Cadastro de Usuário</h2>
-                        <form>
+                        <form id="cadastro-form" action="cadastropet.html" method="post">
+                            <!-- Campo para carregar uma foto de perfil -->
+                        <div class="mb-3">
+                            <label for="foto-perfil" class="form-label">Foto de Perfil:</label>
+                            <input type="file" class="form-control" id="foto-perfil" name="foto-perfil">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome Completo:</label>
+                            <input type="text" class="form-control" id="nome" name="nome">
+                        </div>
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome Completo:</label>
                                 <input type="text" class="form-control" id="nome" name="nome">
@@ -127,7 +143,12 @@
                                     <option value="outro">Outro</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <div class="mb-3">
+                                <label for="quantidade-animais" class="form-label">Quantidade de Animais de Estimação:</label>
+                                <input type="number" class="form-control" id="quantidade-animais" name="quantidade-animais">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Próxima Estapa</button>
                             <p>Já tem uma conta? <a href="login.html">Faça Login</a></p>
                         </form>
                     </div>

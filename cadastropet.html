@@ -39,7 +39,7 @@
                             <a class="nav-link" href="rastreamento.html">Rastreamento</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Comunidade</a>
+                            <a class="nav-link" href="comunidade.html">Comunidade</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Minha Conta</a>
@@ -49,6 +49,14 @@
             </div>
         </div>
     </nav>
+
+    <!-- Seção de Destaque de Etapa -->
+<section class="destaque-etapa-fixed" data-aos="fade" data-aos-delay="500" data-aos-duration="2000">
+    <div class="destaque-container">
+        <p class="destaque-text">Etapa 2 de 2</p>
+    </div>
+</section>
+
 
 <!-- Seção de Cadastro do Pet -->
 <section class="cadastro-pet" id="cadastro-pet">
@@ -87,6 +95,11 @@
                         <div class="mb-3">
                             <label for="doencas-conhecidas" class="form-label">Doenças Conhecidas:</label>
                             <textarea class="form-control" id="doencas-conhecidas" name="doencas-conhecidas" rows="3"></textarea>
+                        </div>
+                        <!-- Adicione o campo para carregar a foto do pet -->
+                        <div class="mb-3">
+                            <label for="foto-pet" class="form-label">Foto do Pet:</label>
+                            <input type="file" class="form-control" id="foto-pet" name="foto-pet">
                         </div>
 
                         <div class="mb-3">
@@ -135,7 +148,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Cadastrar Pet</button>
+                        <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
                     </form>
                 </div>
             </div>
