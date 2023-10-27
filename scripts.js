@@ -1,38 +1,17 @@
-
 // Initialize AOS
 AOS.init();
 
-// Função para verificar se a página rolou até o final
-function isPageAtBottom() {
-  return (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
-}
-
-// Função para mostrar ou ocultar o rodapé com base na posição da página
-function toggleFooterVisibility() {
-  if (isPageAtBottom()) {
-      document.getElementById('myFooter').style.display = 'block';
-  } else {
-      document.getElementById('myFooter').style.display = 'none';
-  }
-}
-
-// Adicionar um ouvinte de evento de rolagem
-window.addEventListener('scroll', toggleFooterVisibility);
-
-// Chamar a função inicialmente para verificar o estado da página
-toggleFooterVisibility();
-
-// Função para redirecionar para página de cadastro pet
+// Função para redirecionar para a página de cadastro pet
 document.addEventListener("DOMContentLoaded", function() {
+  // Obtém o elemento de formulário com o ID "cadastro-form"
   const form = document.getElementById("cadastro-form");
 
+  // Adiciona um evento de submissão do formulário
   form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      window.location.href = form.action;
+    // Redireciona para a página "cadastropet.html" quando o formulário é enviado
+    window.location.href = "cadastropet.html";
+    
+    // Impede que o formulário seja submetido normalmente (evita recarregar a página)
+    event.preventDefault();
   });
 });
-
-    // Rola a página para o topo quando a página é carregada
-    window.onload = function () {
-      window.scrollTo(0, 0);
-  };
