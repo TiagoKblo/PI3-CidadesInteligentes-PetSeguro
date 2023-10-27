@@ -70,20 +70,48 @@
                         <!-- Dados Gerais -->
                         <h3>Dados Gerais</h3>
                         <div class="mb-3">
-                            <label for="nome-pet" class="form-label">Nome do Pet:</label>
-                            <input type="text" class="form-control" id="nome-pet" name="nome-pet">
+                            <label for="nome-pet" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" id="nome-pet" name="nome-pet" placeholder="Nome do Pet">
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="especie" class="form-label">Espécie:</label>
-                                <input type="text" class="form-control" id="especie" name="especie">
+                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Cachorro ou Gato">
                             </div>
 
                             <div class="col-md-6">
-                                <label for="raca" class="form-label">Raça:</label>
-                                <input type="text" class="form-control" id="raca" name="raca">
+                                <label for="raça" class="form-label">Raça:</label>
+                                <input type="text" class="form-control" id="raça" name="raça" placeholder="Raça do Pet">
                             </div>
+                            
+                            <div class="col-md-6">
+                                <label for="data-nascimento" class="form-label">Data de Nascimento:</label>
+                                <input type="date" class="form-control" id="data-nascimento" name="data-nascimento">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="data-obito" class="form-label">Data de Óbito:</label>
+                                <input type="date" class="form-control" id="data-obito" name="data-obito">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="motivo-obito" class="form-label">Motivo do Óbito:</label>
+                                <textarea class="form-control" id="motivo-obito" name="motivo-obito" rows="3" placeholder="Causa do Falecimento"></textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="cor" class="form-label">Cor:</label>
+                                <input type="text" class="form-control" id="cor" name="cor" placeholder="Cor do Pet">
+                            </div>
+
+                                <div class="col-md-6">
+                                    <label for="sexo-animal" class="form-label">Sexo:</label>
+                                    <select class="form-select" id="sexo-animal" name="sexo-animal">
+                                        <option value="macho">Macho</option>
+                                        <option value="femea">Fêmea</option>
+                                    </select>
+                                </div>
                         </div>
 
                         <!-- Informações de Saúde -->
@@ -95,58 +123,17 @@
 
                         <div class="mb-3">
                             <label for="doencas-conhecidas" class="form-label">Doenças Conhecidas:</label>
-                            <textarea class="form-control" id="doencas-conhecidas" name="doencas-conhecidas" rows="3"></textarea>
+                            <textarea class="form-control" id="doencas-conhecidas" name="doencas-conhecidas" rows="3" placeholder="Informações de saúde, como alergias, vacinas, medicamentos prescritos"></textarea>
                         </div>
                         <!-- Adicione o campo para carregar a foto do pet -->
-                        <div class="mb-3">
-                            <label for="foto-pet" class="form-label">Foto do Pet:</label>
-                            <input type="file" class="form-control" id="foto-pet" name="foto-pet">
-                        </div>
-
                         <div class="mb-3">
                             <label for="exames-medicos" class="form-label">Anexar Exames Médicos:</label>
                             <input type="file" class="form-control" id="exames-medicos" name="exames-medicos">
                         </div>
-
-                        <!-- Rastreabilidade -->
-                        <h3>Rastreabilidade</h3>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="microchip" class="form-label">Microchip de Identificação:</label>
-                                <select class="form-select" id="microchip" name="microchip">
-                                    <option value="sim">Sim</option>
-                                    <option value="nao">Não</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="registro-microchip" class="form-label">Número de Registro do Microchip:</label>
-                                <input type="text" class="form-control" id="registro-microchip" name="registro-microchip">
-                            </div>
-                        </div>
-
+                        
                         <div class="mb-3">
-                            <label for="dispositivos-rastreamento" class="form-label">Dispositivos de Rastreamento:</label>
-                            <input type="text" class="form-control" id="dispositivos-rastreamento"
-                                name="dispositivos-rastreamento">
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <label for="modelo-dispositivo" class="form-label">Modelo do Dispositivo:</label>
-                                <input type="text" class="form-control" id="modelo-dispositivo" name="modelo-dispositivo">
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="marca-dispositivo" class="form-label">Marca do Dispositivo:</label>
-                                <input type="text" class="form-control" id="marca-dispositivo" name="marca-dispositivo">
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="fabricante-dispositivo" class="form-label">Fabricante do Dispositivo:</label>
-                                <input type="text" class="form-control" id="fabricante-dispositivo"
-                                    name="fabricante-dispositivo">
-                            </div>
+                            <label for="foto-pet" class="form-label">Foto do Pet:</label>
+                            <input type="file" class="form-control" id="foto-pet" name="foto-pet">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
