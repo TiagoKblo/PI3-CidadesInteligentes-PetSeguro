@@ -65,17 +65,11 @@
 
     </section>
 
-   <!-- Seção de Informações Públicas -->
-   <section class="public-info-section" id="public-info" data-aos="fade-up" data-aos-duration="1000">
+<!-- Seção de Informações Públicas -->
+<section class="public-info-section" id="public-info" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
         <h2 class="section-heading">Informações Públicas</h2>
         <div class="row" data-aos="fade-up" data-aos-duration="1000">
-            <!-- Gráfico de Barras (Tipo Sanguíneo) -->
-            <div class="col-md-4">
-                <h3>Gráfico de Tipos Sanguíneos</h3>
-                <canvas id="bar-chart-tipo-sanguineo" style="height: 300px;"></canvas>
-            </div>
-
             <!-- Gráfico de Pizza (Espécies) -->
             <div class="col-md-4">
                 <h3>Gráfico de Espécies</h3>
@@ -86,6 +80,24 @@
             <div class="col-md-4">
                 <h3>Gráfico de Idades</h3>
                 <canvas id="line-chart-idades" style="height: 300px;"></canvas>
+            </div>
+
+            <!-- Gráfico de Dados Gerais (Espécie, Sexo, Tipo Sanguíneo) -->
+            <div class="col-md-4">
+                <h3>Dados Gerais</h3>
+                <canvas id="bar-chart-dados-gerais" style="height: 300px;"></canvas>
+            </div>
+
+            <!-- Gráfico de Doenças (Se possui alguma doença ou não) -->
+            <div class="col-md-4">
+                <h3>Se possui alguma doença ou não</h3>
+                <canvas id="bar-chart-doenca" style="height: 300px;"></canvas>
+            </div>
+
+            <!-- Gráfico de Vacinas (Tipo de Vacina e Fabricante) -->
+            <div class="col-md-4">
+                <h3>Vacinas</h3>
+                <canvas id="bar-chart-vacinas" style="height: 300px;"></canvas>
             </div>
         </div>
     </div>
