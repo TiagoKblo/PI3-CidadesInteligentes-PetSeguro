@@ -1,0 +1,207 @@
+[
+    {
+        "nome": "Rex",
+        "especie": "Cachorro",
+        "raca": "Golden Retriever",
+        "data_nascimento": "2019-05-15",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Amarelo",
+        "sexo": "macho",
+        "tipo_sanguineo": "A+",
+        "doencas_conhecidas": ["Alergia a pulgas", "Gastrite"],
+        "vacinas": [
+            {
+                "tipo_vacina": "V8",
+                "data_vacina": "2021-03-20",
+                "validade_vacina": "2022-03-20",
+                "lote_vacina": "12345",
+                "fabricante_vacina": "Pfizer",
+                "dose_vacina": 1
+            },
+            {
+                "tipo_vacina": "Raiva",
+                "data_vacina": "2021-05-10",
+                "validade_vacina": "2022-05-10",
+                "lote_vacina": "67890",
+                "fabricante_vacina": "Moderna",
+                "dose_vacina": 2
+            }
+        ],
+        "exames_medicos": ["exame1.pdf", "exame2.pdf"],
+        "foto_pet": "rex.jpg"
+    },
+    {
+        "nome": "Bella",
+        "especie": "Cachorro",
+        "raca": "Labrador",
+        "data_nascimento": "2020-07-25",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Preto",
+        "sexo": "femea",
+        "tipo_sanguineo": "O-",
+        "doencas_conhecidas": ["Nenhuma"],
+        "vacinas": [],
+        "exames_medicos": ["exame3.pdf", "exame4.pdf"],
+        "foto_pet": "bella.jpg"
+    },
+    {
+        "nome": "Whiskers",
+        "especie": "Gato",
+        "raca": "Siamês",
+        "data_nascimento": "2020-12-10",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Cinza",
+        "sexo": "macho",
+        "tipo_sanguineo": "AB+",
+        "doencas_conhecidas": ["Asma"],
+        "vacinas": [
+            {
+                "tipo_vacina": "Gripe Felina",
+                "data_vacina": "2021-02-18",
+                "validade_vacina": "2022-02-18",
+                "lote_vacina": "54321",
+                "fabricante_vacina": "Merial",
+                "dose_vacina": 1
+            }
+        ],
+        "exames_medicos": ["exame5.pdf"],
+        "foto_pet": "whiskers.jpg"
+    },
+    {
+        "nome": "Luna",
+        "especie": "Cachorro",
+        "raca": "Bulldog Francês",
+        "data_nascimento": "2018-09-07",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Tigrado",
+        "sexo": "femea",
+        "tipo_sanguineo": "B-",
+        "doencas_conhecidas": ["Artrite"],
+        "vacinas": [
+            {
+                "tipo_vacina": "V8",
+                "data_vacina": "2019-03-12",
+                "validade_vacina": "2020-03-12",
+                "lote_vacina": "98765",
+                "fabricante_vacina": "Pfizer",
+                "dose_vacina": 1
+            },
+            {
+                "tipo_vacina": "Raiva",
+                "data_vacina": "2019-05-05",
+                "validade_vacina": "2020-05-05",
+                "lote_vacina": "54321",
+                "fabricante_vacina": "Moderna",
+                "dose_vacina": 2
+            }
+        ],
+        "exames_medicos": ["exame6.pdf", "exame7.pdf"],
+        "foto_pet": "luna.jpg"
+    },
+    {
+        "nome": "Milo",
+        "especie": "Cachorro",
+        "raca": "Poodle",
+        "data_nascimento": "2021-02-14",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Branco",
+        "sexo": "macho",
+        "tipo_sanguineo": "A-",
+        "doencas_conhecidas": ["Nenhuma"],
+        "vacinas": [
+            {
+                "tipo_vacina": "V8",
+                "data_vacina": "2021-04-05",
+                "validade_vacina": "2022-04-05",
+                "lote_vacina": "12345",
+                "fabricante_vacina": "Pfizer",
+                "dose_vacina": 1
+            }
+        ],
+        "exames_medicos": ["exame8.pdf"],
+        "foto_pet": "milo.jpg"
+    },
+    {
+        "nome": "Simba",
+        "especie": "Cachorro",
+        "raca": "Husky Siberiano",
+        "data_nascimento": "2019-11-30",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Cinza e Branco",
+        "sexo": "macho",
+        "tipo_sanguineo": "AB-",
+        "doencas_conhecidas": ["Displasia de quadril"],
+        "vacinas": [
+            {
+                "tipo_vacina": "V8",
+                "data_vacina": "2020-05-20",
+                "validade_vacina": "2021-05-20",
+                "lote_vacina": "54321",
+                "fabricante_vacina": "Pfizer",
+                "dose_vacina": 1
+            }
+        ],
+        "exames_medicos": ["exame9.pdf"],
+        "foto_pet": "simba.jpg"
+    },
+    {
+        "nome": "Misty",
+        "especie": "Gato",
+        "raca": "Maine Coon",
+        "data_nascimento": "2017-04-03",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Malhado",
+        "sexo": "femea",
+        "tipo_sanguineo": "A-",
+        "doencas_conhecidas": ["Nenhuma"],
+        "vacinas": [],
+        "exames_medicos": [],
+        "foto_pet": "misty.jpg"
+    },
+    {
+        "nome": "Buddy",
+        "especie": "Cachorro",
+        "raca": "Beagle",
+        "data_nascimento": "2020-08-22",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Tricolor",
+        "sexo": "macho",
+        "tipo_sanguineo": "O+",
+        "doencas_conhecidas": ["Nenhuma"],
+        "vacinas": [
+            {
+                "tipo_vacina": "V8",
+                "data_vacina": "2021-02-15",
+                "validade_vacina": "2022-02-15",
+                "lote_vacina": "12345",
+                "fabricante_vacina": "Pfizer",
+                "dose_vacina": 1
+            }
+        ],
+        "exames_medicos": ["exame10.pdf"],
+        "foto_pet": "buddy.jpg"
+    },
+    {
+        "nome": "Lola",
+        "especie": "Cachorro",
+        "raca": "Dachshund",
+        "data_nascimento": "2018-06-12",
+        "data_obito": null,
+        "motivo_obito": "",
+        "cor": "Caramelo",
+        "sexo": "femea",
+        "tipo_sanguineo": "B+",
+        "doencas_conhecidas": ["Nenhuma"],
+        "vacinas": [],
+        "exames_medicos": [],
+        "foto_pet": "lola.jpg"
+    }
+]

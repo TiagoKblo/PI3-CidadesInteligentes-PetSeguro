@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PatSeguro - Rastreamento de Animais de Estimação</title>
+    <title>Gráfico de Barras</title>
 
     <!-- Link para o ícone da página -->
     <link rel="icon" href="imagens/icone.png" type="image/x-icon">
@@ -18,6 +18,9 @@
 
     <!-- Link para a biblioteca Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!--  Link para a biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 
@@ -62,36 +65,32 @@
 
     </section>
 
-    <!-- Seção Principal -->
-    <section class="main-section" id="main" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container">
-            <h2 class="section-heading">Localizar meu Pet</h2>
-            <div class="row" data-aos="fade-up" data-aos-duration="1000">
-                <div class="col-md-9">
-                    <div id="map" style="height: 400px;"></div> <!-- Esta div para o mapa -->
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-duration="1000">
-                    <!-- Seção de Configurações -->
-                    <div id="config-panel">
-                        <h2>Buscar Animais
-                        </h2>
-                        <form>
-                            <div class="form-group">
-                                <label for="pet-name">Nome do Tutor:</label>
-                                <input type="text" id="tutor-name" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="pet-name">Nome do Animal:</label>
-                                <input type="text" id="pet-name" class="form-control">
-                            </div>
-                            <button type="button" onclick="buscarAnimal()" data-aos="fade-up"
-                                data-aos-duration="1000">Buscar</button>
-                        </form>
-                    </div>
-                </div>
+   <!-- Seção de Informações Públicas -->
+   <section class="public-info-section" id="public-info" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+        <h2 class="section-heading">Informações Públicas</h2>
+        <div class="row" data-aos="fade-up" data-aos-duration="1000">
+            <!-- Gráfico de Barras (Tipo Sanguíneo) -->
+            <div class="col-md-4">
+                <h3>Gráfico de Tipos Sanguíneos</h3>
+                <canvas id="bar-chart-tipo-sanguineo" style="height: 300px;"></canvas>
+            </div>
+
+            <!-- Gráfico de Pizza (Espécies) -->
+            <div class="col-md-4">
+                <h3>Gráfico de Espécies</h3>
+                <canvas id="pie-chart-especies" style="height: 300px;"></canvas>
+            </div>
+
+            <!-- Gráfico de Linha (Idades) -->
+            <div class="col-md-4">
+                <h3>Gráfico de Idades</h3>
+                <canvas id="line-chart-idades" style="height: 300px;"></canvas>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Seção de Funcionalidades Úteis -->
     <section class="funcionalidades-section" id="funcionalidades" data-aos="fade-up" data-aos-duration="1000">
@@ -136,13 +135,9 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="graficos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" onload="inicializarGraficos()"></script>
     <script src="scripts.js"></script>
-    <script src="map.js"></script>
-
-    <!-- Script para inicializar o API -->
-
-
-
 
 </body>
 
