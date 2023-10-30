@@ -231,7 +231,6 @@ body {
 footer {
     background-color: rgba(59, 157, 254, 0.5);
     padding: 10px;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -246,14 +245,7 @@ footer {
 .custom-link:hover {
     color: #150ae8; /* Cor do link ao passar o mouse (hover) */
 }
-#myFooter {
-    background-color: rgba(59, 157, 254, 0.2);
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: none; /* Inicialmente oculto */
-}
+
 
 /* Estilos para a seção de Funcionalidades Úteis */
 .funcionalidades-section {
@@ -676,3 +668,37 @@ form button:hover {
     font-weight: bold; /* Texto em negrito */
 }
 
+/* Estilos para a seção de informações públicas */
+.public-info-section {
+    padding: 40px 0; /* Espaçamento interno na parte superior e inferior */
+}
+
+.section-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os contadores */
+.col-md-4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para os títulos h3 */
+.col-md-4 h3 {
+    font-size: 18px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilos para os valores dos contadores (p) */
+.col-md-4 p {
+    font-size: 16px; /* Tamanho da fonte */
+    color: #777; /* Cor do texto */
+}
+
+/* Estilos para os gráficos (você pode personalizá-los como desejar) */
+canvas {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
