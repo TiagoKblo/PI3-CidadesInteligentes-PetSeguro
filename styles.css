@@ -672,33 +672,44 @@ form button:hover {
 .public-info-section {
     padding: 40px 0; /* Espaçamento interno na parte superior e inferior */
 }
-
+.public-info-section h2 {
+    font-size: 60px;
+    color: #3c3b3b; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    font-weight: bold;
+    margin: 120px; /* Espaçamento inferior */
+}
 .section-heading {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin: 50px;
 }
 
 /* Estilos para os contadores */
 .col-md-4 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
 }
 
 /* Estilos para os títulos h3 */
 .col-md-4 h3 {
-    font-size: 18px; /* Tamanho da fonte */
+    margin-top: 30px; /* Espaçamento superior */
+    font-size: 28px; /* Tamanho da fonte */
     color: #333; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
 }
 
 /* Estilos para os valores dos contadores (p) */
-.col-md-4 p {
-    font-size: 16px; /* Tamanho da fonte */
-    color: #777; /* Cor do texto */
+#total-animais-cadastrados, #animais-com-chip, #animais-encontrados {
+    font-size: 36px; /* Tamanho da fonte */
+    color: #3b9dfe; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
 }
 
 /* Estilos para os gráficos (você pode personalizá-los como desejar) */
 canvas {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
 }

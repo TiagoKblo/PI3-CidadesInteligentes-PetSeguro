@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,90 +21,115 @@
     <!-- Arquivo CSS personalizado para estilos específicos -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
+                data-aos-once="false">
                 PetSeguro
             </a>
             <div>
                 <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="informacoes.html">Informações Públicas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="comunidade.html">Comunidade</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Minha Conta</a>
-                        </li>
-                    </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="informacoes.html">Informações Públicas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="comunidade.html">Comunidade</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Minha Conta</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
     </nav>
 
     <!-- Seção de Destaque de Etapa -->
-<section class="destaque-etapa-fixed" data-aos="fade" data-aos-delay="500" data-aos-duration="2000">
-    <div class="destaque-container">
-        <p class="destaque-text">Etapa 2 de 2</p>
-    </div>
-</section>
+    <section class="destaque-etapa-fixed" data-aos="fade" data-aos-delay="500" data-aos-duration="2000">
+        <div class="destaque-container">
+            <p class="destaque-text">Etapa 2 de 2</p>
+        </div>
+    </section>
 
 
-<!-- Seção de Cadastro do Pet -->
-<section class="cadastro-pet" id="cadastro-pet">
-    <div class="container">
-        <div class="row justify-content-center" data-aos="fade-up">
-            <div class="col-lg-8">
-                <div class="cadastro-container">
-                    <h2>Cadastro do Pet</h2>
-                    <form>
-                        <!-- Dados Gerais -->
-                        <h3>Dados Gerais</h3>
-                        <div class="mb-3">
-                            <label for="nome-pet" class="form-label">Nome:</label>
-                            <input type="text" class="form-control" id="nome-pet" name="nome-pet" placeholder="Nome do Pet">
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="especie" class="form-label">Espécie:</label>
-                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Cachorro ou Gato">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="raça" class="form-label">Raça:</label>
-                                <input type="text" class="form-control" id="raça" name="raça" placeholder="Raça do Pet">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="data-nascimento" class="form-label">Data de Nascimento:</label>
-                                <input type="date" class="form-control" id="data-nascimento" name="data-nascimento">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label for="data-obito" class="form-label">Data de Óbito:</label>
-                                <input type="date" class="form-control" id="data-obito" name="data-obito">
-                            </div>
-
+    <!-- Seção de Cadastro do Pet -->
+    <section class="cadastro-pet" id="cadastro-pet">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <div class="cadastro-container">
+                        <h2>Cadastro do Pet</h2>
+                        <form>
+                            <!-- Dados Gerais -->
+                            <h3>Dados Gerais</h3>
                             <div class="mb-3">
-                                <label for="motivo-obito" class="form-label">Motivo do Óbito:</label>
-                                <textarea class="form-control" id="motivo-obito" name="motivo-obito" rows="3" placeholder="Causa do Falecimento"></textarea>
+                                <label for="nome-pet" class="form-label">Nome:</label>
+                                <input type="text" class="form-control" id="nome-pet" name="nome-pet"
+                                    placeholder="Nome do Pet">
                             </div>
 
-                            <div class="col-md-6">
-                                <label for="cor" class="form-label">Cor:</label>
-                                <input type="text" class="form-control" id="cor" name="cor" placeholder="Cor do Pet">
-                            </div>
+                            <div class="row mb-3">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="especie" class="form-label">Espécie:</label>
+                                        <select class="form-select" id="especie" name="especie"
+                                            onchange="mostrarOutraEspecie()">
+                                            <option value="cachorro">Cachorro</option>
+                                            <option value="gato">Gato</option>
+                                            <option value="passaro">Pássaro</option>
+                                            <option value="peixe">Peixe</option>
+                                            <option value="roedor">Roedor</option>
+                                            <option value="reptil">Réptil</option>
+                                            <option value="outro">Outra</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="outra-especie" class="form-label">Qual espécie?</label>
+                                        <input type="text" class="form-control" id="outra-especie" name="outra-especie"
+                                            placeholder="Especifique a espécie" style="display: none;">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <label for="raça" class="form-label">Raça:</label>
+                                    <input type="text" class="form-control" id="raça" name="raça"
+                                        placeholder="Raça do Pet">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="data-nascimento" class="form-label">Data de Nascimento:</label>
+                                    <input type="date" class="form-control" id="data-nascimento" name="data-nascimento">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="data-obito" class="form-label">Data de Óbito:</label>
+                                    <input type="date" class="form-control" id="data-obito" name="data-obito">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="motivo-obito" class="form-label">Motivo do Óbito:</label>
+                                    <textarea class="form-control" id="motivo-obito" name="motivo-obito" rows="3"
+                                        placeholder="Causa do Falecimento"></textarea>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="cor" class="form-label">Cor:</label>
+                                    <input type="text" class="form-control" id="cor" name="cor"
+                                        placeholder="Cor do Pet">
+                                </div>
 
                                 <div class="col-md-6">
                                     <label for="sexo-animal" class="form-label">Sexo:</label>
@@ -112,75 +138,136 @@
                                         <option value="femea">Fêmea</option>
                                     </select>
                                 </div>
-                        </div>
 
-                        <!-- Informações de Saúde -->
-                        <h3>Informações de Saúde</h3>
-                        <div class="mb-3">
-                            <label for="tipo-sanguineo" class="form-label">Tipo Sanguíneo:</label>
-                            <input type="text" class="form-control" id="tipo-sanguineo" name="tipo-sanguineo">
-                        </div>
+                                <div class="mb-3">
+                                    <label for="foto-pet" class="form-label">Foto do Pet:</label>
+                                    <input type="file" class="form-control" id="foto-pet" name="foto-pet">
+                                </div>
+                            </div>
+                            <!-- Informações de Rastreamento -->
+                            <h3>Informações de Rastreamento</h3>
 
-                        <div class="mb-3">
-                            <label for="doencas-conhecidas" class="form-label">Doenças Conhecidas:</label>
-                            <textarea class="form-control" id="doencas-conhecidas" name="doencas-conhecidas" rows="3" placeholder="Informações de saúde, como alergias, medicamentos prescritos"></textarea>
-                        </div>
-                        <!-- Vacinas -->
-                        <h3>Vacinas</h3>
-                        <div class="row mb-3">
-                        <div class="mb-3">
-                            <label for="tipo-vacina" class="form-label">Tipo de Vacina:</label>
-                            <input type="text" class="form-control" id="tipo-vacina" name="tipo-vacina">
-                        </div>
+                            <div class="mb-3">
+                                <label for="possui-microchip" class="form-label">Possui Microchip?</label>
+                                <select class="form-select" id="possui-microchip" name="possui-microchip"
+                                    onchange="mostrarOcultarChip(this)">
+                                    <option value="nao">Não</option>
+                                    <option value="sim">Sim</option>
+                                </select>
+                            </div>
 
-                        <div class="col-md-6">
-                            <label for="data-vacina" class="form-label">Data da Vacina:</label>
-                            <input type="date" class="form-control" id="data-vacina" name="data-vacina">
-                        </div>
+                            <div class="mb-3" id="numero-do-chip-div" style="display: none;">
+                                <label for="numero-do-chip" class="form-label">Número do Chip</label>
+                                <input type="text" class="form-control" id="numero-do-chip" name="numero-do-chip"
+                                    placeholder="Informe o número do chip">
+                            </div>
 
-                        <div class="col-md-6">
-                            <label for="validade-vacina" class="form-label">Validade da Vacina:</label>
-                            <input type="date" class="form-control" id="validade-vacina" name="validade-vacina">
-                        </div>
+                            <!-- Informações de Saúde -->
+                            <h3>Informações de Saúde</h3>
+                            <div class="mb-3">
+                                <label for="tipo-sanguineo" class="form-label">Tipo Sanguíneo:</label>
+                                <select class="form-select" id="tipo-sanguineo" name="tipo-sanguineo">
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="nao-sei" selected>Não sei</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="castrado" class="form-label">Animal é Castrado?</label>
+                                <select class="form-select" id="castrado" name="castrado">
+                                    <option value="nao">Não</option>
+                                    <option value="sim">Sim</option>
+                                </select>
+                            </div>
 
-                        <div class="col-md-6">
-                            <label for="lote-vacina" class="form-label">Número do Lote:</label>
-                            <input type="text" class="form-control" id="lote-vacina" name="lote-vacina">
-                        </div>
 
-                        <div class="col-md-6">
-                            <label for="fabricante-vacina" class="form-label">Fabricante da Vacina:</label>
-                            <input type="text" class="form-control" id="fabricante-vacina" name="fabricante-vacina">
-                        </div>
+                            <div class="mb-3">
+                                <label for="doencas-conhecidas" class="form-label">Doenças Conhecidas:</label>
+                                <select class="form-select" id="doencas-conhecidas" name="doencas-conhecidas"
+                                    onchange="mostrarOcultarDoenca(this)">
+                                    <option value="nao">Não</option>
+                                    <option value="sim">Sim</option>
+                                </select>
+                            </div>
 
-                        <div class="col-md-6">
-                            <label for="dose-vacina" class="form-label">Número da Dose:</label>
-                            <input type="number" class="form-control" id="dose-vacina" name="dose-vacina">
-                        </div>
-</div>
-                        <!-- Adicione o campo para carregar a foto do pet -->
-                        <div class="mb-3">
-                            <label for="exames-medicos" class="form-label">Anexar Exames Médicos:</label>
-                            <input type="file" class="form-control" id="exames-medicos" name="exames-medicos">
-                        </div>
+                            <div class="mb-3" id="qual-doenca-div" style="display: none;">
+                                <label for="qual-doenca" class="form-label">Qual doença?</label>
+                                <input type="text" class="form-control" id="qual-doenca" name="qual-doenca"
+                                    placeholder="Informe a doença">
+                            </div>
 
-                        <div class="mb-3">
-                            <label for="foto-pet" class="form-label">Foto do Pet:</label>
-                            <input type="file" class="form-control" id="foto-pet" name="foto-pet">
-                        </div>
+                            <!-- Adicione o campo para carregar a foto do pet -->
+                            <div class="mb-3">
+                                <label for="exames-medicos" class="form-label">Anexar Exames Médicos:</label>
+                                <input type="file" class="form-control" id="exames-medicos" name="exames-medicos">
+                            </div>
 
-                        <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
-                    </form>
+                            <!-- Vacinas -->
+                            <h3>Vacinas</h3>
+                            <div class="mb-3">
+                                <label for="animal-vacinado" class="form-label">O animal está Vacinado?</label>
+                                <select class="form-select" id="animal-vacinado" name="animal-vacinado"
+                                    onchange="mostrarOcultarCamposVacina(this)">
+                                    <option value="nao">Não</option>
+                                    <option value="sim">Sim</option>
+                                </select>
+                            </div>
+
+                            <div id="campos-vacina" style="display: none;">
+                                <div class="row mb-3">
+                                    <div class="mb-3">
+                                        <label for="tipo-vacina" class="form-label">Tipo de Vacina:</label>
+                                        <input type="text" class="form-control" id="tipo-vacina" name="tipo-vacina">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="data-vacina" class="form-label">Data da Vacina:</label>
+                                        <input type="date" class="form-control" id="data-vacina" name="data-vacina">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="validade-vacina" class="form-label">Validade da Vacina:</label>
+                                        <input type="date" class="form-control" id="validade-vacina"
+                                            name="validade-vacina">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="lote-vacina" class="form-label">Número do Lote:</label>
+                                        <input type="text" class="form-control" id="lote-vacina" name="lote-vacina">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="fabricante-vacina" class="form-label">Fabricante da Vacina:</label>
+                                        <input type="text" class="form-control" id="fabricante-vacina"
+                                            name="fabricante-vacina">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="dose-vacina" class="form-label">Número da Dose:</label>
+                                        <input type="number" class="form-control" id="dose-vacina" name="dose-vacina">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-    <footer class="text-center text-lg-start" data-aos="fade-up" data-aos-duration="2000">
+    <footer class="text-center">
         <div class="text-center p-3">
-            <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados</a>
+            <a href="https://github.com/TiagoKblo" class="custom-link">© 2023 PatSeguro - Todos os direitos
+                reservados</a>
         </div>
     </footer>
 
@@ -188,4 +275,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts.js"></script>
 </body>
+
 </html>

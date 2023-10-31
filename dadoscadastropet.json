@@ -1,207 +1,362 @@
 [
     {
-        "nome": "Rex",
-        "especie": "Cachorro",
-        "raca": "Golden Retriever",
-        "data_nascimento": "2019-05-15",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Amarelo",
-        "sexo": "macho",
-        "tipo_sanguineo": "A+",
-        "doencas_conhecidas": ["Alergia a pulgas", "Gastrite"],
-        "vacinas": [
-            {
-                "tipo_vacina": "V8",
-                "data_vacina": "2021-03-20",
-                "validade_vacina": "2022-03-20",
-                "lote_vacina": "12345",
-                "fabricante_vacina": "Pfizer",
-                "dose_vacina": 1
-            },
-            {
-                "tipo_vacina": "Raiva",
-                "data_vacina": "2021-05-10",
-                "validade_vacina": "2022-05-10",
-                "lote_vacina": "67890",
-                "fabricante_vacina": "Moderna",
-                "dose_vacina": 2
+        "DadosGerais": {
+            "NomePet": "Rex",
+            "Especie": "Cachorro",
+            "OutraEspecie": "",
+            "Raca": "Golden Retriever",
+            "DataNascimento": "2019-05-15",
+            "DataObito": "",
+            "MotivoObito": "",
+            "Cor": "Dourado",
+            "SexoAnimal": "Macho",
+            "FotoPet": "rex.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "123456789"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "A+",
+            "Castrado": "Não",
+            "DoencasConhecidas": "Não",
+            "QualDoenca": "",
+            "ExamesMedicos": "rex_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Sim",
+            "CamposVacina": {
+                "TipoVacina": "V8",
+                "DataVacina": "2021-02-10",
+                "ValidadeVacina": "2023-02-10",
+                "LoteVacina": "A12345",
+                "FabricanteVacina": "Pfizer",
+                "DoseVacina": 2
             }
-        ],
-        "exames_medicos": ["exame1.pdf", "exame2.pdf"],
-        "foto_pet": "rex.jpg"
+        }
     },
     {
-        "nome": "Bella",
-        "especie": "Cachorro",
-        "raca": "Labrador",
-        "data_nascimento": "2020-07-25",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Preto",
-        "sexo": "femea",
-        "tipo_sanguineo": "O-",
-        "doencas_conhecidas": ["Nenhuma"],
-        "vacinas": [],
-        "exames_medicos": ["exame3.pdf", "exame4.pdf"],
-        "foto_pet": "bella.jpg"
-    },
-    {
-        "nome": "Whiskers",
-        "especie": "Gato",
-        "raca": "Siamês",
-        "data_nascimento": "2020-12-10",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Cinza",
-        "sexo": "macho",
-        "tipo_sanguineo": "AB+",
-        "doencas_conhecidas": ["Asma"],
-        "vacinas": [
-            {
-                "tipo_vacina": "Gripe Felina",
-                "data_vacina": "2021-02-18",
-                "validade_vacina": "2022-02-18",
-                "lote_vacina": "54321",
-                "fabricante_vacina": "Merial",
-                "dose_vacina": 1
+        "DadosGerais": {
+            "NomePet": "Whiskers",
+            "Especie": "Gato",
+            "OutraEspecie": "",
+            "Raca": "Siamês",
+            "DataNascimento": "2020-08-20",
+            "DataObito": "",
+            "MotivoObito": "",
+            "Cor": "Cinza",
+            "SexoAnimal": "Fêmea",
+            "FotoPet": "whiskers.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "987654321"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "B-",
+            "Castrado": "Não",
+            "DoencasConhecidas": "Não",
+            "QualDoenca": "",
+            "ExamesMedicos": "whiskers_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Sim",
+            "CamposVacina": {
+                "TipoVacina": "Fel-O-Vax PCT",
+                "DataVacina": "2021-04-05",
+                "ValidadeVacina": "2023-04-05",
+                "LoteVacina": "B98765",
+                "FabricanteVacina": "Merial",
+                "DoseVacina": 1
             }
-        ],
-        "exames_medicos": ["exame5.pdf"],
-        "foto_pet": "whiskers.jpg"
+        }
     },
     {
-        "nome": "Luna",
-        "especie": "Cachorro",
-        "raca": "Bulldog Francês",
-        "data_nascimento": "2018-09-07",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Tigrado",
-        "sexo": "femea",
-        "tipo_sanguineo": "B-",
-        "doencas_conhecidas": ["Artrite"],
-        "vacinas": [
-            {
-                "tipo_vacina": "V8",
-                "data_vacina": "2019-03-12",
-                "validade_vacina": "2020-03-12",
-                "lote_vacina": "98765",
-                "fabricante_vacina": "Pfizer",
-                "dose_vacina": 1
-            },
-            {
-                "tipo_vacina": "Raiva",
-                "data_vacina": "2019-05-05",
-                "validade_vacina": "2020-05-05",
-                "lote_vacina": "54321",
-                "fabricante_vacina": "Moderna",
-                "dose_vacina": 2
+        "DadosGerais": {
+            "NomePet": "Tweety",
+            "Especie": "Pássaro",
+            "OutraEspecie": "",
+            "Raca": "Canário",
+            "DataNascimento": "2018-03-12",
+            "DataObito": "",
+            "MotivoObito": "",
+            "Cor": "Amarelo",
+            "SexoAnimal": "Macho",
+            "FotoPet": "tweety.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Não",
+            "NumeroDoChip": ""
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "Não sei",
+            "Castrado": "Não",
+            "DoencasConhecidas": "Sim",
+            "QualDoenca": "Gripe aviária",
+            "ExamesMedicos": "tweety_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Não",
+            "CamposVacina": {
+                "TipoVacina": "",
+                "DataVacina": "",
+                "ValidadeVacina": "",
+                "LoteVacina": "",
+                "FabricanteVacina": "",
+                "DoseVacina": ""
             }
-        ],
-        "exames_medicos": ["exame6.pdf", "exame7.pdf"],
-        "foto_pet": "luna.jpg"
+        }
     },
     {
-        "nome": "Milo",
-        "especie": "Cachorro",
-        "raca": "Poodle",
-        "data_nascimento": "2021-02-14",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Branco",
-        "sexo": "macho",
-        "tipo_sanguineo": "A-",
-        "doencas_conhecidas": ["Nenhuma"],
-        "vacinas": [
-            {
-                "tipo_vacina": "V8",
-                "data_vacina": "2021-04-05",
-                "validade_vacina": "2022-04-05",
-                "lote_vacina": "12345",
-                "fabricante_vacina": "Pfizer",
-                "dose_vacina": 1
+        "DadosGerais": {
+            "NomePet": "Nemo",
+            "Especie": "Peixe",
+            "OutraEspecie": "",
+            "Raca": "",
+            "DataNascimento": "2022-01-05",
+            "DataObito": "",
+            "MotivoObito": "",
+            "Cor": "Laranja e Branco",
+            "SexoAnimal": "Macho",
+            "FotoPet": "nemo.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Não",
+            "NumeroDoChip": ""
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "Não sei",
+            "Castrado": "Não",
+            "DoencasConhecidas": "Não",
+            "QualDoenca": "",
+            "ExamesMedicos": "nemo_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Não",
+            "CamposVacina": {
+                "TipoVacina": "",
+                "DataVacina": "",
+                "ValidadeVacina": "",
+                "LoteVacina": "",
+                "FabricanteVacina": "",
+                "DoseVacina": ""
             }
-        ],
-        "exames_medicos": ["exame8.pdf"],
-        "foto_pet": "milo.jpg"
+        }
     },
     {
-        "nome": "Simba",
-        "especie": "Cachorro",
-        "raca": "Husky Siberiano",
-        "data_nascimento": "2019-11-30",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Cinza e Branco",
-        "sexo": "macho",
-        "tipo_sanguineo": "AB-",
-        "doencas_conhecidas": ["Displasia de quadril"],
-        "vacinas": [
-            {
-                "tipo_vacina": "V8",
-                "data_vacina": "2020-05-20",
-                "validade_vacina": "2021-05-20",
-                "lote_vacina": "54321",
-                "fabricante_vacina": "Pfizer",
-                "dose_vacina": 1
+        "DadosGerais": {
+            "NomePet": "Bugs",
+            "Especie": "Coelho",
+            "OutraEspecie": "",
+            "Raca": "Holland Lop",
+            "DataNascimento": "2020-07-22",
+            "DataObito": "2022-11-15",
+            "MotivoObito": "Doença",
+            "Cor": "Marrom",
+            "SexoAnimal": "Macho",
+            "FotoPet": "bugs.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "555555555"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "O+",
+            "Castrado": "Sim",
+            "DoencasConhecidas": "Sim",
+            "QualDoenca": "Mixomatose",
+            "ExamesMedicos": "bugs_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Sim",
+            "CamposVacina": {
+                "TipoVacina": "V4",
+                "DataVacina": "2019-04-10",
+                "ValidadeVacina": "2020-04-10",
+                "LoteVacina": "C12345",
+                "FabricanteVacina": "Merck",
+                "DoseVacina": 3
             }
-        ],
-        "exames_medicos": ["exame9.pdf"],
-        "foto_pet": "simba.jpg"
+        }
     },
     {
-        "nome": "Misty",
-        "especie": "Gato",
-        "raca": "Maine Coon",
-        "data_nascimento": "2017-04-03",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Malhado",
-        "sexo": "femea",
-        "tipo_sanguineo": "A-",
-        "doencas_conhecidas": ["Nenhuma"],
-        "vacinas": [],
-        "exames_medicos": [],
-        "foto_pet": "misty.jpg"
-    },
-    {
-        "nome": "Buddy",
-        "especie": "Cachorro",
-        "raca": "Beagle",
-        "data_nascimento": "2020-08-22",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Tricolor",
-        "sexo": "macho",
-        "tipo_sanguineo": "O+",
-        "doencas_conhecidas": ["Nenhuma"],
-        "vacinas": [
-            {
-                "tipo_vacina": "V8",
-                "data_vacina": "2021-02-15",
-                "validade_vacina": "2022-02-15",
-                "lote_vacina": "12345",
-                "fabricante_vacina": "Pfizer",
-                "dose_vacina": 1
+        "DadosGerais": {
+            "NomePet": "Lizzie",
+            "Especie": "Réptil",
+            "OutraEspecie": "Tartaruga",
+            "Raca": "",
+            "DataNascimento": "2019-06-30",
+            "DataObito": "",
+            "MotivoObito": "",
+            "Cor": "Verde e Marrom",
+            "SexoAnimal": "Fêmea",
+            "FotoPet": "lizzie.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "777777777"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "Não sei",
+            "Castrado": "Não",
+            "DoencasConhecidas": "Não",
+            "QualDoenca": "",
+            "ExamesMedicos": "lizzie_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Não",
+            "CamposVacina": {
+                "TipoVacina": "",
+                "DataVacina": "",
+                "ValidadeVacina": "",
+                "LoteVacina": "",
+                "FabricanteVacina": "",
+                "DoseVacina": ""
             }
-        ],
-        "exames_medicos": ["exame10.pdf"],
-        "foto_pet": "buddy.jpg"
+        }
     },
     {
-        "nome": "Lola",
-        "especie": "Cachorro",
-        "raca": "Dachshund",
-        "data_nascimento": "2018-06-12",
-        "data_obito": null,
-        "motivo_obito": "",
-        "cor": "Caramelo",
-        "sexo": "femea",
-        "tipo_sanguineo": "B+",
-        "doencas_conhecidas": ["Nenhuma"],
-        "vacinas": [],
-        "exames_medicos": [],
-        "foto_pet": "lola.jpg"
+        "DadosGerais": {
+            "NomePet": "Fluffy",
+            "Especie": "Gato",
+            "OutraEspecie": "",
+            "Raca": "Persa",
+            "DataNascimento": "2017-11-12",
+            "DataObito": "2022-05-25",
+            "MotivoObito": "Insuficiência renal",
+            "Cor": "Branco",
+            "SexoAnimal": "Macho",
+            "FotoPet": "fluffy.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "888888888"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "A+",
+            "Castrado": "Sim",
+            "DoencasConhecidas": "Sim",
+            "QualDoenca": "Doença renal crônica",
+            "ExamesMedicos": "fluffy_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Sim",
+            "CamposVacina": {
+                "TipoVacina": "Fel-O-Vax PCT",
+                "DataVacina": "2019-04-10",
+                "ValidadeVacina": "2021-04-10",
+                "LoteVacina": "D54321",
+                "FabricanteVacina": "Merial",
+                "DoseVacina": 1
+            }
+        }
+    },
+    {
+        "DadosGerais": {
+            "NomePet": "Sparky",
+            "Especie": "Cachorro",
+            "OutraEspecie": "",
+            "Raca": "Labrador Retriever",
+            "DataNascimento": "2016-02-17",
+            "DataObito": "2022-10-08",
+            "MotivoObito": "Atropelamento",
+            "Cor": "Amarelo",
+            "SexoAnimal": "Macho",
+            "FotoPet": "sparky.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "999999999"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "O-",
+            "Castrado": "Sim",
+            "DoencasConhecidas": "Não",
+            "QualDoenca": "",
+            "ExamesMedicos": "sparky_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Sim",
+            "CamposVacina": {
+                "TipoVacina": "V8",
+                "DataVacina": "2018-05-20",
+                "ValidadeVacina": "2020-05-20",
+                "LoteVacina": "E98765",
+                "FabricanteVacina": "Pfizer",
+                "DoseVacina": 3
+            }
+        }
+    },
+    {
+        "DadosGerais": {
+            "NomePet": "Daisy",
+            "Especie": "Cachorro",
+            "OutraEspecie": "",
+            "Raca": "Poodle",
+            "DataNascimento": "2019-12-25",
+            "DataObito": "",
+            "MotivoObito": "",
+            "Cor": "Branco",
+            "SexoAnimal": "Fêmea",
+            "FotoPet": "daisy.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "111111111"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "A-",
+            "Castrado": "Não",
+            "DoencasConhecidas": "Não",
+            "QualDoenca": "",
+            "ExamesMedicos": "daisy_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Sim",
+            "CamposVacina": {
+                "TipoVacina": "V8",
+                "DataVacina": "2020-05-20",
+                "ValidadeVacina": "2022-05-20",
+                "LoteVacina": "F98765",
+                "FabricanteVacina": "Pfizer",
+                "DoseVacina": 1
+            }
+        }
+    },
+    {
+        "DadosGerais": {
+            "NomePet": "Toby",
+            "Especie": "Cachorro",
+            "OutraEspecie": "",
+            "Raca": "Pug",
+            "DataNascimento": "2018-09-10",
+            "DataObito": "",
+            "MotivoObito": "",
+            "Cor": "Preto",
+            "SexoAnimal": "Macho",
+            "FotoPet": "toby.jpg"
+        },
+        "InformacoesRastreamento": {
+            "PossuiMicrochip": "Sim",
+            "NumeroDoChip": "222222222"
+        },
+        "InformacoesSaude": {
+            "TipoSanguineo": "O+",
+            "Castrado": "Sim",
+            "DoencasConhecidas": "Não",
+            "QualDoenca": "",
+            "ExamesMedicos": "toby_exames.pdf"
+        },
+        "Vacinas": {
+            "AnimalVacinado": "Sim",
+            "CamposVacina": {
+                "TipoVacina": "V8",
+                "DataVacina": "2020-05-20",
+                "ValidadeVacina": "2022-05-20",
+                "LoteVacina": "G98765",
+                "FabricanteVacina": "Pfizer",
+                "DoseVacina": 1
+            }
+        }
     }
 ]

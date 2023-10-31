@@ -68,60 +68,88 @@
 <!-- Seção de Informações Públicas -->
 <section class="public-info-section" id="public-info" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
-        <h2 class="section-heading">Informações Públicas</h2>
+        <h2 class="section-heading">Estatísticas</h2>
         <div class="row">
             <div class="col-md-4">
-                <h3>Número total de animais cadastrados</h3>
-                <p id="total-animais-cadastrados">100</p>
+                <div class="feature-1 text-center">
+                    <div class="wrap-icon icon-1">
+                        <a href="incentivos.html">
+                            <i class="bi bi-card-checklist"></i>
+                        </a>
+                    </div>
+                    <h3 class="mb-3">Total de Animais Cadastrados</h3>
+                    <p id="total-animais-cadastrados">0</p>
+                </div>
             </div>
             <div class="col-md-4">
-                <h3>Número de animais com chip</h3>
-                <p id="animais-com-chip">75</p>
+                <div class="feature-1 text-center">
+                    <div class="wrap-icon icon-2">
+                        <a href="#">
+                            <i class="bi bi-cpu"></i>
+                        </a>
+                    </div>
+                    <h3 class="mb-3">Animais com chip</h3>
+                    <p id="animais-com-chip">0</p>
+                </div>
             </div>
             <div class="col-md-4">
-                <h3>Número de animais encontrados</h3>
-                <p id="animais-encontrados">30</p>
+                <div class="feature-1 text-center">
+                    <div class="wrap-icon icon-3">
+                        <a href="#">
+                            <i class="bi bi-search"></i>
+                        </a>
+                    </div>
+                    <h3 class="mb-3">Animais encontrados</h3>
+                    <p id="animais-encontrados">0</p>
+                </div>
             </div>
         </div>
+        <h2 class="section-heading">Gráficos</h2>
         <div class="row" data-aos="fade-up" data-aos-duration="1000">
             <!-- Gráfico de Pizza (Espécies) -->
             <div class="col-md-4">
-                <h3>Gráfico de Espécies</h3>
-                <canvas id="pie-chart-especies" style="height: 300px;"></canvas>
+                <h3>Espécies</h3>
+                <canvas id="pie-chart-especies"></canvas>
             </div>
 
-            <!-- Gráfico de Linha (Idades) -->
+            <!-- Gráfico de Barras (Sexo) -->
             <div class="col-md-4">
-                <h3>Gráfico de Idades</h3>
-                <canvas id="line-chart-idades" style="height: 300px;"></canvas>
+                <h3>Gênero do animais</h3>
+                <canvas id="bar-chart-sexo"></canvas>
             </div>
 
-            <!-- Gráfico de Dados Gerais (Espécie, Sexo) -->
+            <!-- Gráfico de Barras (Castração) -->
             <div class="col-md-4">
-                <h3>Dados Gerais</h3>
-                <canvas id="bar-chart-dados-gerais" style="height: 300px;"></canvas>
+                <h3>Animais Castrados</h3>
+                <canvas id="bar-chart-castracao"></canvas>
             </div>
 
-            <!-- Gráfico de Doenças (Se possui alguma doença ou não) -->
+            <!-- Gráfico de Barras Empilhadas (Doenças Conhecidas) -->
             <div class="col-md-4">
-                <h3>Se possui alguma doença ou não</h3>
-                <canvas id="bar-chart-doenca" style="height: 300px;"></canvas>
+                <h3>Doenças Crônicas Conhecidas</h3>
+                <canvas id="stacked-bar-chart-doenca"></canvas>
             </div>
 
-            <!-- Gráfico de Vacinas (Tipo de Vacina e Fabricante) -->
+            <!-- Gráfico de Barras (Vacinas) -->
             <div class="col-md-4">
-                <h3>Vacinas</h3>
-                <canvas id="bar-chart-vacinas" style="height: 300px;"></canvas>
+                <h3>Vacinação</h3>
+                <canvas id="bar-chart-vacinas"></canvas>
+            </div>
+
+            <!-- Gráfico de Linha (Nascimentos por Ano com Idades) -->
+            <div class="col-md-4">
+                <h3>Idade do Animais</h3>
+                <canvas id="line-chart-nascimentos-idades"></canvas>
             </div>
         </div>
-    </div>
-</section>
+        </div>
+        </section>
 
 
     <!-- Rodapé -->
-    <footer class="text-center text-lg-start" data-aos="fade-up" data-aos-duration="2000">
+    <footer class="text-center">
         <div class="text-center p-3">
-            <a href="sua-url-aqui" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados</a>
+            <a href="https://github.com/TiagoKblo" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados</a>
         </div>
     </footer>
 
@@ -132,6 +160,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="animation.js"></script>
     <script src="graficos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js" onload="inicializarGraficos()"></script>
     <script src="scripts.js"></script>
