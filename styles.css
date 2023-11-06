@@ -713,3 +713,71 @@ canvas {
     max-width: 400px;
     height: auto;
 }
+/* Estilos para a seção "Ficha do Pet" */
+.ficha-pet {
+
+    padding: 20px; /* Espaçamento interno */
+
+    margin: 20px auto; /* Centraliza a ficha horizontalmente */
+    max-width: 100%; /* Garante que a ficha seja responsiva */
+
+    display: flex; /* Exibe os elementos em um layout flexível */
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos verticalmente */
+}
+
+.ficha-pet h2 {
+    color: #3c3b3b; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    font-size: 40px; /* Tamanho da fonte do título */
+    text-align: center; /* Centralizar o título */
+    margin-top: 0; /* Remova o espaço superior do título */
+}
+
+.ficha-pet .imagem-pet {
+    max-width: 150px; /* Largura máxima da imagem de perfil */
+    max-height: 150px; /* Altura máxima da imagem de perfil */
+    border: 4px solid #3b9dfe; /* Borda com a cor do perfil */
+
+    margin-bottom: 20px; /* Espaço inferior abaixo da foto de perfil */
+}
+
+/* Estilos para os detalhes do pet */
+.ficha-pet table {
+
+    width: 100%; /* Tabela ocupa toda a largura da div */
+    border-collapse: collapse; /* Remove espaços entre as células da tabela */
+}
+
+.ficha-pet table th,
+.ficha-pet table td {
+    padding: 10px; /* Espaçamento interno das células */
+    text-align: left; /* Alinhamento do texto à esquerda nas células */
+}
+
+.ficha-pet table th {
+    background-color: rgba(59, 157, 254, 0.5) /* Cor de fundo da tabela */
+}
+
+.ficha-pet h3 {
+    color: #3b9dfe; /* Cor do texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    font-size: 30px; /* Tamanho da fonte para os títulos de seção */
+    margin-top: 20px; /* Espaço superior entre as seções */
+}
+
+
+
+
+/* Ajuste para o layout responsivo */
+@media (max-width: 768px) {
+    .ficha-pet {
+        flex-direction: column; /* Empilha os elementos em dispositivos menores */
+    }
+
+    .ficha-pet img {
+        max-width: 100%; /* Garante que a imagem seja responsiva em dispositivos menores */
+        max-height: 100%; /* Garante que a imagem seja responsiva em dispositivos menores */
+        margin-bottom: 20px; /* Adiciona espaço abaixo da foto de perfil */
+    }
+}
