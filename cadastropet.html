@@ -72,9 +72,14 @@
                 <div class="col-lg-8">
                     <div class="cadastro-container">
                         <h2>Cadastro do Pet</h2>
-                        <form>
+                        <form action="cadastropet.php" method="POST">
                             <!-- Dados Gerais -->
                             <h3>Dados Gerais</h3>
+                            <div class="mb-3">
+                                <label for="id-animal" class="form-label">ID do Animal:</label>
+                                <input type="text" class="form-control" id="id-animal" name="id-animal" disabled>
+                            </div>
+
                             <div class="mb-3">
                                 <label for="nome-pet" class="form-label">Nome:</label>
                                 <input type="text" class="form-control" id="nome-pet" name="nome-pet"
@@ -97,8 +102,8 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="outra-especie" class="form-label">Qual espécie?</label>
-                                        <input type="text" class="form-control" id="outra-especie" name="outra-especie"
+                                        <label for="outraEspecie" class="form-label">Qual espécie?</label>
+                                        <input type="text" class="form-control" id="outraEspecie" name="outraEspecie"
                                             placeholder="Especifique a espécie" style="display: none;">
                                     </div>
                                 </div>
@@ -106,8 +111,8 @@
 
 
                                 <div class="col-md-6">
-                                    <label for="raça" class="form-label">Raça:</label>
-                                    <input type="text" class="form-control" id="raça" name="raça"
+                                    <label for="raca" class="form-label">Raça:</label>
+                                    <input type="text" class="form-control" id="raca" name="raca"
                                         placeholder="Raça do Pet">
                                 </div>
 

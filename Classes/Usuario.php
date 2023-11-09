@@ -57,6 +57,48 @@ class Usuario {
         // Nome de usuário ou senha incorretos, autenticação falhou
         return false;
     }
+    public function cadastrarPet($dadosPet)
+{
+    try {
+        $stmt = $this->conexao->prepare("INSERT INTO animais (nomePet, especie, outraEspecie, raca, dataNascimento, dataObito, motivoObito, cor, sexoAnimal, fotoPet, possuiMicrochip, numeroChip, tipoSanguineo, castrado, doencasConhecidas, qualDoenca, examesMedicos, animalVacinado, tipoVacina, dataVacina, validadeVacina, loteVacina, fabricanteVacina, doseVacina) VALUES (:nomePet, :especie, :outraEspecie, :raca, :dataNascimento, :dataObito, :motivoObito, :cor, :sexoAnimal, :fotoPet, :possuiMicrochip, :numeroChip, :tipoSanguineo, :castrado, :doencasConhecidas, :qualDoenca, :examesMedicos, :animalVacinado, :tipoVacina, :dataVacina, :validadeVacina, :loteVacina, :fabricanteVacina, :doseVacina)");
+
+        // Associa os parâmetros
+        $stmt->bindParam(':nomePet', $dadosPet[':nomePet']);
+        $stmt->bindParam(':especie', $dadosPet[':especie']);
+        $stmt->bindParam(':outraEspecie', $dadosPet[':outraEspecie']);
+        $stmt->bindParam(':raca', $dadosPet[':raca']);
+        $stmt->bindParam(':dataNascimento', $dadosPet[':dataNascimento']);
+        $stmt->bindParam(':dataObito', $dadosPet[':dataObito']);
+        $stmt->bindParam(':motivoObito', $dadosPet[':motivoObito']);
+        $stmt->bindParam(':cor', $dadosPet[':cor']);
+        $stmt->bindParam(':sexoAnimal', $dadosPet[':sexoAnimal']);
+        $stmt->bindParam(':fotoPet', $dadosPet[':fotoPet']);
+        $stmt->bindParam(':possuiMicrochip', $dadosPet[':possuiMicrochip']);
+        $stmt->bindParam(':numeroChip', $dadosPet[':numeroChip']);
+        $stmt->bindParam(':tipoSanguineo', $dadosPet[':tipoSanguineo']);
+        $stmt->bindParam(':castrado', $dadosPet[':castrado']);
+        $stmt->bindParam(':doencasConhecidas', $dadosPet[':doencasConhecidas']);
+        $stmt->bindParam(':qualDoenca', $dadosPet[':qualDoenca']);
+        $stmt->bindParam(':examesMedicos', $dadosPet[':examesMedicos']);
+        $stmt->bindParam(':animalVacinado', $dadosPet[':animalVacinado']);
+        $stmt->bindParam(':tipoVacina', $dadosPet[':tipoVacina']);
+        $stmt->bindParam(':dataVacina', $dadosPet[':dataVacina']);
+        $stmt->bindParam(':validadeVacina', $dadosPet[':validadeVacina']);
+        $stmt->bindParam(':loteVacina', $dadosPet[':loteVacina']);
+        $stmt->bindParam(':fabricanteVacina', $dadosPet[':fabricanteVacina']);
+        $stmt->bindParam(':doseVacina', $dadosPet[':doseVacina']);
+
+        // Executa a inserção
+        $stmt->execute();
+
+        return true;
+    } catch (PDOException $e) {
+        // Em caso de erro, imprime a mensagem e retorna false
+        echo "Erro: " . $e->getMessage();
+        return false;
+    }
+}
+
 }
 ?>
 
