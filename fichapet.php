@@ -3,11 +3,19 @@
 require_once 'Classes/Usuario.php';
 $usuario = new Usuario($conexao);
 
-// Verifica a autenticação (se necessário)
-// $usuario->verificarAutenticacao();
+// Obtém a lista de pets ou um pet específico se o ID for fornecido
+if (isset($_GET['pet_id'])) {
+    $petId = $_GET['pet_id'];
+    $petEncontrado = $usuario->buscarPetPorId($petId);
 
-// Obtém a lista de pets
-$pets = $usuario->listarPets();
+    if (!$petEncontrado) {
+        echo '<p>Pet não encontrado.</p>';
+        // Você pode redirecionar para uma página de erro ou tomar outra ação, se necessário
+    }
+} else {
+    // Se o ID do pet não foi fornecido, lista todos os pets
+    $pets = $usuario->listarPets();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -58,7 +66,7 @@ $pets = $usuario->listarPets();
                                 <a class="nav-link" href="comunidade.html">Comunidade</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Minha Conta</a>
+                                <a class="nav-link" href="dashboard_usuario.php">Minha Conta</a>
                             </li>
                         </ul>
                     </div>

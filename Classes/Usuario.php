@@ -48,6 +48,21 @@ class Usuario {
             return false;
         }
     }
+    public function buscarPetPorId($id) {
+        try {
+            $stmt = $this->conexao->prepare("SELECT * FROM animais WHERE id = :id");
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            $pet = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $pet;
+        } catch (PDOException $e) {
+            echo "Erro: " . $e->getMessage();
+            return false;
+        }
+    }
+
 //Função para autenticar os usuários
     public function autenticarUsuario($username, $senha) {
         // Consulta SQL para obter o usuário com o nome de usuário fornecido
