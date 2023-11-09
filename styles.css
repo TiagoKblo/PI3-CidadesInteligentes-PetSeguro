@@ -388,6 +388,20 @@ footer {
     color: #fff;
 }
 
+.destaque-container button {
+    background-color: #3b9dfe; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 5px; /* Borda arredondada do botão */
+    cursor: pointer; /* Altera o cursor ao pairar sobre o botão */
+    transition: background-color 0.3s; /* Efeito de transição de cor de fundo */
+}
+
+.destaque-container button:hover {
+    background-color: rgba(128, 128, 128, 0.5); /* Cor de fundo do botão ao passar o mouse */
+}
+
 /* CSS para a seção de cadastro de usuário */
 .cadastro-usuario {
     background-image: url('imagens/cadastro.png');

@@ -8,7 +8,7 @@ $usuario = new Usuario($conexao);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupera os dados do formulário
     $dadosUsuario = [
-        ':id' => '$_POST["id"]',
+        ':id' => $_POST["id"],
         ':nome' => $_POST["nome"],
         ':email' => $_POST["email"],
         ':username' => $_POST["username"],
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = $usuario->cadastrarUsuario($dadosUsuario);
 
     // Verifica o resultado e redireciona se for bem-sucedido
-    if ($resultado > 0) {
+    if ($resultado) {
         echo "Cadastro realizado com sucesso!";
         header("Location: cadastropet.html");
         exit();
