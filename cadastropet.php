@@ -1,12 +1,7 @@
 <?php
 require_once 'Classes/Usuario.php';
 
-// Verifica se o usuário está autenticado
-// (Você pode adicionar lógica adicional de verificação de autenticação conforme necessário)
-
-// Se não estiver autenticado, redireciona para a página de login
-// Exemplo: header("Location: login.html");
-// Certifique-se de usar a função header antes de imprimir qualquer saída
+$usuario->verificarAutenticacao();
 
 // Cria uma instância da classe Usuario, passando a conexão como parâmetro
 $usuario = new Usuario($conexao);

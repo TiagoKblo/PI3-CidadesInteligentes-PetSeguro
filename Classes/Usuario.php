@@ -36,6 +36,19 @@ class Usuario {
         // Retorna o resultado da execução
         return $stmt->rowCount() > 0; // Retorna true se a inserção for bem-sucedida, caso contrário, false
     }
+    // Função para listar os pets
+    public function listarPets() {
+        try {
+            $stmt = $this->conexao->query("SELECT * FROM animais");
+            $pets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $pets;
+        } catch (PDOException $e) {
+            echo "Erro: " . $e->getMessage();
+            return false;
+        }
+    }
+//Função para autenticar os usuários
     public function autenticarUsuario($username, $senha) {
         // Consulta SQL para obter o usuário com o nome de usuário fornecido
         $sql = "SELECT * FROM usuarios WHERE username = :username";
@@ -56,6 +69,19 @@ class Usuario {
 
         // Nome de usuário ou senha incorretos, autenticação falhou
         return false;
+    }
+    public function verificarAutenticacao() {
+        // Inicia a sessão se ainda não estiver iniciada
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        // Verifica se a variável de sessão 'usuario_logado' está definida
+        if (!isset($_SESSION['usuario_logado'])) {
+            // Usuário não está logado, redireciona para a página de login
+            header("Location: login.html");
+            exit();
+        }
     }
     public function cadastrarPet($dadosPet)
 {
