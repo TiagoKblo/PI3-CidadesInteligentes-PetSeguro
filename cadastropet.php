@@ -1,7 +1,7 @@
 <?php
 require_once 'Classes/Usuario.php';
 
-$usuario->verificarAutenticacao();
+
 
 // Cria uma instância da classe Usuario, passando a conexão como parâmetro
 $usuario = new Usuario($conexao);
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($resultado > 0) {
         echo "Cadastro do Pet realizado com sucesso!";
         // Adicione redirecionamento ou outra lógica aqui
-        header("Location: dashboard_usuario.php");
+        header("Location: login.html");
     } else {
         echo "Erro ao cadastrar o Pet.";
     }
