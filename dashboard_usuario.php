@@ -70,7 +70,7 @@
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="dashboard-feature text-center">
                     <div class="dashboard-icon">
-                        <a href="meus_animais.php">
+                        <a href="fichapet.php">
                             <i class="bi bi-card-checklist"></i>
                         </a>
                     </div>
