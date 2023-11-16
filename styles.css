@@ -834,3 +834,15 @@ canvas {
 .dashboard-feature p {
     color: #3c3b3b;
 }
+/* Estilo para o Mapa */
+#map {
+    height: 600px; /* Altura desejada para a div do mapa */
+    width: 100%;  /* A largura ocupa 100% da largura do contêiner pai, ajuste conforme necessário */
+
+    /* Adicione estilos adicionais conforme necessário */
+    border: 1px solid #ccc; /* Borda para a div do mapa */
+    margin-top: 20px; /* Margem superior para separação de outros elementos */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+

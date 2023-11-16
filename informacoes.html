@@ -107,124 +107,9 @@
             </div>
             <h2 class="section-heading">Gráficos</h2>
             <div class="row" data-aos="fade-up" data-aos-duration="1000">
-                <!-- Gráfico de Pizza (Espécies) -->
-                <div class="col-md-4">
-                    <h3>Espécies</h3>
-                    <canvas id="pie-chart-especies"></canvas>
-                </div>
-
-                <!-- Gráfico de Barras (Sexo) -->
-                <div class="col-md-4">
-                    <h3>Gênero do animais</h3>
-                    <canvas id="bar-chart-sexo"></canvas>
-                </div>
-
-                <!-- Gráfico de Barras (Castração) -->
-                <div class="col-md-4">
-                    <h3>Animais Castrados</h3>
-                    <canvas id="bar-chart-castracao"></canvas>
-                </div>
-
-                <!-- Gráfico de Barras Empilhadas (Doenças Conhecidas) -->
-                <div class="col-md-4">
-                    <h3>Doenças Crônicas Conhecidas</h3>
-                    <canvas id="stacked-bar-chart-doenca"></canvas>
-                </div>
-                <!-- Gráfico de Linha (Nascimentos por Ano com Idades) -->
-                <div class="col-md-4">
-                    <h3>Idade do Animais</h3>
-                    <canvas id="line-chart-nascimentos-idades"></canvas>
-                </div>
-                <!-- Gráfico de Barras (Vacinas) -->
-                <div class="col-md-4">
-                    <h3>Vacinação</h3>
-                    <canvas id="bar-chart-vacinas"></canvas>
-                </div>
-
-
-            </div>
+                <div id="map"></div> <!-- Esta div para o mapa -->
         </div>
     </section>
-
-<!-- Seção de Informações Públicas
-<section class="public-info-section" id="public-info" data-aos="fade-up" data-aos-duration="1000">
-    <div class="container">
-        <h2 class="section-heading">Estatísticas</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="feature-1 text-center">
-                    <div class="wrap-icon icon-1">
-                        <a href="incentivos.html">
-                            <i class="bi bi-card-checklist"></i>
-                        </a>
-                    </div>
-                    <h3 class="mb-3">Animais Registrados</h3>
-                    <p id="total-animais-cadastrados">0</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-1 text-center">
-                    <div class="wrap-icon icon-2">
-                        <a href="#">
-                            <i class="bi bi-cpu"></i>
-                        </a>
-                    </div>
-                    <h3 class="mb-3">Animais com Microchip</h3>
-                    <p id="animais-com-chip">0</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-1 text-center">
-                    <div class="wrap-icon icon-3">
-                        <a href="#">
-                            <i class="bi bi-search"></i>
-                        </a>
-                    </div>
-                    <h3 class="mb-3">Animais Encontrados</h3>
-                    <p id="animais-encontrados">0</p>
-                </div>
-            </div>
-        </div>
-        <h2 class="section-heading">Gráficos</h2>
-        <div class="row" data-aos="fade-up" data-aos-duration="1000">
-            <!-- Gráfico de Barras (População Registrada por Região) --
-            <div class="col-md-4">
-                <h3>População por Região</h3>
-                <canvas id="bar-chart-populacao-regiao"></canvas>
-            </div>
-
-            <!-- Gráfico de Linha (Redução de Animais de Rua ao Longo do Tempo) --
-            <div class="col-md-4">
-                <h3>Redução de Animais de Rua</h3>
-                <canvas id="line-chart-reducao-animais-de-rua"></canvas>
-            </div>
-
-            <!-- Gráfico de Pizza (Percentual de Animais Castrados e Atualizados com Vacinas) --
-            <div class="col-md-4">
-                <h3>Animais Castrados e Vacinados</h3>
-                <canvas id="pie-chart-castracao-vacinacao"></canvas>
-            </div>
-
-            <!-- Gráfico de Barras (Recuperação de Animais Perdidos ou Roubados) --
-            <div class="col-md-4">
-                <h3>Recuperação de Animais</h3>
-                <canvas id="bar-chart-recuperacao-animais"></canvas>
-            </div>
-
-            <!-- Gráfico de Pizza (Participação em Programas de Incentivo) --
-            <div class="col-md-4">
-                <h3>Participação em Programas de Incentivo</h3>
-                <canvas id="pie-chart-participacao-incentivo"></canvas>
-            </div>
-
-            <!-- Gráfico de Barras (Educação e Sensibilização) --
-            <div class="col-md-4">
-                <h3>Educação e Sensibilização</h3>
-                <canvas id="bar-chart-educacao-sensibilizacao"></canvas>
-            </div>
-        </div>
-    </div>
-</section>
 
     <!-- Rodapé -->
     <footer class="text-center">
@@ -237,13 +122,13 @@
 
 
     <!-- Os scripts do Bootstrap e outros scripts necessários -->
+    <script src="map.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-K_J9mjjy6UPA429Sp_rJhaW49GQNq8I&callback=initMap"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="animation.js"></script>
-    <script src="graficos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" onload="inicializarGraficos()"></script>
     <script src="scripts.js"></script>
 
 </body>
