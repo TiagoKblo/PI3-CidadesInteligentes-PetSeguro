@@ -1,0 +1,16 @@
+services:
+  httpd:
+    image: php8.2
+    ports:
+      - 80:80
+    volumes:
+      - ./app:/var/www/html
+    links:
+      - mongo:mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+
+#para executar os containers: docker-compose up -d

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Cabeçalho da página -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Barras</title>
+
+    <!-- Link para o ícone da página -->
+    <link rel="icon" href="imagens/icone.png" type="image/x-icon">
+
+    <!-- Link para o Bootstrap CSS  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <!-- Link para a biblioteca AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Link para a biblioteca Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!--  Link para a biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+
+    <!-- Arquivo CSS personalizado para estilos específicos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+                PetSeguro
+            </a>
+
+            <!-- Botões alinhados à direita -->
+            <div>
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="informacoes.html">Informações Públicas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="comunidade.html">Comunidade</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Minha Conta</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </nav>
+
+    </section>
+
+    <!-- Seção de Informações Públicas -->
+    <section class="public-info-section" id="public-info" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <h2 class="section-heading">Estatísticas</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-1 text-center">
+                        <div class="wrap-icon icon-1">
+                            <a href="incentivos.html">
+                                <i class="bi bi-card-checklist"></i>
+                            </a>
+                        </div>
+                        <h3 class="mb-3">Total de Animais Cadastrados</h3>
+                        <p id="total-animais-cadastrados">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-1 text-center">
+                        <div class="wrap-icon icon-2">
+                            <a href="#">
+                                <i class="bi bi-cpu"></i>
+                            </a>
+                        </div>
+                        <h3 class="mb-3">Animais com chip</h3>
+                        <p id="animais-com-chip">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-1 text-center">
+                        <div class="wrap-icon icon-3">
+                            <a href="#">
+                                <i class="bi bi-search"></i>
+                            </a>
+                        </div>
+                        <h3 class="mb-3">Animais encontrados</h3>
+                        <p id="animais-encontrados">0</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section-heading">Gráficos</h2>
+            <div class="row" data-aos="fade-up" data-aos-duration="1000">
+                <div id="map"></div> <!-- Esta div para o mapa -->
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="text-center">
+        <div class="text-center p-3">
+            <a href="https://github.com/TiagoKblo" class="custom-link">© 2023 PatSeguro - Todos os direitos
+                reservados</a>
+        </div>
+    </footer>
+
+
+
+    <!-- Os scripts do Bootstrap e outros scripts necessários -->
+    <script src="map.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-K_J9mjjy6UPA429Sp_rJhaW49GQNq8I&callback=initMap"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="animation.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
