@@ -6,7 +6,7 @@ Projeto Integrador (PI) do 3º período do curso de Tecnologia em Desenvolviment
 - Daniel
 - Laura
 - Radmila
-- Tiago H
+- Tiago 
 
 ## Tema
 **PetSeguro:** Desenvolvimento de um portal para rastreamento inteligente e seguro de animais de estimação.
