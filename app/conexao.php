@@ -18,10 +18,13 @@ class MongoDBManager {
 try {
     $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');
 
-    // Exemplo de uso com a coleção 'veterinarios'
+    // Coleção 'veterinarios'
     $usuarioCollection = $mongoManager->getCollection('veterinarios');
 
-    // Você pode criar mais instâncias da coleção para outras coleções, por exemplo:
+    // Coleção 'pets'
+    $petsCollection = $mongoManager->getCollection('pets');
+
+    // Coleção 'proprietarios'
     $proprietariosCollection = $mongoManager->getCollection('proprietarios');
 
     // Restante do código...
