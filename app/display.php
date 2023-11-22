@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/config.php';
-;
 
 try {
     $mongoHost = "mongo"; // Nome do serviço do MongoDB no docker-compose.yml
