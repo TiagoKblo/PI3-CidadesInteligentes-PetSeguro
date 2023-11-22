@@ -413,6 +413,16 @@ footer {
     align-items: center;
     justify-content: center;
 }
+.cadastro-veterinario {
+    background-image: url('imagens/cuidadosaude.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .cadastro-container {
     background-color: rgba(255, 255, 255, 0.8);
