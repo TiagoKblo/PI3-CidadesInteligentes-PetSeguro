@@ -1,23 +1,11 @@
 // Initialize AOS
 AOS.init();
-
-// Verifica se a página atual é "cadastro.html" antes de adicionar o evento
-if (window.location.pathname === '/cadastro.html') {
-  // Obtém o elemento de formulário com o ID "cadastro-form"
-  const form = document.getElementById("cadastro-form");
-
-  // Verifica se o elemento foi encontrado antes de adicionar o ouvinte de evento
-  if (form) {
-    // Adiciona um evento de submissão do formulário
-    form.addEventListener("submit", function (event) {
-      // Redireciona para a página "cadastropet.html" quando o formulário é enviado
-      window.location.href = "cadastropet.html";
-
-      // Impede que o formulário seja submetido normalmente (evita recarregar a página)
-      event.preventDefault();
-    });
-  }
+// Função para exibir mensagens na página
+function exibirMensagem(tipo, mensagem) {
+  const mensagemElement = document.getElementById('mensagem');
+  mensagemElement.innerHTML = `<div class="alert alert-${tipo}" role="alert">${mensagem}</div>`;
 }
+
 
 // Verifica se a página atual é 'cadastropet.html'
 if (document.location.pathname.endsWith("cadastropet.html")) {
@@ -74,7 +62,7 @@ if (document.location.pathname.endsWith("cadastropet.html")) {
   }
 }
 
-// API DE CEP 
+// API DE CEP
 
 const cep = document.querySelector('#cep');
 const estado = document.querySelector('#estado');
@@ -84,11 +72,11 @@ const rua = document.querySelector('#rua');
 const message = document.querySelector('#message');
 
 cep.addEventListener('focusout', async () => {
-  
+
   try {
     const onlyNumbers = /^[0-9]+$/;
     const cepValid = /^[0-9]+$/;
-  
+
     if(!onlyNumbers.test(cep.value) || !cepValid.test(cep.value)){
       throw {cep_error: 'Cep Inválido'};
     }
@@ -101,7 +89,7 @@ cep.addEventListener('focusout', async () => {
 
     const responseCep = await response.json();
 
-    estado.value = responseCep.uf; 
+    estado.value = responseCep.uf;
     cidade.value = responseCep.localidade;
     bairro.value = responseCep.bairro;
     rua.value = responseCep.logradouro;

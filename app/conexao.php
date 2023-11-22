@@ -22,7 +22,7 @@ try {
     $usuarioCollection = $mongoManager->getCollection('veterinarios');
 
     // Você pode criar mais instâncias da coleção para outras coleções, por exemplo:
-    // $outraColecao = $mongoManager->getCollection('outraColecao');
+    $proprietariosCollection = $mongoManager->getCollection('proprietarios');
 
     // Restante do código...
 } catch (Exception $e) {

@@ -61,7 +61,7 @@
             <p class="destaque-text">Etapa 1 de 2</p>
         </div>
     </section>
-
+    <div id="mensagem" class="mb-3"></div>
     <!-- Seção de Cadastro de Usuário -->
     <section class="cadastro-usuario" id="cadastro-usuario">
         <div class="container">
@@ -70,9 +70,6 @@
                     <div class="cadastro-container">
                         <h2>Cadastro de Usuário</h2>
                         <form id="cadastro-form" action="cadastro.php" method="post">
-
-                            <!-- Adicione um campo oculto para armazenar o id -->
-                            <input type="hidden" name="id" value="">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome Completo:</label>
                                 <input type="text" class="form-control" id="nome" name="nome">
@@ -111,6 +108,7 @@
                                     <label for="data-nascimento" class="form-label">Data de Nascimento:</label>
                                     <input type="date" class="form-control" id="data-nascimento" name="data-nascimento">
                                 </div>
+                                
 
                                 <div class="row mb-3">
                                     <div class="col">
@@ -171,8 +169,8 @@
                             </div>
 
 
-                            <button type="submit" class="btn btn-primary">Cadastrar-se</button>
-                            <p>Já tem uma conta? <a href="login.html">Faça Login</a></p>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+
                         </form>
                     </div>
                 </div>
@@ -188,9 +186,9 @@
         </div>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <script src="scripts.js"></script>
 </body>

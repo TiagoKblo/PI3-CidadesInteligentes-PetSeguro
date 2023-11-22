@@ -1,40 +1,91 @@
 <?php
-require_once 'Classes/Usuario.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Cria uma instância da classe Usuario, passando a conexão como parâmetro
-$usuario = new Usuario($conexao);
+require_once __DIR__ . '/conexao.php';
 
 // Verifica se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupera os dados do formulário
-    $dadosUsuario = [
-        ':id' => $_POST["id"],
-        ':nome' => $_POST["nome"],
-        ':email' => $_POST["email"],
-        ':username' => $_POST["username"],
-        ':senha' => $_POST["senha"],
-        ':telefone' => $_POST["telefone"],
-        ':dataNascimento' => $_POST["data-nascimento"],
-        ':sexo' => $_POST["sexo"],
-        ':quantidadeAnimais' => $_POST["quantidade-animais"],
-        ':cep' => $_POST["cep"],
-        ':estado' => $_POST["estado"],
-        ':cidade' => $_POST["cidade"],
-        ':bairro' => $_POST["bairro"],
-        ':rua' => $_POST["rua"],
-        ':numero' => $_POST["numero"]
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Coleta dados do formulário do proprietário
+    $dadosProprietario = [
+        'nome' => $_POST['nome'],
+        'email' => $_POST['email'],
+        'username' => $_POST['username'],
+        'senha' => $_POST['senha'],
+        'confirmar-senha' => $_POST['confirmar-senha'],
+        'telefone' => $_POST['telefone'],
+        'data-nascimento' => $_POST['data-nascimento'],
+        'cpf' => $_POST['cpf'],
+        'sexo' => $_POST['sexo'],
+        'quantidade-animais' => isset($_POST['quantidade-animais']) ? (int)$_POST['quantidade-animais'] : 0,
+        'cep' => $_POST['cep'],
+        'estado' => $_POST['estado'],
+        'cidade' => $_POST['cidade'],
+        'bairro' => $_POST['bairro'],
+        'rua' => $_POST['rua'],
+        'numero' => $_POST['numero'],
     ];
 
-    // Chama a função cadastrarUsuario
-    $resultado = $usuario->cadastrarUsuario($dadosUsuario);
-
-    // Verifica o resultado e redireciona se for bem-sucedido
-    if ($resultado) {
-        echo "Cadastro realizado com sucesso!";
-        header("Location: cadastropet.html");
-        exit();
-    } else {
-        echo "Erro ao cadastrar.";
+    // Validação de Campos
+    $camposObrigatorios = ['nome', 'email', 'username', 'senha', 'confirmar-senha', 'telefone', 'data-nascimento', 'cpf', 'sexo', 'cep', 'estado', 'cidade', 'bairro', 'rua', 'numero'];
+    foreach ($camposObrigatorios as $campo) {
+        if (empty($dadosProprietario[$campo])) {
+            exibirMensagem('Por favor, preencha todos os campos obrigatórios.');
+            exit;
+        }
     }
+
+    // Verifica se as senhas coincidem
+    if ($dadosProprietario['senha'] !== $dadosProprietario['confirmar-senha']) {
+        exibirMensagem('As senhas não coincidem. Por favor, verifique.');
+        exit;
+    }
+
+    // Conecta ao MongoDB usando a classe MongoDBManager
+    try {
+        $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');
+
+        // Obtém a coleção de proprietários
+        $proprietariosCollection = $mongoManager->getCollection('proprietarios');
+
+        // Adiciona o hash da senha
+        $dadosProprietario['senha'] = password_hash($dadosProprietario['senha'], PASSWORD_DEFAULT);
+
+        // Remove a confirmação de senha antes de inserir no MongoDB
+        unset($dadosProprietario['confirmar-senha']);
+
+        // Insere o documento do proprietário na coleção
+        $resultadoCadastroProprietario = $proprietariosCollection->insertOne($dadosProprietario);
+
+        // Verifica o resultado do cadastro do proprietário
+        if ($resultadoCadastroProprietario->getInsertedCount() > 0) {
+            exibirMensagem('Cadastro do proprietário realizado com sucesso!', 'sucesso');
+            // Redireciona para a página cadastropet.html
+            header('Location: cadastropet.html');
+            exit;
+        } else {
+            exibirMensagem('Erro ao cadastrar o proprietário. Por favor, tente novamente.');
+        }
+
+    } catch (Exception $e) {
+        exibirMensagem('Erro ao conectar ao MongoDB: ' . $e->getMessage());
+    }
+} else {
+    // Redireciona se o formulário não foi enviado
+    header('Location: cadastro.html');
+    exit;
 }
+
+function exibirMensagem($mensagem, $tipo = 'erro') {
+    echo "<script>";
+    echo "alert('$mensagem');";
+    if ($tipo === 'sucesso') {
+        echo "window.location.href = 'cadastropet.html';";
+    } else {
+        echo "window.location.href = 'cadastro.html';";
+    }
+    echo "</script>";
+    exit;
+}
+
 ?>
