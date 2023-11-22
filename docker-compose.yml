@@ -1,6 +1,6 @@
 services:
   httpd:
-    image: php8.2
+    build: .
     ports:
       - 80:80
     volumes:
@@ -10,6 +10,7 @@ services:
 
   mongo:
     image: mongo
+    restart: always
     ports:
       - 27017:27017
 
