@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html,body{height: 100%;}
+
+/* INICIO HEADER */
+header {
+  background-color: #73b4ff;
+  padding: 10px 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo h3 {
+  cursor: pointer;
+}
+
+.logo h3:hover {
+  opacity: 0.7;
+}
+
+.info-header{
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.icons-header svg {
+  cursor: pointer;
+}
+
+.icons-header svg:hover {
+  opacity: 0.7;
+}
+
+.info-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 0 8px;
+}
+
+.info-header svg {
+  margin: 0 10px;
+}
+
+.icons-header {
+  margin-left: 10px;
+}
+/* FIM HEADER */
+
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: white;
+  height: 100%;
+}
+
+.sidebar a.sidebar-active {
+  border-left: 4px solid #73b4ff;
+  background-color: rgb(240,240,240);
+  color: #222;
+}
+
+.sidebar a.sidebar-active > svg {
+  background-color: #f0f0f0;
+  color: #444;
+}
+
+.sidebar h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #444;
+  
+}
+
+.sidebar a:hover {
+  border-left: 4px solid #73b4ff;
+  background-color: rgb(240,240,240);
+  color: #222;
+}
+
+.sidebar a:hover .sidebar a > svg {
+  color: #222;
+}
+
+.sidebar a > svg {
+  color: #444;
+   background-color: rgb(245,245,245);
+}
+
+.content {
+  width: 80%;
+  background-color: rgb(245,245,245);
+  padding: 20px;
+}
+
+.titulo-secao {
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+.titulo-secao h2 {
+  font-size: 19px;
+}
+
+.titulo-secao p {
+  font-size: 14px;
+}
+
+.titulo-secao svg {
+  color: #73b4ff;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(240,240,240);
+}
