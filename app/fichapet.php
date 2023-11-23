@@ -1,20 +1,28 @@
 <?php
+require_once 'conexao.php';
 
-require_once 'Classes/Usuario.php';
-$usuario = new Usuario($conexao);
-
-// Obtém a lista de pets ou um pet específico se o ID for fornecido
-if (isset($_GET['pet_id'])) {
-    $petId = $_GET['pet_id'];
-    $petEncontrado = $usuario->buscarPetPorId($petId);
+// Verifica se o ID do pet foi fornecido
+if (isset($_GET['id'])) {
+    $petId = $_GET['id'];
+    $petEncontrado = buscarPetPorId($petId);
 
     if (!$petEncontrado) {
         echo '<p>Pet não encontrado.</p>';
         // Você pode redirecionar para uma página de erro ou tomar outra ação, se necessário
     }
 } else {
-    // Se o ID do pet não foi fornecido, lista todos os pets
-    $pets = $usuario->listarPets();
+    echo '<p>ID do pet não fornecido.</p>';
+    // Você pode redirecionar para uma página de erro ou tomar outra ação, se necessário
+}
+
+function buscarPetPorId($petId) {
+    global $mongoManager;
+
+    // Converte o ID para o formato ObjectId do MongoDB
+    $petId = new MongoDB\BSON\ObjectId($petId);
+
+    // Consulta no MongoDB
+    return $mongoManager->findOne('pets', ['_id' => $petId]);
 }
 ?>
 <!DOCTYPE html>

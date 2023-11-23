@@ -13,6 +13,10 @@ class MongoDBManager {
     public function getCollection($collectionName) {
         return $this->mongoDB->$collectionName;
     }
+    public function findOne($collectionName, $filter) {
+        $collection = $this->getCollection($collectionName);
+        return $collection->findOne($filter);
+    }
 }
 
 try {
