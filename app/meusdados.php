@@ -85,7 +85,7 @@ try {
                                 <a class="nav-link" href="informacoes.html">Informações Públicas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="comunidade.html">Comunidade</a>
+                                <a class="nav-link" href="meusanimais.php">Meus Animais</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="meusdados.php">Meus Dados</a>
@@ -115,6 +115,10 @@ try {
         <tr>
             <th>Nome:</th>
             <td><?php echo $usuarioEncontrado['nome']; ?></td>
+        </tr>
+        <tr>
+            <th>CPF:</th>
+            <td><?php echo $usuarioEncontrado['cpf']; ?></td>
         </tr>
         <tr>
             <th>Email:</th>

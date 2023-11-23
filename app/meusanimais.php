@@ -4,7 +4,10 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/conexao.php';
 
-// Recupera o CPF do proprietário da sessão,
+// Verifica se a sessão está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 
 // Verifica se o CPF foi passado como parâmetro na URL
