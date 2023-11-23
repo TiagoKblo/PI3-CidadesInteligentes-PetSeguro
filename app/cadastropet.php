@@ -4,36 +4,14 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/conexao.php';
 
-// Função para obter o ID do proprietário com base no nome de usuário
-function obterIdProprietario($username) {
-    try {
-        $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');
-        $proprietariosCollection = $mongoManager->getCollection('proprietarios');
-
-        // Consulta MongoDB para obter o ID do proprietário com base no nome de usuário
-        $proprietario = $proprietariosCollection->findOne(['username' => $username], ['projection' => ['_id' => 1]]);
-
-        return $proprietario ? (string)$proprietario['_id'] : null;
-    } catch (Exception $e) {
-        // Lida com erros ao conectar ao MongoDB
-        exibirMensagem('Erro ao conectar ao MongoDB: ' . $e->getMessage());
-        return null;
-    }
-}
-
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Obtém o ID do proprietário
-    $usernameProprietario = $_POST['username'];  // Certifique-se de ajustar conforme a lógica do seu sistema
-    $idProprietario = obterIdProprietario($usernameProprietario);
+    // Obtém o CPF do proprietário diretamente do formulário
+    $cpfProprietario = $_POST['cpf-proprietario'];
 
-    if ($idProprietario === null) {
-        // O proprietário não foi encontrado, você pode lidar com isso aqui
-        exibirMensagem('Proprietário não encontrado. Por favor, verifique o nome de usuário.');
-    } else {
-        // Coleta dados do formulário do animal de estimação
-        $dadosPet = [
-        'id-proprietario' => $idProprietario,  // Adiciona o ID do proprietário aos dados do pet
+    // Coleta dados do formulário do animal de estimação
+    $dadosPet = [
+        'cpf_proprietario' => $cpfProprietario,
         'nome' => $_POST['nome-pet'],
         'especie' => $_POST['especie'],
         'outraEspecie' => isset($_POST['outraEspecie']) ? $_POST['outraEspecie'] : null,
@@ -59,16 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'fabricante-vacina' => isset($_POST['fabricante-vacina']) ? $_POST['fabricante-vacina'] : null,
         'dose-vacina' => isset($_POST['dose-vacina']) ? $_POST['dose-vacina'] : null,
     ];
-}
 
-    // Validação de Campos
-    $camposObrigatorios = ['nome-pet', 'especie', 'raca', 'data-nascimento', 'cor', 'sexo-animal'];
-    foreach ($camposObrigatorios as $campo) {
-        if (empty($dadosPet[$campo])) {
-            exibirMensagem('Por favor, preencha todos os campos obrigatórios para o pet.');
-            exit;
-        }
-    }
+
 
     // Conecta ao MongoDB usando a classe MongoDBManager
     try {
@@ -77,11 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Obtém a coleção de pets
         $petsCollection = $mongoManager->getCollection('pets');
 
-
-
-        // Supondo que você tenha o ID do proprietário disponível em $idProprietario
-        $dadosPet['id_proprietario'] = $idProprietario;
-
         // Insere o documento do pet na coleção
         $resultadoCadastroPet = $petsCollection->insertOne($dadosPet);
 
@@ -89,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($resultadoCadastroPet->getInsertedCount() > 0) {
             exibirMensagem('Cadastro do pet realizado com sucesso!', 'sucesso');
             // Redireciona para a página apropriada
-            header('Location: paginasucesso.html');
+            header('Location: dashboard_usuario.php');
             exit;
         } else {
             exibirMensagem('Erro ao cadastrar o pet. Por favor, tente novamente.');
@@ -104,10 +69,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 function exibirMensagem($mensagem, $tipo = 'erro') {
-    echo "<script>
-            alert('$mensagem');
-            window.location.href = 'cadastropet.html';
-          </script>";
+    echo "<script>";
+    echo "alert('$mensagem');";
+    if ($tipo === 'sucesso') {
+        echo "window.location.href = 'dashboard_usuario.php';";
+    } else {
+        echo "window.location.href = 'cadastropet.html';";
+    }
+    echo "</script>";
     exit;
 }
 ?>
