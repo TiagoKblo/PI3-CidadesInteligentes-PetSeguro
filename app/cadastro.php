@@ -4,6 +4,18 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/conexao.php';
 
+// Função para formatar o CPF
+function formatarCPF($cpf)
+{
+    // Remove caracteres não numéricos
+    $cpf = preg_replace("/[^0-9]/", "", $cpf);
+
+    // Adiciona os pontos e traço
+    $cpfFormatado = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
+
+    return $cpfFormatado;
+}
+
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Coleta dados do formulário do proprietário
@@ -15,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'confirmar-senha' => $_POST['confirmar-senha'],
         'telefone' => $_POST['telefone'],
         'data-nascimento' => $_POST['data-nascimento'],
-        'cpf' => $_POST['cpf'],
+        'cpf' => formatarCPF($_POST['cpf']), // Formata o CPF antes de salvar
         'sexo' => $_POST['sexo'],
         'quantidade-animais' => isset($_POST['quantidade-animais']) ? (int)$_POST['quantidade-animais'] : 0,
         'cep' => $_POST['cep'],
@@ -27,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ];
 
     // Validação de Campos
-    $camposObrigatorios = ['nome', 'email', 'username', 'senha', 'confirmar-senha', 'telefone', 'data-nascimento', 'cpf', 'sexo', 'cep', 'estado', 'cidade', 'bairro', 'rua', 'numero'];
+    $camposObrigatorios = ['nome', 'email', 'username', 'senha', 'confirmar-senha', 'cpf'];
     foreach ($camposObrigatorios as $campo) {
         if (empty($dadosProprietario[$campo])) {
             exibirMensagem('Por favor, preencha todos os campos obrigatórios.');
@@ -76,7 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-function exibirMensagem($mensagem, $tipo = 'erro') {
+function exibirMensagem($mensagem, $tipo = 'erro')
+{
     echo "<script>";
     echo "alert('$mensagem');";
     if ($tipo === 'sucesso') {
@@ -87,5 +100,4 @@ function exibirMensagem($mensagem, $tipo = 'erro') {
     echo "</script>";
     exit;
 }
-
 ?>

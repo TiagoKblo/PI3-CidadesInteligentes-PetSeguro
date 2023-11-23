@@ -4,9 +4,17 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/conexao.php';
 
-// Recupera o CPF do proprietário da sessão, assumindo que você tenha um sistema de autenticação
-// Se não tiver um sistema de autenticação, você precisará obter o CPF de alguma forma segura
-$cpfProprietario = "370.487.078-10"; // Substitua isso pela lógica real de obtenção do CPF
+// Recupera o CPF do proprietário da sessão,
+
+
+// Verifica se o CPF foi passado como parâmetro na URL
+$cpfProprietario = isset($_GET['cpf']) ? $_GET['cpf'] : null;
+
+// Se o CPF não estiver disponível, redireciona para alguma página de erro ou tratamento adequado
+if (!$cpfProprietario) {
+    header("Location: login.html");
+    exit;
+}
 
 try {
     $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');
@@ -27,7 +35,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Pet</title>
+    <title>Meus Animais</title>
 
     <!-- Link para o ícone da página -->
     <link rel="icon" href="imagens/icone.png" type="image/x-icon">
@@ -73,7 +81,7 @@ try {
                                 <a class="nav-link" href="comunidade.html">Comunidade</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Minha Conta</a>
+                                <a class="nav-link" href="logout.php">Sair</a>
                             </li>
                         </ul>
                     </div>

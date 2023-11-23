@@ -1,3 +1,17 @@
+<?php
+// Inicia a sessão
+session_start();
+
+// Verifica se a sessão do CPF não está definida, redireciona para a página de login
+if (!isset($_SESSION['cpf_usuario'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Obtém o CPF e o nome do usuário a partir da sessão
+$cpfUsuario = $_SESSION['cpf_usuario'];
+$nomeUsuario = $_SESSION['nome_usuario'];
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,7 +74,7 @@
     <div class="container">
         <div class="row justify-content-center text-center mb-5">
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="500">
-                <h2 class="section-heading">Painel do Usuário</h2>
+            <h2 class="section-heading">Bem-vindo, <?php echo $nomeUsuario; ?>!</h2>
                 <p class="section-subheading">Gerencie suas informações e interaja com as funcionalidades do PetSeguro.</p>
             </div>
         </div>
@@ -70,7 +84,7 @@
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="dashboard-feature text-center">
                     <div class="dashboard-icon">
-                        <a href="meusanimais.php">
+                    <a href="meusanimais.php?cpf=<?= $cpfUsuario ?>">
                             <i class="bi bi-card-checklist"></i>
                         </a>
                     </div>
@@ -83,7 +97,7 @@
             <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="dashboard-feature text-center">
                     <div class="dashboard-icon">
-                        <a href="meus_dados.php">
+                        <a href="meusdados.php?cpf=<?= $cpfUsuario ?>">
                             <i class="bi bi-person"></i>
                         </a>
                     </div>
@@ -92,32 +106,7 @@
                 </div>
             </div>
 
-            <!-- Caixa de Mensagens -->
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="dashboard-feature text-center">
-                    <div class="dashboard-icon">
-                        <a href="caixa_mensagens.php">
-                            <i class="bi bi-chat-dots"></i>
-                        </a>
-                    </div>
-                    <h3 class="mb-3">Caixa de Mensagens</h3>
-                    <p>Comunique-se com outros usuários e receba notificações importantes.</p>
-                </div>
-            </div>
 
-            <!-- Buscar Animais -->
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="dashboard-feature text-center">
-                    <div class="dashboard-icon">
-                        <a href="buscar_animais.php">
-                            <i class="bi bi-search"></i>
-                        </a>
-                    </div>
-                    <h3 class="mb-3">Buscar Animais</h3>
-                    <p>Encontre novos amigos peludos e explore animais cadastrados por outros usuários.</p>
-                </div>
-            </div>
-            <!-- Adicione mais colunas e funcionalidades conforme necessário -->
         </div>
     </div>
 </section>
