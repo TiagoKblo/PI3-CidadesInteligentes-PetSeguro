@@ -25,36 +25,47 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
-                data-aos-once="false">
-                PetSeguro
-            </a>
+          <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+            PetSeguro
+          </a>
 
-            <div>
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Início</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="informacoes.html">Gerar Relatórios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="cadastro_vet.html">Cadastrar Usuários</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.html">Minha Conta</a>
-                            </li>
-                        </ul>
+          <div>
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="relatorio.html">Relatórios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="gerenciar-usuarios.html">Gerenciar usuários</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      Cadastrar
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="cadastro.html">Usuários</a>
+                      <a class="dropdown-item" href="cadastropet.html">Animal</a>
+                      <a class="dropdown-item" href="cadastro_vet.html">Veteninário</a>
                     </div>
-                </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="logout.php">Sair</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-    </nav>
+          </div>
+      </nav>
 
 
     <!-- Seção de Cadastro de Usuário -->
@@ -65,7 +76,7 @@
                     <div class="cadastro-container">
                         <h2>Cadastro de Veterinários</h2>
                         <form id="cadastro-form" action="cadastro_vet.php" method="post">
-
+                            <h3 id="h3">Dados Gerais</h3>
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome Completo:</label>
                                 <input type="text" class="form-control" id="nome" name="nome">
@@ -106,7 +117,7 @@
                                     </div>
 
 
-                                    <h2>Clínica Veterinária</h2>
+                                    <h3 id="h3">Endereço Comercial</h3>
 
                                     <div class="mb-3">
                                         <label for="nome" class="form-label">Nome do Estabelecimento</label>
@@ -175,9 +186,13 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
+     <!-- Os scripts do Bootstrap e outros scripts necessários -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="scripts.js"></script>
 </body>
 
 </html>

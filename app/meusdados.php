@@ -65,9 +65,10 @@ try {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
+                data-aos-once="false">
                 PetSeguro
             </a>
             <div>
@@ -82,19 +83,14 @@ try {
                                 <a class="nav-link" href="index.html">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="informacoes.html">Informações Públicas</a>
-                            </li>
+                                <a class="nav-link" href="dashboard_usuario.php">Funcionalidades</a>
                             <li class="nav-item">
-                                <a class="nav-link" href="meusanimais.php">Meus Animais</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="meusdados.php">Meus Dados</a>
+                                <a class="nav-link" href="logout.php">Sair</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
     </nav>
 
     <section class="ficha-usuario" id="ficha-usuario">

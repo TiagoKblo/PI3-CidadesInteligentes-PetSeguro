@@ -50,6 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifica o resultado do cadastro
     if ($resultadoCadastro->getInsertedCount() > 0) {
         echo "Cadastro realizado com sucesso!";
+        // Redireciona para a página admin.html
+        header('Location: admin.html');
+        exit;
     } else {
         echo "Erro ao cadastrar. Por favor, tente novamente.";
     }

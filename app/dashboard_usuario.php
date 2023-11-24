@@ -56,10 +56,10 @@ $nomeUsuario = $_SESSION['nome_usuario'];
                                 <a class="nav-link" href="index.html">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="informacoes.html">Informações Públicas</a>
+                                <a class="nav-link" href="meusanimais.php?cpf=<?= $cpfUsuario ?>">Meus Animais</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="comunidade.html">Comunidade</a>
+                                <a class="nav-link" href="meusdados.php?cpf=<?= $cpfUsuario ?>"><Main>Atualizar Dados</Main></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Sair</a>

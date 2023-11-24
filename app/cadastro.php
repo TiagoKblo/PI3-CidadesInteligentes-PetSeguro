@@ -72,8 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Verifica o resultado do cadastro do proprietário
         if ($resultadoCadastroProprietario->getInsertedCount() > 0) {
             exibirMensagem('Cadastro do proprietário realizado com sucesso!', 'sucesso');
-            // Redireciona para a página cadastropet.html
-            header('Location: cadastropet.html');
+            // Redireciona para a página admin.html
+            header('Location: admin.html');
             exit;
         } else {
             exibirMensagem('Erro ao cadastrar o proprietário. Por favor, tente novamente.');
@@ -93,7 +93,7 @@ function exibirMensagem($mensagem, $tipo = 'erro')
     echo "<script>";
     echo "alert('$mensagem');";
     if ($tipo === 'sucesso') {
-        echo "window.location.href = 'cadastropet.html';";
+        echo "window.location.href = 'admin.html';";
     } else {
         echo "window.location.href = 'cadastro.html';";
     }

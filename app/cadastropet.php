@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($resultadoCadastroPet->getInsertedCount() > 0) {
             exibirMensagem('Cadastro do pet realizado com sucesso!', 'sucesso');
             // Redireciona para a página apropriada
-            header('Location: dashboard_usuario.php');
+            header('Location: admin.html');
             exit;
         } else {
             exibirMensagem('Erro ao cadastrar o pet. Por favor, tente novamente.');
@@ -72,7 +72,7 @@ function exibirMensagem($mensagem, $tipo = 'erro') {
     echo "<script>";
     echo "alert('$mensagem');";
     if ($tipo === 'sucesso') {
-        echo "window.location.href = 'dashboard_usuario.php';";
+        echo "window.location.href = 'admin.html';";
     } else {
         echo "window.location.href = 'cadastropet.html';";
     }

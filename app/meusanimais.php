@@ -60,7 +60,7 @@ try {
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
                 data-aos-once="false">
@@ -78,11 +78,7 @@ try {
                                 <a class="nav-link" href="index.html">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="informacoes.html">Informações Públicas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="comunidade.html">Comunidade</a>
-                            </li>
+                                <a class="nav-link" href="dashboard_usuario.php">Funcionalidades</a>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Sair</a>
                             </li>
@@ -91,35 +87,42 @@ try {
                 </div>
             </div>
     </nav>
+    <section class="meus-animais-section" id="meus-animais">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Meus Animais</h1>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Espécie</th>
+                            <th>Raça</th>
+                            <th>Data de Nascimento</th>
+                            <th>Visualizar</th> <!-- Nova coluna para o botão -->
+                            <!-- Adicione mais colunas conforme necessário -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($animaisCursor as $animal) : ?>
+                            <tr>
+                                <td><?= $animal['nome'] ?></td>
+                                <td><?= $animal['especie'] ?></td>
+                                <td><?= $animal['raca'] ?></td>
+                                <td><?= $animal['data-nascimento'] ?></td>
+                                <td><a href="fichapet.php?id=<?= $animal['_id'] ?>">Visualizar</a></td>
+                                <!-- Adicione mais células conforme necessário -->
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-
-    <h2>Meus Animais Cadastrados</h2>
-
-    <table border="1">
-        <thead>
-        <tr>
-                <th>Nome</th>
-                <th>Espécie</th>
-                <th>Raça</th>
-                <th>Data de Nascimento</th>
-                <th>Visualizar</th> <!-- Nova coluna para o botão -->
-                <!-- Adicione mais colunas conforme necessário -->
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($animaisCursor as $animal) : ?>
-                <tr>
-                    <td><?= $animal['nome'] ?></td>
-                    <td><?= $animal['especie'] ?></td>
-                    <td><?= $animal['raca'] ?></td>
-                    <td><?= $animal['data-nascimento'] ?></td>
-                    <td><a href="fichapet.php?id=<?= $animal['_id'] ?>">Visualizar</a></td>
-                    <!-- Adicione mais células conforme necessário -->
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
 <footer class="text-center">
         <div class="text-center p-3">
             <a href="https://github.com/TiagoKblo" class="custom-link">© 2023 PatSeguro - Todos os direitos

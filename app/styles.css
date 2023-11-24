@@ -10,56 +10,63 @@ body {
 .navbar-custom {
     background-color: rgba(59, 157, 254, 0.5);
     padding: 10px;
-    display: flex; /* Usar flexbox para alinhar verticalmente o conteúdo */
-    align-items: center; /* Centralizar verticalmente o conteúdo */
+    display: flex;
+    align-items: center;
 }
 
 /* Estilos para o texto "PetSeguro" na navbar */
-.navbar-brand {
-    color: #3c3b3b; /* Cor do texto */
-    font-weight: bold; /* Texto em negrito */
-    font-size: 30px; /* Tamanho da fonte para o texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
-    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Adicionar transição suave para cor, transform e sombra */
+.navbar-custom .navbar-brand {
+    color: #3c3b3b;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
-
 
 /* Efeito de hover para a marca e o ícone na navbar */
 .navbar-custom .navbar-brand:hover {
-    color: #3b9dfe; /* Mudar a cor do texto ao passar o mouse */
-    transform: scale(1.1); /* Aumentar o tamanho do ícone e do texto no hover */
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Adicionar uma sombra no texto no hover */
+    color: #3b9dfe;
+    transform: scale(1.1);
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
 }
-
-.navbar-custom .navbar-brand img:hover {
-    transform: scale(1.1); /* Aumentar o tamanho do ícone no hover */
-}
-
 
 /* Estilos para os links de navegação */
 .navbar-custom .navbar-nav .nav-item .nav-link {
-    font-weight: bold; /* Texto em negrito */
-    font-size: 20px; /* Tamanho da fonte para o texto */
-    color: #3c3b3b; /* Cor dos links */
-    margin: 0 10px; /* Espaçamento horizontal entre os links */
-    transition: color 0.3s ease-in-out; /* Efeito de transição suave para a cor do texto */
+    font-weight: bold;
+    font-size: 20px;
+    color: #3c3b3b;
+    margin: 0 10px;
+    transition: color 0.3s ease-in-out;
     text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento de texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos para os links de navegação no hover */
-.navbar-custom .navbar-nav .nav-item .nav-link {
-    transition: color 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, border-radius 0.3s ease; /* Adicionando transições suaves para cor, transform, sombra e borda */
-    border-radius: 0; /* Remover qualquer borda arredondada padrão */
-}
-
 .navbar-custom .navbar-nav .nav-item .nav-link:hover {
-    color: #3b9dfe; /* Mudar a cor dos links ao passar o mouse */
-    transform: scale(1.2); /* Aumentar o tamanho do texto no hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionar uma sombra no hover */
-    border-radius: 15px; /* Adicionar bordas arredondadas no hover */
+    color: #3b9dfe;
+    transform: scale(1.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
+/* Estilos para o dropdown */
+.navbar-custom .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos para os itens do dropdown */
+.navbar-custom .navbar-nav .nav-item.dropdown .dropdown-menu {
+    background-color: rgba(59, 157, 254, 0.5);
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os itens do dropdown no hover */
+.navbar-custom .navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #3b9dfe;
+    color: #fff;
+}
 
 
 /* Estilos para a seção Banner */
@@ -423,7 +430,12 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
+#h3 {
+    font-size: 35px;
+    margin-top: 20px;
+    color: #3b9dfe;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5); /* Sombreamento de texto */
+}
 .cadastro-container {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -855,4 +867,49 @@ canvas {
     border-radius: 8px; /* Borda arredondada */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
+/* Estilo para a seção de Meus Animais */
+#meus-animais {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 800px; /* Ajuste conforme necessário */
+    margin: 50px auto; /* Ajuste conforme necessário */
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
+}
 
+#meus-animais h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(78, 79, 79, 0.5);
+}
+
+#meus-animais table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#meus-animais th, #meus-animais td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#meus-animais th {
+    background-color: #f2f2f2;
+}
+
+#meus-animais a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b9dfe;
+    text-shadow: 2px 2px 4px rgba(88, 88, 88, 0.5);
+}
+
+#meus-animais a:hover {
+    color: #3c3b3b;
+}
