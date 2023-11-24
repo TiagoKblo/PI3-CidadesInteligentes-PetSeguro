@@ -18,7 +18,8 @@ if (isset($_GET['id'])) {
     // Você pode redirecionar para uma página de erro ou tomar outra ação, se necessário
 }
 
-function buscarPetPorId($petId) {
+function buscarPetPorId($petId)
+{
     global $mongoManager;
 
     try {
@@ -63,14 +64,12 @@ function buscarPetPorId($petId) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
-                data-aos-once="false">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
                 PetSeguro
             </a>
             <div>
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -115,7 +114,16 @@ function buscarPetPorId($petId) {
                             </tr>
                             <tr>
                                 <th>Espécie:</th>
-                                <td><?php echo $petEncontrado['especie']; ?></td>
+                                <td>
+                                    <?php
+                                    echo $petEncontrado['especie'];
+
+                                    // Verifica se a espécie é "outro" e se há um valor em "outra-especie"
+                                    if ($petEncontrado['especie'] === 'outro' && !empty($petEncontrado['outra-especie'])) {
+                                        echo ' - ' . $petEncontrado['outra-especie'];
+                                    }
+                                    ?>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Raça:</th>

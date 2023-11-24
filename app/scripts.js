@@ -35,7 +35,29 @@ if (document.location.pathname.endsWith("cadastropet.html")) {
   });
 }
 
+// Verifica se a página atual é 'cadastropet.html'
+if (document.location.pathname.endsWith("cadastropet.html")) {
+  // Obtém referências para os elementos do formulário
+  var especieSelect = document.getElementById("especie");
+  var outraEspecieLabel = document.getElementById("outra-especie-label");
+  var outraEspecieInput = document.getElementById("outra-especie-input");
 
+  // Adiciona um ouvinte de evento para o campo "Espécie"
+  especieSelect.addEventListener("change", function () {
+    mostrarOutraEspecie();
+  });
+
+  function mostrarOutraEspecie() {
+    // Mostra o campo "Qual espécie?" e a caixa de texto apenas se "Outra" for selecionada
+    if (especieSelect.value === "outro") {
+      outraEspecieLabel.style.display = "block";
+      outraEspecieInput.style.display = "block";
+    } else {
+      outraEspecieLabel.style.display = "none";
+      outraEspecieInput.style.display = "none";
+    }
+  }
+}
 
 // Verifica se a página atual é 'cadastropet.html'
 if (document.location.pathname.endsWith("cadastropet.html")) {
@@ -51,20 +73,6 @@ if (document.location.pathname.endsWith("cadastropet.html")) {
       // Limpar o valor do campo quando ele estiver oculto
       qualDoencaInput.value = "";
     }
-  }
-
-  // Obtém referências para os elementos do formulário
-  var especieSelect = document.getElementById("especie");
-  var outraEspecieInput = document.getElementById("outra-especie");
-
-  // Adiciona um ouvinte de evento para o campo "Espécie"
-  especieSelect.addEventListener("change", function () {
-    mostrarOutraEspecie();
-  });
-
-  function mostrarOutraEspecie() {
-    // Mostra o campo "Qual espécie?" apenas se "Outra" for selecionada
-    outraEspecieInput.style.display = especieSelect.value === "outro" ? "block" : "none";
   }
 
   function mostrarOcultarChip(selectElement) {

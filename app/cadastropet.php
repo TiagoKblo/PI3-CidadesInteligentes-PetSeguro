@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'cpf_proprietario' => $cpfProprietario,
         'nome' => $_POST['nome-pet'],
         'especie' => $_POST['especie'],
-        'outraEspecie' => isset($_POST['outraEspecie']) ? $_POST['outraEspecie'] : null,
+        'outra-especie' => isset($_POST['outra-especie']) ? $_POST['outra-especie'] : null,
         'raca' => $_POST['raca'],
         'data-nascimento' => $_POST['data-nascimento'],
         'cor' => $_POST['cor'],

@@ -15,8 +15,7 @@ function formatarCPF($cpf)
 
     return $cpfFormatado;
 }
-// Debug: Verifica o valor do CPF da sessão
-var_dump($_SESSION['cpf_usuario']);
+
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Coleta dados do formulário do proprietário
@@ -28,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'telefone' => $_POST['telefone'],
         // Adicione outros campos que deseja atualizar
     ];
-
 
     // Verifica se as senhas coincidem
     if ($dadosAtualizados['senha'] !== $dadosAtualizados['confirmar-senha']) {
@@ -83,26 +81,4 @@ function exibirMensagem($mensagem, $tipo = 'erro')
     }
     echo "</script>";
     exit;
-}
-// ... (Seu código anterior)
-
-
-
-// Atualiza o documento do proprietário na coleção
-$filtro = ['cpf' => $_SESSION['cpf_usuario']]; // Utiliza o CPF da sessão para identificar o proprietário
-$atualizacao = ['$set' => $dadosAtualizados];
-$resultadoAtualizacao = $proprietariosCollection->updateOne($filtro, $atualizacao);
-
-// Debug: Verifica o resultado da atualização
-var_dump($resultadoAtualizacao);
-
-// Verifica o resultado da atualização do proprietário
-if ($resultadoAtualizacao->getMatchedCount() > 0 && $resultadoAtualizacao->getModifiedCount() > 0) {
-    exibirMensagem('Dados atualizados com sucesso!', 'sucesso');
-    // Redireciona para a página de dashboard após a atualização
-    header('Location: dashboard_usuario.php');
-    exit;
-} else {
-    // Debug: Adiciona o erro específico do MongoDB à mensagem
-    exibirMensagem('Nenhum dado foi atualizado. Erro: ' . $resultadoAtualizacao->getWriteErrors(), 'erro');
 }
