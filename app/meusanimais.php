@@ -100,7 +100,8 @@ try {
                             <th>Espécie</th>
                             <th>Raça</th>
                             <th>Data de Nascimento</th>
-                            <th>Visualizar</th> <!-- Nova coluna para o botão -->
+                            <th>Ficha Animal</th>
+                            <th>Comunicar</th>
                             <!-- Adicione mais colunas conforme necessário -->
                         </tr>
                     </thead>
@@ -112,7 +113,9 @@ try {
                                 <td><?= $animal['raca'] ?></td>
                                 <td><?= $animal['data-nascimento'] ?></td>
                                 <td><a href="fichapet.php?id=<?= $animal['_id'] ?>">Visualizar</a></td>
-                                <!-- Adicione mais células conforme necessário -->
+                                <td>
+                                    <a href="editarpet.php?id=<?= $animal['_id'] ?>">Perda</a>
+                                    <a href="excluirpet.php?id=<?= $animal['_id'] ?>">Óbito</a>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -133,11 +136,7 @@ try {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts.js"></script>
-    <script>
-        document.getElementById('cpf-proprietario').addEventListener('blur', function () {
-            document.getElementById('cpf-proprietario-hidden').value = this.value;
-        });
-    </script>
+    
 </body>
 
 </html>

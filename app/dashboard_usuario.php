@@ -4,7 +4,7 @@ session_start();
 
 // Verifica se a sessão do CPF não está definida, redireciona para a página de login
 if (!isset($_SESSION['cpf_usuario'])) {
-    header("Location: login.php");
+    header("Location: login.html");
     exit;
 }
 
