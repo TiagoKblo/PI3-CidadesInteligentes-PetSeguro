@@ -5,6 +5,34 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+/* Estilo para a Seção Principal */
+.main-section {
+    padding: 50px 0;
+}
+
+/* Estilo para as Imagens dentro das Rows */
+.row img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Adapte conforme necessário */
+    margin-bottom: 20px;
+}
+
+/* Estilo para os Parágrafos dentro das Rows */
+.row p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Estilo para os Títulos H2 */
+h2 {
+    color: #333; /* Cor do texto do título */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Adapte as cores, fontes e outros estilos conforme necessário */
 
 /* Estilos para a barra de navegação */
 .navbar-custom {
