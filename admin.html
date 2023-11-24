@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Link para o ícone da página -->
+  <link rel="icon" href="imagens/icone.png" type="image/x-icon">
+
+  <!-- Link para o Bootstrap CSS  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+  <!-- Link para a biblioteca AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Link para a biblioteca Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Arquivo CSS personalizado para estilos específicos -->
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Administrador</title>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+  <div class="container">
+      <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
+          data-aos-once="false">
+          PetSeguro
+      </a>
+
+      <div>
+          <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="admin.html">Dashboard</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="relatorio.html">Relatórios</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="gerenciar-usuarios.html">Gerenciar usuários</a>
+                    </li>
+                    <div class="dropdown nav-item">
+                      <a class=" nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cadastrar
+                      </a>
+
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Usuários</a>
+                        <a class="dropdown-item" href="#">Animal</a>
+                        <a class="dropdown-item" href="#">Veteninário</a>
+                      </div>
+                    </div>
+                      <li class="nav-item">
+                          <a class="nav-link" href="index.html">Sair</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+</nav>
+
+<section>
+  <h1>Bem vindo Administrador</h1>
+  <p>Gerenciar usuários</p>
+  <p></p>
+  <p></p>
+</section>
+
+  <!-- Rodapé -->
+  <footer class="text-center">
+    <div class="text-center p-3">
+      <a href="https://github.com/TiagoKblo" class="custom-link">© 2023 PatSeguro - Todos os direitos
+        reservados</a>
+    </div>
+  </footer>
+
+
+  <!-- Os scripts do Bootstrap e outros scripts necessários -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="animation.js"></script>
+  <script src="graficos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" onload="inicializarGraficos()"></script>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
