@@ -68,12 +68,46 @@
         </div>
       </div>
   </nav>
-<section>
-  <h1>Gerenciamento de usuários</h1>
-  <p>Deve ter</p>
-  <p>A tabela do banco</p>
-  <p>Mostrando suas Informações</p>
+<!-- Seção do Gerenciar Usuários -->
+<section class="gerenciar-usuarios-section" id="gerenciar-usuarios">
+  <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="500">
+              <h2 class="section-heading">Bem-vindo, <?php echo $nomeUsuario; ?>!</h2>
+              <p class="section-subheading">Gerencie os usuários do PetSeguro, incluindo Tutores e Veterinários.</p>
+          </div>
+      </div>
+
+      <div class="row">
+          <!-- Gerenciar Tutores -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="gerenciar-usuarios-feature text-center">
+                  <div class="gerenciar-usuarios-icon">
+                      <a href="gerenciar-tutores.php">
+                          <i class="bi bi-person"></i>
+                      </a>
+                  </div>
+                  <h3 class="mb-3">Gerenciar Tutores</h3>
+                  <p>Visualize e gerencie informações sobre os Tutores cadastrados no PetSeguro.</p>
+              </div>
+          </div>
+
+          <!-- Gerenciar Veterinários -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+              <div class="gerenciar-usuarios-feature text-center">
+                  <div class="gerenciar-usuarios-icon">
+                      <a href="gerenciar-veterinarios.php">
+                          <i class="bi bi-person"></i>
+                      </a>
+                  </div>
+                  <h3 class="mb-3">Gerenciar Veterinários</h3>
+                  <p>Visualize e gerencie informações sobre os Veterinários cadastrados no PetSeguro.</p>
+              </div>
+          </div>
+      </div>
+  </div>
 </section>
+
 
 
 <!-- Rodapé -->

@@ -58,7 +58,7 @@ body {
 .navbar-custom .navbar-nav .nav-item.dropdown .dropdown-menu {
     background-color: rgba(59, 157, 254, 0.5);
     border: none;
-    border-radius: 0;
+    border-radius: 10;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -820,7 +820,7 @@ canvas {
 /* CSS para a Seção do Dashboard */
 .dashboard-section {
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 50px 0;
+    padding: 10px 0;
 
 
 }
@@ -856,6 +856,44 @@ canvas {
 .dashboard-feature p {
     color: #3c3b3b;
 }
+/* CSS para a Seção do Gerenciar Usuários */
+.gerenciar-usuarios-section {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 0;
+}
+
+.gerenciar-usuarios-icon {
+    font-size: 3rem;
+    color: #3c3b3b;
+}
+
+.gerenciar-usuarios-feature {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: rgba(59, 157, 254, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    transition: background-color 0.3s;
+    height: 100%; /* Define a altura de todas as seções como 100% */
+}
+
+.gerenciar-usuarios-feature:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+/* Texto dentro da Seção do Gerenciar Usuários */
+.gerenciar-usuarios-feature h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3c3b3b;
+}
+
+.gerenciar-usuarios-feature p {
+    color: #3c3b3b;
+}
+
 /* Estilo para o Mapa */
 #map {
     height: 600px; /* Altura desejada para a div do mapa */

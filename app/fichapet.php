@@ -62,14 +62,16 @@ function buscarPetPorId($petId)
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
+                data-aos-once="false">
                 PetSeguro
             </a>
             <div>
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -78,13 +80,9 @@ function buscarPetPorId($petId)
                                 <a class="nav-link" href="index.html">Início</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="informacoes.html">Informações Públicas</a>
-                            </li>
+                                <a class="nav-link" href="dashboard_usuario.php">Funcionalidades</a>
                             <li class="nav-item">
-                                <a class="nav-link" href="comunidade.html">Comunidade</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="dashboard_usuario.php">Minha Conta</a>
+                                <a class="nav-link" href="logout.php">Sair</a>
                             </li>
                         </ul>
                     </div>
@@ -94,14 +92,15 @@ function buscarPetPorId($petId)
 
     <section class="ficha-pet" id="ficha-pet">
         <div class="container">
-            <h2 class="text-center">Ficha do Pet</h2>
+
 
             <?php
             // Verifica se há um animal de estimação encontrado
             if ($petEncontrado) {
             ?>
+            <h2 class="text-center"><?php echo $petEncontrado['nome']; ?></h2>
                 <div class="primeiro-elemento">
-                    <img src="<?php echo $petEncontrado['fotoPet']; ?>" alt="Foto do Pet" class="img-fluid imagem-pet">
+                    <img src="imagens/golfinho.webp" alt="Foto do Pet" class="img-fluid imagem-pet">
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
