@@ -58,7 +58,7 @@ function buscarPetPorId($petId)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Pet</title>
+    <title>Ficha do Animal</title>
 
     <!-- Link para o ícone da página -->
     <link rel="icon" href="imagens/icone.png" type="image/x-icon">
@@ -74,6 +74,7 @@ function buscarPetPorId($petId)
 
     <!-- Arquivo CSS personalizado para estilos específicos -->
     <link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
@@ -186,53 +187,100 @@ function buscarPetPorId($petId)
                         <h3>Exames Médicos</h3>
                         <p><strong>Anexar Exames Médicos:</strong> [Inserir link ou imagem dos exames médicos, se aplicável]</p>
 
-                        <!-- Vacinas -->
-                        <h3>Vacinas</h3>
-                        <table class="table">
-                            <tr>
-                                <th>O animal está Vacinado?</th>
-                                <td><?php echo $petEncontrado['animal-vacinado'] ? 'Sim' : 'Não'; ?></td>
-                            </tr>
-                        </table>
-
-                        <!-- Campos de Vacinação (se aplicável) -->
-                        <h3>Detalhes da Vacina</h3>
+<!-- Vacinas -->
+<h3>Vacinas</h3>
 <table class="table">
     <tr>
-        <th>Tipo de Vacina</th>
-        <td><?php echo $petEncontrado['tipo-vacina']; ?></td>
+        <th>O animal está Vacinado?</th>
+        <td><?php echo $petEncontrado['animal-vacinado'] ? 'Sim' : 'Não'; ?></td>
     </tr>
     <tr>
-        <th>Data da Vacina</th>
-        <td><?php echo $petEncontrado['data-vacina']; ?></td>
-    </tr>
-    <tr>
-        <th>Validade da Vacina</th>
-        <td><?php echo $petEncontrado['validade-vacina']; ?></td>
-    </tr>
-    <tr>
-        <th>Número do Lote</th>
-        <td><?php echo $petEncontrado['lote-vacina']; ?></td>
-    </tr>
-    <tr>
-        <th>Fabricante da Vacina</th>
-        <td><?php echo $petEncontrado['fabricante-vacina']; ?></td>
-    </tr>
-    <tr>
-        <th>Número da Dose</th>
-        <td><?php echo $petEncontrado['dose-vacina']; ?></td>
+        <th>Quantidade de Vacinas:</th>
+        <td><?php echo count($petEncontrado['vacinas']); ?></td>
     </tr>
 </table>
 
-                    </div>
-            </div>
-        <?php
-        } else {
-            echo '<p>Nenhum pet encontrado.</p>';
-        }
-        ?>
+<!-- Campos de Vacinação (se aplicável) -->
+<?php if ($petEncontrado['animal-vacinado'] && !empty($petEncontrado['vacinas'])) : ?>
+    <h3>Detalhes das Vacinas</h3>
+    <table class="table">
+        <tr>
+            <th>Tipo de Vacina</th>
+            <th>Data da Aplicação</th>
+            <th>Validade da Vacina</th>
+            <th>Número do Lote</th>
+            <th>Fabricante da Vacina</th>
+            <th>Número da Dose</th>
+        </tr>
+        <?php foreach ($petEncontrado['vacinas'] as $vacina) : ?>
+            <tr>
+                <td><?php echo $vacina['tipo-vacina']; ?></td>
+                <td><?php echo $vacina['data-vacina']; ?></td>
+                <td><?php echo $vacina['validade-vacina']; ?></td>
+                <td><?php echo $vacina['lote-vacina']; ?></td>
+                <td><?php echo $vacina['fabricante-vacina']; ?></td>
+                <td><?php echo $vacina['dose-vacina']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php else : ?>
+    <p>Nenhuma informação de vacina disponível.</p>
+<?php endif; ?>
+
+<!-- Botão "Adicionar Vacina" e Campos para preenchimento -->
+<button type="button" id="btnAdicionarVacina" class="btn btn-primary" onclick="mostrarCamposVacina()">Adicionar Vacina</button>
+
+<div id="campos-vacina" style="display: none;">
+    <!-- Usar a classe "vacina" para agrupar os campos de cada vacina -->
+    <div class="row mb-3 vacina">
+        <div class="col-md-6">
+            <label for="tipo-vacina" class="form-label">Tipo de Vacina:</label>
+            <input type="text" class="form-control" name="tipo-vacina[]">
+        </div>
+
+        <div class="col-md-6">
+            <label for="data-vacina" class="form-label">Data da Aplicação:</label>
+            <input type="date" class="form-control" name="data-vacina[]">
+        </div>
+
+        <div class="col-md-6">
+            <label for="validade-vacina" class="form-label">Validade da Vacina:</label>
+            <input type="date" class="form-control" name="validade-vacina[]">
+        </div>
+
+        <div class="col-md-6">
+            <label for="lote-vacina" class="form-label">Número do Lote:</label>
+            <input type="text" class="form-control" name="lote-vacina[]">
+        </div>
+
+        <div class="col-md-6">
+            <label for="fabricante-vacina" class="form-label">Fabricante da Vacina:</label>
+            <input type="text" class="form-control" name="fabricante-vacina[]">
+        </div>
+
+        <div class="col-md-6">
+            <label for="dose-vacina" class="form-label">Número da Dose:</label>
+            <input type="number" class="form-control" name="dose-vacina[]">
+        </div>
+
     </div>
+    <!-- Botão para confirmar a adição da vacina -->
+    <button type="button" onclick="adicionarVacina()">Confirmar</button>
+</div>
+
+<!-- Fechamento da div que envolve a sua página -->
+</div>
+</div>
+
+<?php
+} else {
+    echo '<p>Nenhum pet encontrado.</p>';
+}
+?>
+</div>
 </section>
+
+
 
 
     <footer class="text-center">
@@ -244,6 +292,7 @@ function buscarPetPorId($petId)
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 

@@ -27,16 +27,13 @@ if (document.location.pathname.endsWith("cadastropet.html")) {
       });
 
       // Inicializa o popover
-      $('#cpf-proprietario').popover({
-          placement: 'right',
-          trigger: 'focus',
-          html: true
-      });
+    $('#cpf-proprietario').popover({
+      placement: 'right',
+      trigger: 'focus',
+      html: true
+    });
   });
-}
 
-// Verifica se a página atual é 'cadastropet.html'
-if (document.location.pathname.endsWith("cadastropet.html")) {
   // Obtém referências para os elementos do formulário
   var especieSelect = document.getElementById("especie");
   var outraEspecieLabel = document.getElementById("outra-especie-label");
@@ -57,10 +54,7 @@ if (document.location.pathname.endsWith("cadastropet.html")) {
       outraEspecieInput.style.display = "none";
     }
   }
-}
 
-// Verifica se a página atual é 'cadastropet.html'
-if (document.location.pathname.endsWith("cadastropet.html")) {
   // Mostra ou oculta o campo de texto "Qual doença?"
   function mostrarOcultarDoenca(selectElement) {
     var qualDoencaDiv = document.getElementById("qual-doenca-div");
@@ -93,6 +87,66 @@ if (document.location.pathname.endsWith("cadastropet.html")) {
 
     camposVacina.style.display = selectElement.value === "sim" ? "block" : "none";
   }
+}
+
+// Verifica se a página atual é 'fichapet.php'
+if (document.location.pathname.endsWith("fichapet.php")) {
+  // Código existente para 'fichapet.php'
+
+  // Função para mostrar/ocultar campos de vacina
+function mostrarCamposVacina() {
+  var camposVacina = document.getElementById("campos-vacina");
+  camposVacina.style.display = "block";
+}
+
+// Função para adicionar campos de uma nova vacina
+function adicionarVacina() {
+  // Obtém a referência para os campos de vacina
+  var camposVacina = document.getElementById("campos-vacina");
+
+  // Clone do primeiro conjunto de campos de vacina
+  var novaVacina = camposVacina.firstElementChild.cloneNode(true);
+
+  // Limpa os valores nos campos clonados
+  var inputs = novaVacina.querySelectorAll("input");
+  inputs.forEach(function (input) {
+    input.value = "";
+  });
+
+  // Adiciona a nova vacina ao final da lista
+  camposVacina.appendChild(novaVacina);
+
+  // Obtém os valores dos campos da nova vacina
+  var tipoVacina = novaVacina.querySelector('input[name="tipo-vacina[]"]').value;
+  var dataVacina = novaVacina.querySelector('input[name="data-vacina[]"]').value;
+  var validadeVacina = novaVacina.querySelector('input[name="validade-vacina[]"]').value;
+  var loteVacina = novaVacina.querySelector('input[name="lote-vacina[]"]').value;
+  var fabricanteVacina = novaVacina.querySelector('input[name="fabricante-vacina[]"]').value;
+  var doseVacina = novaVacina.querySelector('input[name="dose-vacina[]"]').value;
+
+  // Faz uma requisição AJAX para o arquivo PHP que salvará as informações no banco de dados
+  $.ajax({
+    type: 'POST',
+    url: 'salvar_vacina.php', // Altere para o nome do arquivo PHP que salvará as informações
+    data: {
+      tipoVacina: tipoVacina,
+      dataVacina: dataVacina,
+      validadeVacina: validadeVacina,
+      loteVacina: loteVacina,
+      fabricanteVacina: fabricanteVacina,
+      doseVacina: doseVacina
+    },
+    success: function (response) {
+      // Exibe uma mensagem de sucesso (ou tratamento adicional, se necessário)
+      exibirMensagem('success', 'Vacina adicionada com sucesso!');
+    },
+    error: function (error) {
+      // Exibe uma mensagem de erro (ou tratamento adicional, se necessário)
+      exibirMensagem('danger', 'Erro ao adicionar vacina. Tente novamente.');
+      console.error('Erro ao adicionar vacina:', error);
+    }
+  });
+}
 }
 
 
