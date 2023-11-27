@@ -51,7 +51,7 @@ try {
                 <a class="nav-link" href="admin.html">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="relatorio.html">Relatórios</a>
+                <a class="nav-link" href="relatorio.php">Relatórios</a>
               </li>
 
               <li class="nav-item dropdown">
