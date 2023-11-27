@@ -12,12 +12,27 @@ if (isset($_GET['id'])) {
     if (!$petEncontrado) {
         echo '<p>Animal de estimação não encontrado.</p>';
         // Você pode redirecionar para uma página de erro ou tomar outra ação, se necessário
+    } else {
+        // Verifica se a chave "cpf_proprietario" está definida no array $petEncontrado
+        $cpfProprietario = isset($petEncontrado['cpf_proprietario']) ? $petEncontrado['cpf_proprietario'] : null;
+
+        if ($cpfProprietario) {
+            // Buscar proprietário pelo CPF
+            $proprietarioEncontrado = buscarProprietarioPorCPF($cpfProprietario);
+
+            if ($proprietarioEncontrado) {
+                $nomeProprietario = $proprietarioEncontrado['nome'];
+            } else {
+                $nomeProprietario = 'Proprietário não encontrado';
+            }
+        } else {
+            $nomeProprietario = 'CPF do proprietário não disponível';
+        }
     }
 } else {
     echo '<p>ID do animal de estimação não fornecido.</p>';
     // Você pode redirecionar para uma página de erro ou tomar outra ação, se necessário
 }
-
 function buscarPetPorId($petId)
 {
     global $mongoManager;
@@ -106,10 +121,10 @@ function buscarPetPorId($petId)
                     <!-- Dados Gerais -->
                     <h3>Dados Gerais</h3>
                     <table class="table">
-                        <tr>
-                            <th>Nome do Proprietario:</th>
-                            <td><?php echo $petEncontrado['nome']; ?></td>
-                        </tr>
+                    <tr>
+    <th>Nome do Proprietario:</th>
+    <td><?php echo $nomeProprietario; ?></td>
+</tr>
                         <tr>
                             <th>Espécie:</th>
                             <td>

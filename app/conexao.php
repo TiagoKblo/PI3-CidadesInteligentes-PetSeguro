@@ -18,6 +18,21 @@ class MongoDBManager {
         return $collection->findOne($filter);
     }
 }
+function buscarProprietarioPorCPF($cpf)
+{
+    global $mongoManager;
+
+    try {
+        // Consulta no MongoDB para encontrar o proprietário pelo CPF
+        $proprietarioEncontrado = $mongoManager->findOne('proprietarios', ['cpf' => $cpf]);
+
+        return $proprietarioEncontrado;
+    } catch (Exception $e) {
+        // Trate a exceção, por exemplo, registrando em logs ou retornando uma mensagem de erro
+        return null;
+    }
+}
+
 
 try {
     $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');
