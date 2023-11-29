@@ -1,12 +1,24 @@
 // Exemplo de dados de animais perdidos
 const lostPetsData = [
     {
-      name: 'Cachorro Perdido',
+      name: 'REX',
       type: 'Cachorro',
       color: 'Marrom',
-      coordinates: { lat: -22.439, lng: -46.820 }
+      coordinates: { lat: -22.439, lng: -46.830 }
     },
     // Adicione mais animais conforme necessário
+    {
+        name: 'TOTO',
+        type: 'Cachorro',
+        color: 'Amarelo',
+        coordinates: { lat: -22.440, lng: -46.815 }
+    },
+    {
+        name: 'Garfield',
+        type: 'Gato',
+        color: 'Laranja',
+        coordinates: { lat: -22.410, lng: -46.840 }
+    }
   ];
 
   // Função para carregar marcadores de animais perdidos no mapa
