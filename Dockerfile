@@ -26,6 +26,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install zip
 
+RUN composer install
+
 EXPOSE 80
 
 #Digite no terminal o seguinte comando: docker build -t php8.2 .
