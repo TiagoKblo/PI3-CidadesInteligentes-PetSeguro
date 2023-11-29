@@ -948,16 +948,29 @@ canvas {
 
 
 /* Estilo para o Mapa */
-#map {
-    height: 600px; /* Altura desejada para a div do mapa */
-    width: 100%;  /* A largura ocupa 100% da largura do contêiner pai, ajuste conforme necessário */
-
-    /* Adicione estilos adicionais conforme necessário */
-    border: 1px solid #ccc; /* Borda para a div do mapa */
-    margin-top: 20px; /* Margem superior para separação de outros elementos */
-    border-radius: 8px; /* Borda arredondada */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+#map-container {
+    height: 600px; /* Altura desejada para a coluna que contém o mapa */
 }
+
+#map {
+    height: 100%; /* Altura 100% da coluna que contém o mapa */
+    width: 100%;  /* Largura 100% da largura do contêiner pai, ajuste conforme necessário */
+
+    /* Outros estilos conforme necessário */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#animal-info {
+    height: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Estilo para a seção de Meus Animais */
 #meus-animais {
     background-color: rgba(255, 255, 255, 0.8);
