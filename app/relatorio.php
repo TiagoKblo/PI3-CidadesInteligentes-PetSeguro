@@ -20,6 +20,9 @@ try {
   // Total de animais registrados
   $totalAnimais = $animaisCollection->countDocuments();
 
+  // Total animais perdidos
+  $totalPerdidos = $animaisCollection->countDocuments(['animal-perdido' => 'sim']);
+
   // Total de animais castrados
   $totalCastrados = $animaisCollection->countDocuments(['castrado' => 'sim']);
 
@@ -125,6 +128,9 @@ try {
                 <td>Total de animais registrados</td>
                 <td><?= $totalAnimais ?></td>
               </tr>
+              <tr>
+                <td>Total de animais perdidos</td>
+                <td><?= $totalPerdidos ?></td>
               <tr>
                 <td>Total de animais castrados</td>
                 <td><?= $totalCastrados ?></td>

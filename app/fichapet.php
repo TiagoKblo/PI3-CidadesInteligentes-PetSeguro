@@ -230,46 +230,7 @@ function buscarPetPorId($petId)
     <p>Nenhuma informação de vacina disponível.</p>
 <?php endif; ?>
 
-<!-- Botão "Adicionar Vacina" e Campos para preenchimento -->
-<button type="button" id="btnAdicionarVacina" class="btn btn-primary" onclick="mostrarCamposVacina()">Adicionar Vacina</button>
 
-<div id="campos-vacina" style="display: none;">
-    <!-- Usar a classe "vacina" para agrupar os campos de cada vacina -->
-    <div class="row mb-3 vacina">
-        <div class="col-md-6">
-            <label for="tipo-vacina" class="form-label">Tipo de Vacina:</label>
-            <input type="text" class="form-control" name="tipo-vacina[]">
-        </div>
-
-        <div class="col-md-6">
-            <label for="data-vacina" class="form-label">Data da Aplicação:</label>
-            <input type="date" class="form-control" name="data-vacina[]">
-        </div>
-
-        <div class="col-md-6">
-            <label for="validade-vacina" class="form-label">Validade da Vacina:</label>
-            <input type="date" class="form-control" name="validade-vacina[]">
-        </div>
-
-        <div class="col-md-6">
-            <label for="lote-vacina" class="form-label">Número do Lote:</label>
-            <input type="text" class="form-control" name="lote-vacina[]">
-        </div>
-
-        <div class="col-md-6">
-            <label for="fabricante-vacina" class="form-label">Fabricante da Vacina:</label>
-            <input type="text" class="form-control" name="fabricante-vacina[]">
-        </div>
-
-        <div class="col-md-6">
-            <label for="dose-vacina" class="form-label">Número da Dose:</label>
-            <input type="number" class="form-control" name="dose-vacina[]">
-        </div>
-
-    </div>
-    <!-- Botão para confirmar a adição da vacina -->
-    <button type="button" onclick="adicionarVacina()">Confirmar</button>
-</div>
 
 <!-- Fechamento da div que envolve a sua página -->
 </div>

@@ -163,13 +163,7 @@ h2 {
     margin-bottom: 40px; /* Espaçamento inferior do título */
 }
 
-/* Estilos para a div do mapa */
-#map {
-    height: 400px;
-    border: 2px solid #3b9dfe; /* Borda fina ao redor do mapa */
-    border-radius: 5px; /* Borda arredondada */
 
-}
 
 /* Estilos para a seção de configurações */
 #config-panel {
