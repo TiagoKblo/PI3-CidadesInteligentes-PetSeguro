@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'data-nascimento' => $_POST['data-nascimento'],
         'cpf' => formatarCPF($_POST['cpf']), // Formata o CPF antes de salvar
         'sexo' => $_POST['sexo'],
-        'quantidade-animais' => isset($_POST['quantidade-animais']) ? (int)$_POST['quantidade-animais'] : 0,
         'cep' => $_POST['cep'],
         'estado' => $_POST['estado'],
         'cidade' => $_POST['cidade'],

@@ -1,7 +1,8 @@
 <?php
 // Incluir o arquivo de conexão e verificar a sessão
 require_once __DIR__ . '/conexao.php';
-
+// Adicione a chamada da função para buscarAnimaisComEndereco
+buscarAnimaisComEndereco();
 // Consultar todos os animais cadastrados
 try {
   $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');

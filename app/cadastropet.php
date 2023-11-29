@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'porte' => $_POST['porte'],
         'peso' => isset($_POST['peso']) ? $_POST['peso'] : null,
         'foto' => $_FILES['foto-pet']['name'], // Nome do arquivo da foto (será preciso mover o arquivo para um diretório)
+        'animal-perdido' => isset($_POST['animal-perdido']) ? $_POST['animal-perdido'] : 'nao',
         'possui-microchip' => $_POST['possui-microchip'],
         'numero-do-chip' => isset($_POST['numero-do-chip']) ? $_POST['numero-do-chip'] : null,
         'tipo-sanguineo' => $_POST['tipo-sanguineo'],

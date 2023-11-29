@@ -153,8 +153,11 @@ function buscarPetPorId($petId)
                     <h3>Informações de Rastreamento</h3>
                     <table class="table">
                         <tr>
+                            <th>Animal Está Perdido?</th>
+                            <td><?php echo $petEncontrado['animal-perdido']; ?></td>
+                        <tr>
                             <th>Possui Microchip?</th>
-                            <td><?php echo $petEncontrado['possui-microchip'] ? 'Sim' : 'Não'; ?></td>
+                            <td><?php echo $petEncontrado['possui-microchip']; ?></td>
                         </tr>
                         <tr>
                             <th>Número do Chip:</th>
@@ -171,11 +174,11 @@ function buscarPetPorId($petId)
                             </tr>
                             <tr>
                                 <th>Animal é Castrado?</th>
-                                <td><?php echo $petEncontrado['castrado'] ? 'Sim' : 'Não'; ?></td>
+                                <td><?php echo $petEncontrado['castrado']; ?></td>
                             </tr>
                             <tr>
                                 <th>Doenças Conhecidas:</th>
-                                <td><?php echo $petEncontrado['doencas-conhecidas'] ? 'Sim' : 'Não'; ?></td>
+                                <td><?php echo $petEncontrado['doencas-conhecidas']; ?></td>
                             </tr>
                             <tr>
                                 <th>Qual doença?</th>
@@ -192,7 +195,7 @@ function buscarPetPorId($petId)
 <table class="table">
     <tr>
         <th>O animal está Vacinado?</th>
-        <td><?php echo $petEncontrado['animal-vacinado'] ? 'Sim' : 'Não'; ?></td>
+        <td><?php echo $petEncontrado['animal-vacinado']; ?></td>
     </tr>
     <tr>
         <th>Quantidade de Vacinas:</th>
