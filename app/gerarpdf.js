@@ -6,7 +6,7 @@ btnGeneratePDF.addEventListener('click', () => {
   //configurações do pdf
   const options = {
     margin: 1,
-    filename: 'vacinas.pdf',
+    filename: 'dadosPetseguro.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
