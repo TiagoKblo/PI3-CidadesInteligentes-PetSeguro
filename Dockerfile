@@ -26,6 +26,8 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-install zip
 
+RUN chmod -R 777 /var/www/html/
+
 RUN composer install
 
 EXPOSE 80
