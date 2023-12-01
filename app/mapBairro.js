@@ -1,10 +1,39 @@
 var google;
 
-function gerarQuadrantes(lat, lng, largura, altura) {
-    const superiorEsquerdo = { lat: lat + altura / 2, lng: lng - largura / 2 };
-    const inferiorEsquerdo = { lat: lat - altura / 2, lng: lng - largura / 2 };
-    const superiorDireito = { lat: lat + altura / 2, lng: lng + largura / 2 };
-    const inferiorDireito = { lat: lat - altura / 2, lng: lng + largura / 2 };
+
+
+function gerarQuadradoSuperiorEsquerdo(lat, lng, largura, altura) {
+    const superiorEsquerdo = { lat: lat + altura, lng: lng - largura };
+    const inferiorEsquerdo = { lat: lat, lng: lng - largura };
+    const superiorDireito = { lat: lat + altura, lng: lng };
+    const inferiorDireito = { lat: lat, lng: lng };
+
+    return { superiorEsquerdo, inferiorEsquerdo, superiorDireito, inferiorDireito };
+}
+
+function gerarQuadradoSuperiorDireito(lat, lng, largura, altura) {
+    const superiorEsquerdo = { lat: lat + altura, lng: lng };
+    const inferiorEsquerdo = { lat: lat, lng: lng };
+    const superiorDireito = { lat: lat + altura, lng: lng + largura };
+    const inferiorDireito = { lat: lat, lng: lng + largura };
+
+    return { superiorEsquerdo, inferiorEsquerdo, superiorDireito, inferiorDireito };
+}
+
+function gerarQuadradoInferiorEsquerdo(lat, lng, largura, altura) {
+    const superiorEsquerdo = { lat: lat, lng: lng - largura };
+    const inferiorEsquerdo = { lat: lat - altura, lng: lng - largura };
+    const superiorDireito = { lat: lat, lng: lng };
+    const inferiorDireito = { lat: lat - altura, lng: lng };
+
+    return { superiorEsquerdo, inferiorEsquerdo, superiorDireito, inferiorDireito };
+}
+
+function gerarQuadradoInferiorDireito(lat, lng, largura, altura) {
+    const superiorEsquerdo = { lat: lat - altura, lng: lng };
+    const inferiorEsquerdo = { lat: lat - altura, lng: lng - largura };
+    const superiorDireito = { lat: lat - altura, lng: lng + largura };
+    const inferiorDireito = { lat: lat - altura, lng: lng };
 
     return { superiorEsquerdo, inferiorEsquerdo, superiorDireito, inferiorDireito };
 }
@@ -43,18 +72,30 @@ function initMap() {
 }
 
 function adicionarQuadrantes(map, coordenadaCentral) {
-    const larguraQuadrante = 0.01;
-    const alturaQuadrante = 0.01;
+    const larguraQuadrante = 0.02;
+    const alturaQuadrante = 0.02;
 
-    const quadrantes = gerarQuadrantes(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante);
+    const quadradoSuperiorEsquerdo = gerarQuadradoSuperiorEsquerdo(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante);
+    const quadradoSuperiorDireito = gerarQuadradoSuperiorDireito(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante);
+    const quadradoInferiorEsquerdo = gerarQuadradoInferiorEsquerdo(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante);
+    const quadradoInferiorDireito = gerarQuadradoInferiorDireito(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante);
 
-    adicionarPoligono(map, quadrantes.superiorEsquerdo, quadrantes.inferiorEsquerdo, quadrantes.inferiorDireito, quadrantes.superiorDireito, '#FF0000'); // Vermelho
-    adicionarPoligono(map, quadrantes.inferiorEsquerdo, quadrantes.inferiorDireito, quadrantes.superiorDireito, quadrantes.superiorEsquerdo, '#00FF00'); // Verde
-    adicionarPoligono(map, quadrantes.superiorDireito, quadrantes.inferiorDireito, quadrantes.inferiorEsquerdo, quadrantes.superiorEsquerdo, '#0000FF'); // Azul
-    adicionarPoligono(map, quadrantes.inferiorEsquerdo, quadrantes.superiorEsquerdo, quadrantes.superiorDireito, quadrantes.inferiorDireito, '#FFFF00'); // Amarelo
+    // Desestruturando os pontos corretos para cada quadrante
+    const { superiorEsquerdo: pontoSE1, inferiorEsquerdo: pontoIE1, superiorDireito: pontoSD1, inferiorDireito: pontoID1 } = quadradoSuperiorEsquerdo;
+    const { superiorEsquerdo: pontoSE2, inferiorEsquerdo: pontoIE2, superiorDireito: pontoSD2, inferiorDireito: pontoID2 } = quadradoSuperiorDireito;
+    const { superiorEsquerdo: pontoSE3, inferiorEsquerdo: pontoIE3, superiorDireito: pontoSD3, inferiorDireito: pontoID3 } = quadradoInferiorEsquerdo;
+    const { superiorEsquerdo: pontoSE4, inferiorEsquerdo: pontoIE4, superiorDireito: pontoSD4, inferiorDireito: pontoID4 } = quadradoInferiorDireito;
+
+    adicionarPoligono(map, pontoSE1, pontoIE1, pontoID1, pontoSD1, '#FF0000');
+    adicionarPoligono(map, pontoIE2, pontoSE2, pontoSD2, pontoID2, '#00FF00');
+    adicionarPoligono(map, pontoSD3, pontoID3, pontoIE3, pontoSE3, '#0000FF');
+    adicionarPoligono(map, pontoID4, pontoSD4, pontoSE4, pontoIE4, '#FFFF00');
 }
 
+
 function adicionarPoligono(map, ponto1, ponto2, ponto3, ponto4, cor) {
+
+
     const quadrantePoligono = new google.maps.Polygon({
         paths: [ponto1, ponto2, ponto3, ponto4],
         strokeColor: cor,
