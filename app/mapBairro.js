@@ -1,8 +1,15 @@
-// Chame a função initMap quando o script for carregado
-initMap();
+var google;
+
+function gerarQuadrantes(lat, lng, largura, altura) {
+    const superiorEsquerdo = { lat: lat + altura / 2, lng: lng - largura / 2 };
+    const inferiorEsquerdo = { lat: lat - altura / 2, lng: lng - largura / 2 };
+    const superiorDireito = { lat: lat + altura / 2, lng: lng + largura / 2 };
+    const inferiorDireito = { lat: lat - altura / 2, lng: lng + largura / 2 };
+
+    return { superiorEsquerdo, inferiorEsquerdo, superiorDireito, inferiorDireito };
+}
 
 function initMap() {
-    // Use a Geocoding API para obter as coordenadas para "Itapira, SP, Brasil"
     const geocoder = new google.maps.Geocoder();
     const location = "Itapira, SP, Brasil";
 
@@ -14,10 +21,8 @@ function initMap() {
                 zoom: 11
             });
 
-            // Ícone da cidade
             const cityIconSize = new google.maps.Size(20, 20);
 
-            // Crie um objeto de ícone para a cidade com a propriedade scaledSize definida
             const cityIcon = {
                 url: '/imagens/icone-cidade.png',
                 scaledSize: cityIconSize
@@ -30,7 +35,6 @@ function initMap() {
                 icon: cityIcon
             });
 
-            // Adicione os quadrantes ao mapa
             adicionarQuadrantes(map, myLatLng);
         } else {
             console.error('Erro ao obter coordenadas:', status);
@@ -39,34 +43,20 @@ function initMap() {
 }
 
 function adicionarQuadrantes(map, coordenadaCentral) {
-    const larguraQuadrante = 0.01; // Ajuste a largura do quadrante conforme necessário
-    const alturaQuadrante = 0.01; // Ajuste a altura do quadrante conforme necessário
+    const larguraQuadrante = 0.01;
+    const alturaQuadrante = 0.01;
 
-    // Gere as coordenadas para os 4 quadrantes
-    const quadranteSuperior = gerarQuadrante(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante).superior;
-    const quadranteInferior = gerarQuadrante(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante).inferior;
-    const quadranteEsquerda = gerarQuadrante(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante).esquerda;
-    const quadranteDireita = gerarQuadrante(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante).direita;
+    const quadrantes = gerarQuadrantes(coordenadaCentral.lat(), coordenadaCentral.lng(), larguraQuadrante, alturaQuadrante);
 
-    // Adicione polígonos para representar os quadrantes
-    adicionarPoligono(map, quadranteSuperior, '#FF0000'); // Vermelho
-    adicionarPoligono(map, quadranteInferior, '#00FF00'); // Verde
-    adicionarPoligono(map, quadranteEsquerda, '#0000FF'); // Azul
-    adicionarPoligono(map, quadranteDireita, '#FFFF00'); // Amarelo
+    adicionarPoligono(map, quadrantes.superiorEsquerdo, quadrantes.inferiorEsquerdo, quadrantes.inferiorDireito, quadrantes.superiorDireito, '#FF0000'); // Vermelho
+    adicionarPoligono(map, quadrantes.inferiorEsquerdo, quadrantes.inferiorDireito, quadrantes.superiorDireito, quadrantes.superiorEsquerdo, '#00FF00'); // Verde
+    adicionarPoligono(map, quadrantes.superiorDireito, quadrantes.inferiorDireito, quadrantes.inferiorEsquerdo, quadrantes.superiorEsquerdo, '#0000FF'); // Azul
+    adicionarPoligono(map, quadrantes.inferiorEsquerdo, quadrantes.superiorEsquerdo, quadrantes.superiorDireito, quadrantes.inferiorDireito, '#FFFF00'); // Amarelo
 }
 
-function gerarQuadrante(lat, lng, largura, altura) {
-    const superior = { lat: lat + altura / 2, lng: lng };
-    const inferior = { lat: lat - altura / 2, lng: lng };
-    const esquerda = { lat: lat, lng: lng - largura / 2 };
-    const direita = { lat: lat, lng: lng + largura / 2 };
-
-    return { superior, inferior, esquerda, direita };
-}
-
-function adicionarPoligono(map, coordenadas, cor) {
+function adicionarPoligono(map, ponto1, ponto2, ponto3, ponto4, cor) {
     const quadrantePoligono = new google.maps.Polygon({
-        paths: coordenadas,
+        paths: [ponto1, ponto2, ponto3, ponto4],
         strokeColor: cor,
         strokeOpacity: 0.8,
         strokeWeight: 2,
