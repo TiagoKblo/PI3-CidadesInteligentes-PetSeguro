@@ -89,15 +89,26 @@ function loadLostPetsMarkers(map) {
             };
 
             lostPetsData.forEach(function (animal) {
-                // Certifique-se de que as chaves e os valores existem no seu JSON
-                const address = `${animal.rua}, ${animal.numero}, ${animal.bairro}, ${animal.cidade}, ${animal.estado}, ${animal.cep}`;
+                const fixedAddress = `${animal.rua}, ${animal.numero}, ${animal.bairro}, ${animal.cidade}, ${animal.estado}, ${animal.cep}`;
 
-                geocodeAddress(address, function (latLng) {
+                geocodeAddress(fixedAddress, function (latLng) {
                     const marker = new google.maps.Marker({
                         position: latLng,
                         map: map,
                         title: animal.nome,
                         icon: animalIcon
+                    });
+
+                    // Adicione um infowindow ao marcador
+                    const infowindow = new google.maps.InfoWindow();
+
+                    marker.addListener('mouseover', function () {
+                        infowindow.setContent(fixedAddress); // Configura o conteúdo do infowindow
+                        infowindow.open(map, marker);
+                    });
+
+                    marker.addListener('mouseout', function () {
+                        infowindow.close();
                     });
 
                     marker.addListener('click', function () {
@@ -107,4 +118,17 @@ function loadLostPetsMarkers(map) {
             });
         })
         .catch(error => console.error(error.message));
+}
+
+function showAnimalInfo(animal) {
+    // Exibir informações básicas
+    document.getElementById('animal-name').innerText = animal.nome;
+    document.getElementById('animal-breed').innerText = animal.raca;
+    document.getElementById('animal-color').innerText = animal.cor;
+
+    // Exibir informações adicionais
+    document.getElementById('animal-chipped').innerText = animal['possui-microchip'];
+    document.getElementById('animal-vaccinated').innerText = animal['animal-vacinado'];
+    document.getElementById('owner-name').innerText = animal['nome-proprietario'];
+    // Adicione mais campos conforme necessário
 }

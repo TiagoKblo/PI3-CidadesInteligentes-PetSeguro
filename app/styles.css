@@ -1207,3 +1207,7 @@ canvas {
 #gerenciar-tutores a:hover {
     color: #3c3b3b;
 }
+/* Exemplo de estilo CSS (verifique seus estilos) */
+.info-window {
+    color: black; /* Certifique-se de que a cor do texto é visível */
+}
