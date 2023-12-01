@@ -1,5 +1,6 @@
 let animalInfoDiv;
 let animalIcon;
+
 // Função de geocodificação para obter a latitude e longitude com base no endereço
 function geocodeAddress(address, callback) {
     const geocoder = new google.maps.Geocoder();
@@ -15,6 +16,7 @@ function geocodeAddress(address, callback) {
         }
     });
 }
+
 function initMap() {
     // Use a Geocoding API para obter as coordenadas para "Itapira, SP, Brasil"
     const geocoder = new google.maps.Geocoder();
@@ -66,8 +68,6 @@ function loadGeoJson(map) {
     });
 }
 
-
-
 // Função para carregar marcadores de animais perdidos no mapa a partir de um arquivo JSON
 function loadLostPetsMarkers(map) {
     const jsonFilePath = 'dados_animais.json';
@@ -80,6 +80,8 @@ function loadLostPetsMarkers(map) {
             return response.json();
         })
         .then(data => {
+
+
             const lostPetsData = data.filter(animal => animal['animal-perdido'] === 'sim');
 
             const animalIconSize = new google.maps.Size(25, 25);
@@ -91,7 +93,10 @@ function loadLostPetsMarkers(map) {
             lostPetsData.forEach(function (animal) {
                 const fixedAddress = `${animal.rua}, ${animal.numero}, ${animal.bairro}, ${animal.cidade}, ${animal.estado}, ${animal.cep}`;
 
+
                 geocodeAddress(fixedAddress, function (latLng) {
+                    // Adicione um marcador para cada animal perdido
+
                     const marker = new google.maps.Marker({
                         position: latLng,
                         map: map,
