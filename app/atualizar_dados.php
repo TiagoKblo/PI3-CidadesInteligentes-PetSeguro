@@ -4,17 +4,8 @@ ini_set('display_errors', 1);
 
 require_once __DIR__ . '/conexao.php';
 
-// Função para formatar o CPF
-function formatarCPF($cpf)
-{
-    // Remove caracteres não numéricos
-    $cpf = preg_replace("/[^0-9]/", "", $cpf);
-
-    // Adiciona os pontos e traço
-    $cpfFormatado = substr($cpf, 0, 3) . '.' . substr($cpf, 3, 3) . '.' . substr($cpf, 6, 3) . '-' . substr($cpf, 9, 2);
-
-    return $cpfFormatado;
-}
+// Inicializa a mensagem de erro como vazia
+$mensagemErro = '';
 
 // Verifica se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -54,15 +45,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Verifica o resultado da atualização do proprietário
         if ($resultadoAtualizacao->getMatchedCount() > 0 && $resultadoAtualizacao->getModifiedCount() > 0) {
-            exibirMensagem('Dados atualizados com sucesso!', 'sucesso');
-            // Redireciona para a página de dashboard após a atualização
-            header('Location: dashboard_usuario.php');
+            exibirMensagem('Dados atualizados com sucesso!', 'sucesso', 'dashboard_usuario.php');
             exit;
         } else {
-            exibirMensagem('Nenhum dado foi atualizado. Por favor, tente novamente.');
+            exibirMensagem('Nenhum dado foi atualizado. Por favor, tente novamente.', 'erro', 'meusdados.php');
         }
     } catch (Exception $e) {
-        exibirMensagem('Erro ao conectar ao MongoDB: ' . $e->getMessage());
+        $mensagemErro = 'Erro ao conectar ao MongoDB: ' . $e->getMessage();
     }
 } else {
     // Redireciona se o formulário não foi enviado
@@ -70,15 +59,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-function exibirMensagem($mensagem, $tipo = 'erro')
-{
+// Redireciona para a página de erro com a mensagem de erro
+exibirMensagem($mensagemErro, 'erro', 'erro.php');
+
+function exibirMensagem($mensagem, $tipo = 'erro', $paginaDestino = 'cadastropet.html') {
+    $urlDestino = $paginaDestino;
+    if ($mensagem !== '') {
+        $urlDestino .= '?erro=' . urlencode($mensagem);
+    }
     echo "<script>";
     echo "alert('$mensagem');";
-    if ($tipo === 'sucesso') {
-        echo "window.location.href = 'dashboard_usuario.php';";
-    } else {
-        echo "window.location.href = 'meusdados.php';";
-    }
+    echo "window.location.href = '$urlDestino';";
     echo "</script>";
     exit;
 }
+?>
