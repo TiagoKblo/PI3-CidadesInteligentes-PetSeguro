@@ -150,20 +150,32 @@ function buscarPetPorId($petId)
                     </table>
 
                     <!-- Informações de Rastreamento -->
-                    <h3>Informações de Rastreamento</h3>
-                    <table class="table">
-                        <tr>
-                            <th>Animal Está Perdido?</th>
-                            <td><?php echo $petEncontrado['animal-perdido']; ?></td>
-                        <tr>
-                            <th>Possui Microchip?</th>
-                            <td><?php echo $petEncontrado['possui-microchip']; ?></td>
-                        </tr>
-                        <tr>
-                            <th>Número do Chip:</th>
-                            <td><?php echo $petEncontrado['numero-do-chip']; ?></td>
-                        </tr>
-                    </table>
+<h3>Informações de Rastreamento</h3>
+<form method="post" action="alterarStatus.php">
+    <input type="hidden" name="idPet" value="<?php echo $petEncontrado['_id']; ?>">
+    <table class="table">
+        <tr>
+            <th>Animal Está Perdido?</th>
+            <td>
+                <?php
+                $statusPerda = $petEncontrado['animal-perdido'];
+                echo $statusPerda;
+                ?>
+                <input type="hidden" name="statusPerdaAtual" value="<?php echo $statusPerda; ?>">
+                <button type="submit">Alterar Status</button>
+            </td>
+        </tr>
+        <tr>
+            <th>Possui Microchip?</th>
+            <td><?php echo $petEncontrado['possui-microchip']; ?></td>
+        </tr>
+        <tr>
+            <th>Número do Chip:</th>
+            <td><?php echo $petEncontrado['numero-do-chip']; ?></td>
+        </tr>
+    </table>
+</form>
+
 
                     <!-- Informações de Saúde -->
                         <h3>Informações de Saúde</h3>
