@@ -1,8 +1,10 @@
 <?php
 // Incluir o arquivo de conexão e verificar a sessão
 require_once __DIR__ . '/conexao.php';
+
 // Adicione a chamada da função para buscarAnimaisComEndereco
 buscarAnimaisComEndereco();
+
 // Consultar todos os animais cadastrados
 try {
   $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');
@@ -15,7 +17,7 @@ try {
   exit;
 }
 
-// Consultar estatísticas
+// Consultar estatísticas gerais
 try {
   // Total de animais registrados
   $totalAnimais = $animaisCollection->countDocuments();
@@ -43,9 +45,18 @@ try {
   // Decodifica o JSON para um array associativo
   $dadosAnimais = json_decode($conteudoJson, true);
 
+  // Array para armazenar bairros únicos
+  $bairrosUnicos = [];
+
+  // Itera sobre os documentos para obter bairros únicos
+  foreach ($dadosAnimais as $animal) {
+    if (!in_array($animal['bairro'], $bairrosUnicos)) {
+      $bairrosUnicos[] = $animal['bairro'];
+    }
+  }
+
   // Recupera a data e hora do primeiro documento (índice 0)
   $dataHoraAtual = $dadosAnimais[0]['data_hora_atual'];
-
 } catch (Exception $e) {
   // Trate a exceção conforme necessário
   echo 'Erro: ' . $e->getMessage();
@@ -131,7 +142,7 @@ try {
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center">Estatísticas</h2>
+          <h2 class="text-center">Estatísticas Gerais</h2>
 
           <table class="table">
             <thead>
@@ -188,9 +199,41 @@ try {
         </div>
       </div>
     </div>
+  
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">Estatísticas por Bairro</h2>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Bairro</th>
+                <th>Total de Animais</th>
+                <th>Total de Animais Perdidos</th>
+                <th>Total de Animais Castrados</th>
+                <th>Total de Animais Vacinados</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($bairrosUnicos as $bairro) : ?>
+                <tr>
+                  <td><?= $bairro ?></td>
+                  <td><?= getTotalAnimaisPorBairro($dadosAnimais, $bairro) ?></td>
+                  <td><?= getTotalAnimaisPerdidosPorBairro($dadosAnimais, $bairro) ?></td>
+                  <td><?= getTotalAnimaisCastradosPorBairro($dadosAnimais, $bairro) ?></td>
+                  <td><?= getTotalAnimaisVacinadosPorBairro($dadosAnimais, $bairro) ?></td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
     <button id="btnGeneratePDF" class="btn btn-primary">Gerar PDF</button>
   </section>
-
 
   <!-- Rodapé -->
   <footer class="text-center">
@@ -209,3 +252,33 @@ try {
 </body>
 
 </html>
+
+<?php
+function getTotalAnimaisPorBairro($dadosAnimais, $bairro)
+{
+  return count(array_filter($dadosAnimais, function ($animal) use ($bairro) {
+    return $animal['bairro'] == $bairro;
+  }));
+}
+
+function getTotalAnimaisPerdidosPorBairro($dadosAnimais, $bairro)
+{
+  return count(array_filter($dadosAnimais, function ($animal) use ($bairro) {
+    return $animal['bairro'] == $bairro && $animal['animal-perdido'] == 'sim';
+  }));
+}
+
+function getTotalAnimaisCastradosPorBairro($dadosAnimais, $bairro)
+{
+  return count(array_filter($dadosAnimais, function ($animal) use ($bairro) {
+    return $animal['bairro'] == $bairro && $animal['castrado'] == 'sim';
+  }));
+}
+
+function getTotalAnimaisVacinadosPorBairro($dadosAnimais, $bairro)
+{
+  return count(array_filter($dadosAnimais, function ($animal) use ($bairro) {
+    return $animal['bairro'] == $bairro && $animal['animal-vacinado'] == 'sim';
+  }));
+}
+?>

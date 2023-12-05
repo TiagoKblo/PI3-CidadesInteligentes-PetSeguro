@@ -25,7 +25,7 @@ body {
 
 /* Estilo para os Parágrafos dentro das Rows */
 .row p {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.6;
     color: #333;
     margin-bottom: 20px; /* Redução da margem inferior */
@@ -150,7 +150,7 @@ h2 {
     margin-top: 20px; /* Redução do espaçamento superior */
     text-align: center;
     color: white;
-    
+
 }
 
 /* Estilos para a seção principal */
