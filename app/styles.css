@@ -9,22 +9,26 @@ body {
 
 /* Estilo para a Seção Principal */
 .main-section {
-    padding: 30px 0; /* Redução do preenchimento */
+    padding: 50px 0; /* Redução do preenchimento */
+    margin-bottom: 10px;
 }
-
+.content {
+    margin-bottom: 60px; /* Altura do rodapé */
+    }
 /* Estilo para as Imagens dentro das Rows */
 .row img {
     width: 100%;
     height: auto;
     border-radius: 8px; /* Adapte conforme necessário */
-    margin-bottom: 10px; /* Redução da margem inferior */
+    margin-bottom: 20px; /* Redução da margem inferior */
 }
 
 /* Estilo para os Parágrafos dentro das Rows */
 .row p {
-    font-size: 14px;
+    font-size: 24px;
     line-height: 1.6;
     color: #333;
+    margin-bottom: 20px; /* Redução da margem inferior */
 }
 
 /* Estilo para os Títulos H2 */
@@ -104,8 +108,8 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 300px; /* Redução da altura da seção */
-    padding: 50px 0; /* Redução do espaçamento interno superior e inferior */
+    min-height: 600px; /* Redução da altura da seção */
+    padding: 80px 0; /* Redução do espaçamento interno superior e inferior */
     z-index: 1;
     color: #000000;
     text-align: center;
@@ -125,7 +129,7 @@ h2 {
 /* Estilos para o texto na seção */
 .banner-section h1 {
     color: #3c3b3b;
-    font-size: 32px; /* Redução do tamanho da fonte */
+    font-size: 42px; /* Redução do tamanho da fonte */
     margin-top: 20px; /* Redução da margem superior */
     text-align: right;
     font-weight: bold;
@@ -135,7 +139,7 @@ h2 {
 .banner-section p {
     color: #3c3b3b;
     text-align: center;
-    font-size: 18px; /* Redução do tamanho da fonte */
+    font-size: 28px; /* Redução do tamanho da fonte */
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     margin-top: 200px; /* Redução do espaço superior */
@@ -143,9 +147,10 @@ h2 {
 
 /* Estilos para o conteúdo principal */
 .container {
-    margin-top: 10px; /* Redução do espaçamento superior */
+    margin-top: 20px; /* Redução do espaçamento superior */
     text-align: center;
     color: white;
+    
 }
 
 /* Estilos para a seção principal */
@@ -155,7 +160,7 @@ h2 {
 }
 
 .main-section h2 {
-    font-size: 36px; /* Redução do tamanho da fonte do título */
+    font-size: 46px; /* Redução do tamanho da fonte do título */
     margin-bottom: 20px; /* Redução do espaçamento inferior do título */
 }
 
@@ -256,6 +261,7 @@ footer {
     padding: 10px;
     bottom: 0;
     width: 100%;
+    position: relative;
 }
 .custom-link {
     color: #3c3b3b; /* Cor dos links */
@@ -851,7 +857,8 @@ form button:hover {
 .dashboard-section {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 0; /* Aumento do espaçamento interno para melhorar a legibilidade */
-
+    height: 100vh;
+    display: fixed;
     /* Adição de margens para garantir um espaçamento apropriado */
     margin-top: 20px;
     margin-bottom: 20px;
@@ -894,6 +901,8 @@ form button:hover {
 .gerenciar-usuarios-section {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 5px 0;
+    height: 100vh;
+    display: fixed;
 }
 
 .gerenciar-usuarios-icon {
