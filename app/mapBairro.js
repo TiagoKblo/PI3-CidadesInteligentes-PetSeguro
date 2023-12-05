@@ -130,12 +130,7 @@ function initMap() {
             // Adiciona quadrantes e obtém a lista
             const quadrantes = adicionarQuadrantes(map);
 
-            // Simulando dados de animais
-            const animais = [
-                { nome: "Animal1", endereco: "Endereco1", cidade: "Cidade1", estado: "Estado1", pais: "Pais1" },
-                { nome: "Animal2", endereco: "Endereco2", cidade: "Cidade2", estado: "Estado2", pais: "Pais2" },
-                // Adicione mais animais conforme necessário
-            ];
+           
 
             // Adiciona animais nos quadrantes
             adicionarAnimaisNoMapa(map, animais, quadrantes);

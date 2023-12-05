@@ -59,18 +59,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// Redireciona para a página de erro com a mensagem de erro
-exibirMensagem($mensagemErro, 'erro', 'erro.php');
-
-function exibirMensagem($mensagem, $tipo = 'erro', $paginaDestino = 'cadastropet.html') {
-    $urlDestino = $paginaDestino;
-    if ($mensagem !== '') {
-        $urlDestino .= '?erro=' . urlencode($mensagem);
-    }
-    echo "<script>";
-    echo "alert('$mensagem');";
-    echo "window.location.href = '$urlDestino';";
-    echo "</script>";
-    exit;
-}
-?>

@@ -35,6 +35,22 @@ try {
   echo 'Erro ao consultar estatísticas: ' . $e->getMessage();
   exit;
 }
+
+try {
+  // Lê o conteúdo do arquivo JSON
+  $conteudoJson = file_get_contents('dados_animais.json');
+
+  // Decodifica o JSON para um array associativo
+  $dadosAnimais = json_decode($conteudoJson, true);
+
+  // Recupera a data e hora do primeiro documento (índice 0)
+  $dataHoraAtual = $dadosAnimais[0]['data_hora_atual'];
+
+} catch (Exception $e) {
+  // Trate a exceção conforme necessário
+  echo 'Erro: ' . $e->getMessage();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -116,6 +132,7 @@ try {
       <div class="row">
         <div class="col-12">
           <h2 class="text-center">Estatísticas</h2>
+
           <table class="table">
             <thead>
               <tr>
@@ -160,7 +177,10 @@ try {
                     ?>
                   <?php endforeach; ?>
                 </td>
-
+              </tr>
+              <tr>
+                <td>Data e hora da última atualização dos dados</td>
+                <td><?= $dataHoraAtual ?></td>
               </tr>
 
             </tbody>

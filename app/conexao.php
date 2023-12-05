@@ -54,6 +54,8 @@ function buscarAnimaisComEndereco() {
             $proprietario = buscarProprietarioPorCPF($animal['cpf_proprietario']);
 
             if ($proprietario) {
+                // Obter a data e hora atual
+                $dataHoraAtual = date('d-m-Y H:i:s');
                 // Monta o objeto com os campos desejados
                 $dadosAnimal = [
                     'nome' => $animal['nome'],
@@ -72,6 +74,7 @@ function buscarAnimaisComEndereco() {
                     'bairro' => $proprietario['bairro'],
                     'rua' => $proprietario['rua'],
                     'numero' => $proprietario['numero'],
+                    'data_hora_atual' => $dataHoraAtual,
                 ];
 
                 // Adiciona o animal ao array
