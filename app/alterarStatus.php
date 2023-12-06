@@ -27,13 +27,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $petId = $_POST['idPet'];
 
         // Atualiza o documento do pet na coleção usando o campo _id como identificador
-        $resultadoAtualizacao = $petsCollection->updateOne(
+        $resultadoAtualizacaoPets = $petsCollection->updateOne(
             ['_id' => new MongoDB\BSON\ObjectID($petId)],
             $dadosAtualizados
         );
 
-        // Verifica o resultado da atualização
-        if ($resultadoAtualizacao->getModifiedCount() > 0) {
+        // Obtém a coleção de dados_animais
+        $dadosAnimaisCollection = $mongoManager->getCollection('dados_animais');
+
+        // Atualiza o documento na coleção dados_animais usando o campo _id como identificador
+        $resultadoAtualizacaoDadosAnimais = $dadosAnimaisCollection->updateOne(
+            ['_id' => new MongoDB\BSON\ObjectID($petId)],
+            $dadosAtualizados
+        );
+
+        // Verifica o resultado da atualização em ambas as coleções
+        if ($resultadoAtualizacaoPets->getModifiedCount() > 0 && $resultadoAtualizacaoDadosAnimais->getModifiedCount() > 0) {
             exibirMensagem('Status de perda atualizado com sucesso!', 'sucesso', 'admin.html');
             exit;
         } else {

@@ -27,7 +27,7 @@ function initMap() {
             const myLatLng = results[0].geometry.location;
             const map = new google.maps.Map(document.getElementById('map'), {
                 center: myLatLng,
-                zoom: 11
+                zoom: 12
             });
 
             // Ícone da cidade
@@ -70,33 +70,26 @@ function loadGeoJson(map) {
 
 // Função para carregar marcadores de animais perdidos no mapa a partir de um arquivo JSON
 function loadLostPetsMarkers(map) {
-    const jsonFilePath = 'dados_animais.json';
+    const apiEndpoint = 'http://localhost/api.php'; // Substitua pela URL do seu arquivo PHP
 
-    fetch(jsonFilePath)
+    fetch(apiEndpoint)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Erro ao carregar dados do arquivo JSON');
+                throw new Error('Erro ao carregar dados da API');
             }
             return response.json();
         })
         .then(data => {
-
-
-            const lostPetsData = data.filter(animal => animal['animal-perdido'] === 'sim');
-
             const animalIconSize = new google.maps.Size(25, 25);
             const animalIcon = {
                 url: '/imagens/icone-pata.png',
                 scaledSize: animalIconSize
             };
 
-            lostPetsData.forEach(function (animal) {
+            data.forEach(function (animal) {
                 const fixedAddress = `${animal.rua}, ${animal.numero}, ${animal.bairro}, ${animal.cidade}, ${animal.estado}, ${animal.cep}`;
 
-
                 geocodeAddress(fixedAddress, function (latLng) {
-                    // Adicione um marcador para cada animal perdido
-
                     const marker = new google.maps.Marker({
                         position: latLng,
                         map: map,
@@ -104,11 +97,10 @@ function loadLostPetsMarkers(map) {
                         icon: animalIcon
                     });
 
-                    // Adicione um infowindow ao marcador
                     const infowindow = new google.maps.InfoWindow();
 
                     marker.addListener('mouseover', function () {
-                        infowindow.setContent(fixedAddress); // Configura o conteúdo do infowindow
+                        infowindow.setContent(fixedAddress);
                         infowindow.open(map, marker);
                     });
 
@@ -124,6 +116,7 @@ function loadLostPetsMarkers(map) {
         })
         .catch(error => console.error(error.message));
 }
+
 
 function showAnimalInfo(animal) {
     // Exibir informações básicas

@@ -18,7 +18,10 @@ class MongoDBManager {
         $collection = $this->getCollection($collectionName);
         return $collection->findOne($filter);
     }
-
+    public function buscar($collectionName, $filter) {
+        $collection = $this->getCollection($collectionName);
+        return $collection->find($filter);
+    }
     public function find($collectionName, $filter) {
         $collection = $this->getCollection($collectionName);
         return $collection->find($filter);
@@ -46,51 +49,59 @@ function buscarAnimaisComEndereco() {
         // Consulta no MongoDB para encontrar todos os animais
         $animais = $mongoManager->find('pets', []);
 
-        // Array para armazenar os dados dos animais
-        $dadosAnimais = [];
-
         foreach ($animais as $animal) {
             // Consulta no MongoDB para encontrar o proprietário pelo CPF
             $proprietario = buscarProprietarioPorCPF($animal['cpf_proprietario']);
 
             if ($proprietario) {
-                // Obter a data e hora atual
-                $dataHoraAtual = date('d-m-Y H:i:s');
-                // Monta o objeto com os campos desejados
-                $dadosAnimal = [
-                    'nome' => $animal['nome'],
-                    'especie' => $animal['especie'],
-                    'outra-especie' => $animal['outra-especie'],
-                    'raca' => $animal['raca'],
-                    'cor' => $animal['cor'],
-                    'animal-perdido' => $animal['animal-perdido'],
-                    'possui-microchip' => $animal['possui-microchip'],
-                    'castrado' => $animal['castrado'],
-                    'animal-vacinado' => $animal['animal-vacinado'],
-                    'nome-proprietario' => $proprietario['nome'],
-                    'cep' => $proprietario['cep'],
-                    'estado' => $proprietario['estado'],
-                    'cidade' => $proprietario['cidade'],
-                    'bairro' => $proprietario['bairro'],
-                    'rua' => $proprietario['rua'],
-                    'numero' => $proprietario['numero'],
-                    'data_hora_atual' => $dataHoraAtual,
-                ];
+                // Verifica se o animal já existe na coleção 'dados_animais' com base no _id
+                $existeAnimal = $mongoManager->findOne('dados_animais', ['_id' => $animal['_id']]);
 
-                // Adiciona o animal ao array
-                $dadosAnimais[] = $dadosAnimal;
+                if (!$existeAnimal) {
+                    // Obter a data e hora atual
+                    $dataHoraAtual = new MongoDB\BSON\UTCDateTime();
+
+                    // Converter para um objeto DateTime
+                    $dateTime = $dataHoraAtual->toDateTime();
+
+                    // Formatar a data conforme necessário (por exemplo, no formato "Y-m-d H:i:s")
+                    $dataHoraFormatada = $dateTime->format("d-m-Y H:i:s");
+
+                    // Monta o objeto com os campos desejados
+                    $dadosAnimal = [
+                        '_id' => $animal['_id'],
+                        'nome' => $animal['nome'],
+                        'especie' => $animal['especie'],
+                        'outra-especie' => $animal['outra-especie'],
+                        'raca' => $animal['raca'],
+                        'cor' => $animal['cor'],
+                        'animal-perdido' => $animal['animal-perdido'],
+                        'possui-microchip' => $animal['possui-microchip'],
+                        'castrado' => $animal['castrado'],
+                        'animal-vacinado' => $animal['animal-vacinado'],
+                        'nome-proprietario' => $proprietario['nome'],
+                        'cep' => $proprietario['cep'],
+                        'estado' => $proprietario['estado'],
+                        'cidade' => $proprietario['cidade'],
+                        'bairro' => $proprietario['bairro'],
+                        'rua' => $proprietario['rua'],
+                        'numero' => $proprietario['numero'],
+                        'data_hora_atual' => $dataHoraFormatada,
+                    ];
+
+                    // Insere os dados na nova collection 'dados_animais'
+                    $mongoManager->getCollection('dados_animais')->insertOne($dadosAnimal);
+                }
             }
         }
-
-        // Salva os dados em um arquivo JSON
-        file_put_contents('dados_animais.json', json_encode($dadosAnimais, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-
-
     } catch (Exception $e) {
         // Trate a exceção, por exemplo, registrando em logs ou retornando uma mensagem de erro
         echo "Erro: " . $e->getMessage();
     }
 }
+
+
+
 
 try {
     $mongoManager = new MongoDBManager('mongo', '27017', 'PetSeguro');

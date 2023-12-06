@@ -1,8 +1,8 @@
 // Função para carregar os dados do JSON e atualizar a interface
 async function carregarEstatisticas() {
   try {
-      // Faz uma requisição assíncrona para o arquivo JSON
-      const resposta = await fetch('dados_animais.json');
+      // Faz uma requisição assíncrona para a API PHP
+      const resposta = await fetch('http://localhost/todosAnimaisApi.php'); // Substitua pela URL do seu arquivo PHP
       const dados = await resposta.json();
 
       // Calcula as estatísticas
@@ -36,3 +36,4 @@ function animateNumber(element, targetValue, duration) {
       }
   });
 }
+
