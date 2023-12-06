@@ -1,5 +1,5 @@
 <?php
-// buscar_nome_proprietario.php
+
 
 require_once __DIR__ . '/conexao.php';
 
