@@ -87,7 +87,8 @@ try {
                                 <th>Nome</th>
                                 <th>Email</th>
                                 <th>Telefone</th>
-                                <th>CPF</th>
+                                <th>Ações</th>
+                                <th>Entra em contato</th>
                                 <!-- Adicione mais colunas conforme necessário -->
                             </tr>
                         </thead>
@@ -97,7 +98,12 @@ try {
                                     <td><?= $usuario['nome'] ?></td>
                                     <td><?= $usuario['email'] ?></td>
                                     <td><?= $usuario['telefone'] ?></td>
-                                    <td><?= $usuario['cpf'] ?></td>
+                                    <td>
+                                        <a href="meusdados.php?id=<?= $usuario['_id'] ?>">Editar</a>
+                                    </td>
+                                    <td>
+                                        <a href="contato.php?id=<?= $usuario['_id'] ?>">Enviar Mensagem</a>
+                                    </td>
                                     <!-- Adicione mais colunas conforme necessário -->
                                 </tr>
                             <?php endforeach; ?>

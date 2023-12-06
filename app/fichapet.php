@@ -78,16 +78,14 @@ function buscarPetPorId($petId)
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000"
-                data-aos-once="false">
+            <a class="navbar-brand" href="index.html" data-aos="flip-left" data-aos-duration="3000" data-aos-once="false">
                 PetSeguro
             </a>
             <div>
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -107,77 +105,77 @@ function buscarPetPorId($petId)
     </nav>
 
     <section class="ficha-pet" id="ficha-pet">
-    <div class="container">
+        <div class="container">
 
-        <?php
-        // Verifica se há um animal de estimação encontrado
-        if ($petEncontrado) {
-        ?>
-<h2 class="text-center"><?php echo $petEncontrado['nome']; ?></h2>
+            <?php
+            // Verifica se há um animal de estimação encontrado
+            if ($petEncontrado) {
+            ?>
+                <h2 class="text-center"><?php echo $petEncontrado['nome']; ?></h2>
                 <div class="primeiro-elemento">
-                    <img src="imagens/golfinho.webp" alt="Foto do Pet" class="img-fluid imagem-pet">
+                    <img src="imagens/dogperfil.jpeg" alt="Foto do Pet" class="img-fluid imagem-pet">
                 </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <!-- Dados Gerais -->
-                    <h3>Dados Gerais</h3>
-                    <table class="table">
-                    <tr>
-    <th>Nome do Proprietario:</th>
-    <td><?php echo $nomeProprietario; ?></td>
-</tr>
-                        <tr>
-                            <th>Espécie:</th>
-                            <td>
-                                <?php
-                                echo $petEncontrado['especie'];
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <!-- Dados Gerais -->
+                        <h3>Dados Gerais</h3>
+                        <table class="table">
+                            <tr>
+                                <th>Nome do Proprietario:</th>
+                                <td><?php echo $nomeProprietario; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Espécie:</th>
+                                <td>
+                                    <?php
+                                    echo $petEncontrado['especie'];
 
-                                // Verifica se a espécie é "outro" e se há um valor em "outra-especie"
-                                if ($petEncontrado['especie'] === 'outro' && !empty($petEncontrado['outra-especie'])) {
-                                    echo ' - ' . $petEncontrado['outra-especie'];
-                                }
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Raça:</th>
-                            <td><?php echo $petEncontrado['raca']; ?></td>
-                        </tr>
-                        <tr>
-                            <th>Data de Nascimento:</th>
-                            <td><?php echo $petEncontrado['data-nascimento']; ?></td>
-                        </tr>
-                    </table>
+                                    // Verifica se a espécie é "outro" e se há um valor em "outra-especie"
+                                    if ($petEncontrado['especie'] === 'outro' && !empty($petEncontrado['outra-especie'])) {
+                                        echo ' - ' . $petEncontrado['outra-especie'];
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Raça:</th>
+                                <td><?php echo $petEncontrado['raca']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Data de Nascimento:</th>
+                                <td><?php echo $petEncontrado['data-nascimento']; ?></td>
+                            </tr>
+                        </table>
 
-                    <!-- Informações de Rastreamento -->
-<h3>Informações de Rastreamento</h3>
-<form method="post" action="alterarStatus.php">
-    <input type="hidden" name="idPet" value="<?php echo $petEncontrado['_id']; ?>">
-    <table class="table">
-        <tr>
-            <th>Animal Está Perdido?</th>
-            <td>
-                <?php
-                $statusPerda = $petEncontrado['animal-perdido'];
-                echo $statusPerda;
-                ?>
-                <input type="hidden" name="statusPerdaAtual" value="<?php echo $statusPerda; ?>">
-                <button type="submit">Alterar Status</button>
-            </td>
-        </tr>
-        <tr>
-            <th>Possui Microchip?</th>
-            <td><?php echo $petEncontrado['possui-microchip']; ?></td>
-        </tr>
-        <tr>
-            <th>Número do Chip:</th>
-            <td><?php echo $petEncontrado['numero-do-chip']; ?></td>
-        </tr>
-    </table>
-</form>
+                        <!-- Informações de Rastreamento -->
+                        <h3>Informações de Rastreamento</h3>
+                        <form method="post" action="alterarStatus.php">
+                            <input type="hidden" name="idPet" value="<?php echo $petEncontrado['_id']; ?>">
+                            <table class="table">
+                                <tr>
+                                    <th>Animal Está Perdido?</th>
+                                    <td>
+                                        <?php
+                                        $statusPerda = $petEncontrado['animal-perdido'];
+                                        echo $statusPerda;
+                                        ?>
+                                        <input type="hidden" name="statusPerdaAtual" value="<?php echo $statusPerda; ?>">
+                                        <button type="submit">Alterar Status</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Possui Microchip?</th>
+                                    <td><?php echo $petEncontrado['possui-microchip']; ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Número do Chip:</th>
+                                    <td><?php echo $petEncontrado['numero-do-chip']; ?></td>
+                                </tr>
+                            </table>
+                        </form>
 
 
-                    <!-- Informações de Saúde -->
+                        <!-- Informações de Saúde -->
                         <h3>Informações de Saúde</h3>
                         <table class="table">
                             <tr>
@@ -202,59 +200,63 @@ function buscarPetPorId($petId)
                         <h3>Exames Médicos</h3>
                         <p><strong>Anexar Exames Médicos:</strong> [Inserir link ou imagem dos exames médicos, se aplicável]</p>
 
-<!-- Vacinas -->
-<h3>Vacinas</h3>
-<table class="table">
-    <tr>
-        <th>O animal está Vacinado?</th>
-        <td><?php echo $petEncontrado['animal-vacinado']; ?></td>
-    </tr>
-    <tr>
-        <th>Quantidade de Vacinas:</th>
-        <td><?php echo count($petEncontrado['vacinas']); ?></td>
-    </tr>
-</table>
+                        <!-- Vacinas -->
+                        <h3>Vacinas</h3>
+                        <table class="table">
+                            <tr>
+                                <th>O animal está Vacinado?</th>
+                                <td><?php echo $petEncontrado['animal-vacinado']; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Quantidade de Vacinas:</th>
+                                <td><?php echo count($petEncontrado['vacinas']); ?></td>
+                            </tr>
+                        </table>
 
-<!-- Campos de Vacinação (se aplicável) -->
-<?php if ($petEncontrado['animal-vacinado'] && !empty($petEncontrado['vacinas'])) : ?>
-    <h3>Detalhes das Vacinas</h3>
-    <table class="table">
-        <tr>
-            <th>Tipo de Vacina</th>
-            <th>Data da Aplicação</th>
-            <th>Validade da Vacina</th>
-            <th>Número do Lote</th>
-            <th>Fabricante da Vacina</th>
-            <th>Número da Dose</th>
-        </tr>
-        <?php foreach ($petEncontrado['vacinas'] as $vacina) : ?>
-            <tr>
-                <td><?php echo $vacina['tipo-vacina']; ?></td>
-                <td><?php echo $vacina['data-vacina']; ?></td>
-                <td><?php echo $vacina['validade-vacina']; ?></td>
-                <td><?php echo $vacina['lote-vacina']; ?></td>
-                <td><?php echo $vacina['fabricante-vacina']; ?></td>
-                <td><?php echo $vacina['dose-vacina']; ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-<?php else : ?>
-    <p>Nenhuma informação de vacina disponível.</p>
-<?php endif; ?>
+                        <!-- Campos de Vacinação (se aplicável) -->
+                        <?php if ($petEncontrado['animal-vacinado'] && !empty($petEncontrado['vacinas'])) : ?>
+                            <h3>Detalhes das Vacinas</h3>
+                            <table class="table">
+                                <tr>
+                                    <th>Tipo de Vacina</th>
+                                    <th>Data da Aplicação</th>
+                                    <th>Validade da Vacina</th>
+                                    <th>Número do Lote</th>
+                                    <th>Fabricante da Vacina</th>
+                                    <th>Número da Dose</th>
+                                </tr>
+                                <?php foreach ($petEncontrado['vacinas'] as $vacina) : ?>
+                                    <tr>
+                                        <td><?php echo $vacina['tipo-vacina']; ?></td>
+                                        <td><?php echo $vacina['data-vacina']; ?></td>
+                                        <td><?php echo $vacina['validade-vacina']; ?></td>
+                                        <td><?php echo $vacina['lote-vacina']; ?></td>
+                                        <td><?php echo $vacina['fabricante-vacina']; ?></td>
+                                        <td><?php echo $vacina['dose-vacina']; ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+
+                            </table>
+
+                        <?php else : ?>
+                            <p>Nenhuma informação de vacina disponível.</p>
+                        <?php endif; ?>
 
 
+                        <a href="editarfichapet.php" class="btn btn-primary">Comunicar Óbito</a>
+                        <a href="editarfichapet.php" class="btn btn-primary">Nova Vacina</a>
+                        <!-- Fechamento da div que envolve a sua página -->
+                    </div>
 
-<!-- Fechamento da div que envolve a sua página -->
-</div>
-</div>
+                </div>
 
-<?php
-} else {
-    echo '<p>Nenhum pet encontrado.</p>';
-}
-?>
-</div>
-</section>
+            <?php
+            } else {
+                echo '<p>Nenhum pet encontrado.</p>';
+            }
+            ?>
+        </div>
+    </section>
 
 
 

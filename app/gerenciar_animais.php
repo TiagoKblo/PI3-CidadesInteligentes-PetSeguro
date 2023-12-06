@@ -87,8 +87,7 @@ try {
                                 <th>Raça</th>
                                 <th>Data de Nascimento</th>
                                 <th>Ficha do Animal</th>
-                                <th>Opções</th>
-                                <th>Comunicar Tutor</th>
+                                <th>Entra em contato</th>
 
                                 <!-- Adicione mais colunas conforme necessário -->
                             </tr>
@@ -101,8 +100,7 @@ try {
                                     <td><?= $animal['raca'] ?></td>
                                     <td><?= $animal['data-nascimento'] ?></td>
                                     <td><a href="fichapet.php?id=<?= $animal['_id'] ?>">Visualizar</a></td>
-                                    <td><a href="editarpet.php?id=<?= $animal['_id'] ?>">Perda</a>
-                                        <a href="excluirpet.php?id=<?= $animal['_id'] ?>">Óbito</a></td>
+
                                         <td><a href="comunicar_tutor.php?id=<?= $animal['_id'] ?>">Enviar Mensagem</a></td>
                                     <!-- Adicione mais colunas conforme necessário -->
                                 </tr>

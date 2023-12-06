@@ -55,12 +55,8 @@ $nomeUsuario = $_SESSION['nome_usuario'];
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">Início</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="meusanimais.php?cpf=<?= $cpfUsuario ?>">Meus Animais</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="meusdados.php?cpf=<?= $cpfUsuario ?>"><Main>Atualizar Dados</Main></a>
-                            </li>
+                            <li class="nav-item current-page">
+                                <a class="nav-link" href="dashboard_usuario.php">Funcionalidades</a>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">Sair</a>
                             </li>
@@ -81,7 +77,7 @@ $nomeUsuario = $_SESSION['nome_usuario'];
 
         <div class="row">
             <!-- Meus animais Cadastrados -->
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
                 <div class="dashboard-feature text-center">
                     <div class="dashboard-icon">
                     <a href="meusanimais.php?cpf=<?= $cpfUsuario ?>">
@@ -94,7 +90,7 @@ $nomeUsuario = $_SESSION['nome_usuario'];
             </div>
 
             <!-- Meus dados Cadastrais -->
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
                 <div class="dashboard-feature text-center">
                     <div class="dashboard-icon">
                         <a href="meusdados.php?cpf=<?= $cpfUsuario ?>">
@@ -105,7 +101,17 @@ $nomeUsuario = $_SESSION['nome_usuario'];
                     <p>Atualize suas informações cadastrais e mantenha-se informado sobre seu perfil no PetSeguro.</p>
                 </div>
             </div>
-
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="dashboard-feature text-center">
+            <div class="dashboard-icon">
+                      <a href="caixa_mensagens.php">
+                        <i class="bi bi-envelope"></i>
+                      </a>
+                  </div>
+                  <h3 class="mb-3">Minhas Mensagens</h3>
+                  <p>Responda suas mensagens.</p>
+              </div>
+          </div>
 
         </div>
     </div>

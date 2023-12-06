@@ -113,7 +113,7 @@ try {
               <li class="nav-item">
                 <a class="nav-link" href="admin.html">Dashboard</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item current-page">
                 <a class="nav-link" href="relatorio.php">Relatórios</a>
               </li>
 
@@ -199,7 +199,7 @@ try {
         </div>
       </div>
     </div>
-  
+
 
 
     <div class="container">
@@ -232,9 +232,11 @@ try {
         </div>
       </div>
     </div>
-    <button id="btnGeneratePDF" class="btn btn-primary">Gerar PDF</button>
-  </section>
 
+  </section>
+  <div id="botaopdf">
+  <button id="btnGeneratePDF" class="btn btn-primary">Gerar PDF</button>
+  </div>
   <!-- Rodapé -->
   <footer class="text-center">
     <div class="text-center p-3">
