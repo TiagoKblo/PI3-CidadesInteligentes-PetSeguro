@@ -84,8 +84,8 @@ try {
                             <tr>
                                 <th>Nome</th>
                                 <th>Espécie</th>
-                                <th>Raça</th>
-                                <th>Data de Nascimento</th>
+                                <th>Animal está Perdido?</th>
+                                <th>Nome do Proprietario</th>
                                 <th>Ficha do Animal</th>
                                 <th>Entra em contato</th>
 
@@ -93,19 +93,23 @@ try {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($animaisCursor as $animal) : ?>
-                                <tr>
-                                    <td><?= $animal['nome'] ?></td>
-                                    <td><?= $animal['especie'] ?></td>
-                                    <td><?= $animal['raca'] ?></td>
-                                    <td><?= $animal['data-nascimento'] ?></td>
-                                    <td><a href="fichapet.php?id=<?= $animal['_id'] ?>">Visualizar</a></td>
-
-                                        <td><a href="comunicar_tutor.php?id=<?= $animal['_id'] ?>">Enviar Mensagem</a></td>
-                                    <!-- Adicione mais colunas conforme necessário -->
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
+        <?php foreach ($animaisCursor as $animal) : ?>
+            <tr>
+                <td><?= $animal['nome'] ?></td>
+                <td><?= $animal['especie'] ?></td>
+                <td><?= $animal['animal-perdido'] ?></td>
+                <td>
+                    <?php
+                    // Busca o proprietário pelo CPF do animal
+                    $proprietarioEncontrado = buscarProprietarioPorCPF($animal['cpf_proprietario']);
+                    echo $proprietarioEncontrado ? $proprietarioEncontrado['nome'] : 'Proprietário não encontrado';
+                    ?>
+                </td>
+                <td><a href="fichapet.php?id=<?= $animal['_id'] ?>">Visualizar</a></td>
+                <td><a href="comunicar_tutor.php?id=<?= $animal['_id'] ?>">Enviar Mensagem</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
                     </table>
                 </div>
             </div>
@@ -114,7 +118,9 @@ try {
     </section>
 
     <footer class="text-center">
-        <!-- ... (seu código de rodapé) ... -->
+        <div class="text-center p-3">
+            <a href="https://github.com/TiagoKblo" class="custom-link">© 2023 PatSeguro - Todos os direitos reservados</a>
+        </div>
     </footer>
 
     <!-- Os scripts do Bootstrap e outros scripts necessários -->

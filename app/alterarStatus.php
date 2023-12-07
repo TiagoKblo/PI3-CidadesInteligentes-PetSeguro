@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Verifica o resultado da atualização em ambas as coleções
         if ($resultadoAtualizacaoPets->getModifiedCount() > 0 && $resultadoAtualizacaoDadosAnimais->getModifiedCount() > 0) {
-            exibirMensagem('Status de perda atualizado com sucesso!', 'sucesso', 'admin.html');
+            exibirMensagem('Status de perda atualizado com sucesso!', 'sucesso', 'gerenciar_animais.php');
             exit;
         } else {
             exibirMensagem('Erro ao atualizar o status de perda. Nenhuma modificação necessária ou documento não encontrado.', 'erro', 'erro.php');
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exibirMensagem($mensagemErro, 'erro', 'erro.php');
 }
 
-function exibirMensagem($mensagem, $tipo = 'erro', $paginaDestino = 'cadastropet.html') {
+function exibirMensagem($mensagem, $tipo = 'erro', $paginaDestino = 'gerenciar_animais.php') {
     $urlDestino = $paginaDestino;
     if ($mensagem !== '') {
         $urlDestino .= '?erro=' . urlencode($mensagem);

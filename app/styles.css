@@ -74,17 +74,15 @@ h2 {
 }
 .current-page {
 
-    color: #3b9dfe;
-    transform: scale(1.0);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
+    background-color: rgba(59, 157, 254, 0.3);
+    border-radius: 50px;
   }
 /* Estilos para os links de navegação no hover */
 .navbar-custom .navbar-nav .nav-item .nav-link:hover {
     color: #3b9dfe;
     transform: scale(1.2);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
+    
+    border-radius: 50px;
 }
 
 /* Estilos para o dropdown */
