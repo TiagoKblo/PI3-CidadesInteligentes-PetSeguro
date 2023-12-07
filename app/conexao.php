@@ -115,6 +115,12 @@ try {
     // Coleção 'proprietarios'
     $proprietariosCollection = $mongoManager->getCollection('proprietarios');
 
+    // Coleção 'dados_animais'
+    $dadosAnimaisCollection = $mongoManager->getCollection('dados_animais');
+
+    // Coleção 'administradores'
+    $administradoresCollection = $mongoManager->getCollection('administradores');
+
     // Restante do código...
 
     // Chama a função para buscar e salvar os dados

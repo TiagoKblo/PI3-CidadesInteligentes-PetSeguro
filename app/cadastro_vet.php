@@ -46,11 +46,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insere o documento na coleção
     $resultadoCadastro = $collection->insertOne($dadosVeterinario);
 
-    // Verifica o resultado do cadastro
-    if ($resultadoCadastro->getInsertedCount() > 0) {
-        echo "Cadastro realizado com sucesso!";
+      // Verifica o resultado do cadastro
+      if ($resultadoCadastro->getInsertedCount() > 0) {
+        // Mensagem de sucesso
+        echo "<script>alert('Cadastro realizado com sucesso!');</script>";
+
         // Redireciona para a página admin.html
-        header('Location: admin.html');
+        header('Location: dashboard_adm.php');
         exit;
     } else {
         echo "Erro ao cadastrar. Por favor, tente novamente.";

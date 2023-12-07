@@ -46,7 +46,7 @@ try {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="admin.html">Dashboard</a>
+                <a class="nav-link" href="dashboard_adm.php">Dashboard</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="relatorio.php">Relatórios</a>
@@ -110,6 +110,7 @@ try {
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary" type="button" onclick="window.location.href='cadastropet.html'">Cadastrar Novo Animal</button>
     </section>
 
     <footer class="text-center">

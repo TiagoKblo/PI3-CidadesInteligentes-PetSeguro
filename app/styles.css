@@ -1146,7 +1146,20 @@ form button:hover {
 #gerenciar-veterinarios a:hover {
     color: #3c3b3b;
 }
+#gerenciar-veterinarios button {
+    background-color: rgba(59, 157, 254, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Adiciona espaço acima do botão */
 
+}
+#gerenciar-veterinarios button:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+}
 /* Estilo para a seção de Gerenciar Animais */
 #gerenciar-animais {
     background-color: rgba(255, 255, 255, 0.8);
@@ -1193,6 +1206,20 @@ form button:hover {
 #gerenciar-animais a:hover {
     color: #3c3b3b;
 }
+#gerenciar-animais button {
+    background-color: rgba(59, 157, 254, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Adiciona espaço acima do botão */
+
+}
+#gerenciar-animais button:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+}
 
 /* Estilo para a seção de Gerenciar Tutores */
 #gerenciar-tutores {
@@ -1228,7 +1255,20 @@ form button:hover {
 #gerenciar-tutores th {
     background-color: #f2f2f2;
 }
+#gerenciar-tutores button {
+    background-color: rgba(59, 157, 254, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Adiciona espaço acima do botão */
 
+}
+#gerenciar-tutores button:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+}
 #gerenciar-tutores a {
     text-decoration: none;
     font-size: 18px;
@@ -1274,4 +1314,114 @@ text-align: center;
     position: center;
     padding: 10px 20px;
 
+}
+/* CSS para a Seção de Caixa de Mensagens */
+/* CSS para a Seção de Caixa de Mensagens */
+.caixa-mensagens {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.caixa-mensagens h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #3c3b3b;
+    text-shadow: 2px 2px 4px rgba(78, 79, 79, 0.5);
+}
+
+.caixa-mensagens form {
+    margin-bottom: 20px;
+}
+
+.caixa-mensagens textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    color: #333; /* Cor mais escura para o texto dentro do textarea */
+}
+
+.caixa-mensagens button {
+    background-color: rgba(59, 157, 254, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.caixa-mensagens button:hover {
+    background-color: rgba(128, 128, 128, 0.8);
+}
+
+.mensagens-recebidas .mensagem {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.mensagens-recebidas .mensagem strong {
+    color: #3c3b3b;
+}
+
+.mensagens-recebidas .mensagem p {
+    color: #3c3b3b;
+}
+.mensagem h3 {
+    color: #3c3b3b; /* Cor do texto do h3 */
+    font-size: medium;
+    font-weight: bold; /* Negrito */
+    margin-bottom: 8px; /* Espaço inferior */
+}
+/* Estilos adicionais para o label específico */
+.form-label-especial {
+    color: rgba(59, 157, 254, 0.8);
+    font-weight: bold; /* Negrito */
+    margin-bottom: 8px; /* Espaço inferior */
+}
+
+/* Estilos para os ícones de mensagens com contadores */
+.icones-mensagens {
+    display: flex;
+    gap: 20px; /* Espaço entre os ícones */
+    color: rgba(59, 157, 254, 0.8);
+}
+
+.icone-mensagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.icone-mensagem i {
+    font-size: 24px;
+}
+
+.contador {
+    background-color: rgba(59, 157, 254, 0.8);
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.icone-mensagem:hover::after {
+    content: attr(title);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 100%; /* Posiciona acima do ícone */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
